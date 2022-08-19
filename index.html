@@ -1,29 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Prueba 2 css</title>
+</head>
+<body>
+    <style>
+        *{
+            background: black;
+        }
+        
+        .h1{
+            text-align: center;
+            
+        }
+        
+        .container{
+            display:grid;
+             grid-template-columns: 1fr 1fr ;
+             grid-gap:20px;
+             margin: 20px;
+           
+        }
+        
+        .item-1{
+            
+            padding: 0px;
+         
+            text-align: justify;
+            color: #fff;
+            
+        }
+        .item-2{
+            padding: 0px;
+         
+            text-align: justify;
+           
+            
+            color:#fff;
+        }
+    </style>
+
+    <h1 class="h1">Hola mundote</h1>
+     <div class="container">
+        <div class="item-1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut corporis? Quia voluptates obcaecati neque quae sunt atque quam veritatis?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae ratione inventore quisquam consectetur rerum iusto earum? Et ea quibusdam placeat.
+            
+        </div>
+        
+            <div class="item-2">
+                ipsum dolor sit amet consectetur adipisicing elit. Itaque corporis et       repellendus laborum maxime odio a, rem obcaecati aliquid doloremque! Ex quaerat minus officia magnam omnis totam! Labore debitis aliquid est sequi ipsum accusamus delectus tempore necessitatibus ex voluptas esse nihil saepe incidunt molestias ea et, quaerat adipisci perspiciatis ipsa.
+                    
+        </div>
     
-     <style>
-            *{
-                background:black;
-                margin: 20px;
-              
-            }
-            body{
-                color:white;
-                text-align: center;
-               
-            }
-        </style>
+    </div>
+
+   
     
-    
-    <body>
-       
-        <h1>Hola Mundote</h1>
-        <P>Que pasotes con tamanos sapatitos</p>
-    </body>
+    <script src="js/main.js"></script>
+</body>
 </html>
