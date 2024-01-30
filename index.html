@@ -1,404 +1,815 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shorcut icon" type="image/x-icon" href="img/ojo2.ico">
-    <title>70s, 80s, 90s </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+//<link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Rubik+Glitch+Pop&display=swap" rel="stylesheet">
+<title>Calendario</title>
+  <style>
+body{
+background-color: LightBlue;
+border: 2px black solid;
+
+}
+.h1{
+margin:15px;
+
+}
+
+header{
+//font-family: 'League Gothic', sans-serif;
+font-family: 'Rubik Glitch Pop', system-ui;
+display: flex;
+padding:10px;
+  justify-content: center;
+  align-items: center;
+width:93%;
+height :60px;
+color: SlateBlue;
+text-align:center;
+position:sticky;
+top:25px;
+background-color:aqua;
+border-radius:5px;
+border: 2px black solid;
+}
+.paisajex{
+width:100px;
+height:100px;
+
+}
+
+    .current-day {
+background: linear-gradient(to bottom right, rgba(173, 216, 230, 0.8), rgba(135, 120, 290, 9.8));
+        }
+ 
+.dia{
+height:40px;
+width:40px;
+border: 2px black solid;
+}
+
+gray{
+background-color:gray;
+}
+    .calendario {
+background-image: url('img/paisajex.jpg');
+background-size: cover; /* Ajusta la imagen al tamaÃ±o del contenedor */
+  background-repeat: no-repeat;
+padding:10px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      text-align: center;
+border-radius:10px;
+    }
+.calendario-1 {
+//background-color:red;
+background-image: url('img/paisajex.jpg');
+  background-size: cover; /* Ajusta la imagen al tamaÃ±o del contenedor */
+  background-repeat: no-repeat; /* Evita la repeticiÃ³n de la imagen */
+  /* Otros estilos opcionales, como color de fondo o ajuste de posiciÃ³n */
+
+padding:10px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      text-align: center;
+border-radius:10px;
+    }
+
+
+.feriado{
+font-size :10px;
+margin:1px;
+padding:1px;
+}
+.dia-feriado{
+padding: 2px;
+ border: 1px solid #ccc;
+background: linear-gradient(to bottom right, rgba(255, 192, 203, 0.8), rgba(255, 0, 0, 0.8));
+}
+.d-15{
+font-size: 14px;
+}
+    .encabezado {
+      grid-column: span 7;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+.dia-semana{
+color:blue;
+font-size:25px;
+}
+  </style>
 </head>
-
-        <style>
-            *{
-                margin: 40px;
-                background: rgb(99, 139, 160);
-                text-align: center;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-            }
-
-            .h1{
-                font-size: 50px;
-                color: rgb(68, 51, 83);
-                text-align: center;
-            }
-            .h2{
-                font-size: 40px;
-                color: rgb(57, 34, 78);
-            }
-            .btn{
-                background-color: blueviolet;
-                font-size: large;
-                color: aliceblue;
-            }
-            .btn:hover{
-                color: blue;
-                cursor: pointer;
-            }
-                
-        
-        </style>
-            
-        <script>
-            const buscar = [];
-        </script>
-
-    <h1 class="h1">70s, 80s, 90s</h1>
-
-        <!--<img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5eeea355389655.59822ff824b72.gif" alt="">-->
-         <iframe src="https://jocular-monstera-9bffdd.netlify.app/" width="500px" height="500px" frameborder="0"></iframe>     
-        
-         
-         <div class="div" width="40px">
-           <a href="#amanda">A</a> 
-           <a href="">B</a>
-           <a href="">C</a>
-           <a href="#raphael">R</a>
-           <a href="#luis miguel">L</a>
-        </div>
-
-         <h2>Sacrifice1 (Subtitulos en Español) </h2>
-         <a href="https://youtu.be/vH44M4SjoxA" target="_blank">Bridgerton</a><br><br>
-       
-            <h2>Nigth of the Cat</h2>
-         <a href="https://youtu.be/T8NRCmXnguA" target="_blank"> Al Stewart</a><br><br>
-        <h2>La casa del sol naciente<h2>
-            <a href="https://youtu.be/mDQD5raPY2s" target="_blank=">The Animals</a><br><br>
-         
-         <h2>Lady Lady Lady</h2>
-         <a href="https://youtu.be/5UQcHr1fSP8" target="_blank">Matilda - Mathilde</a><br><br>
-         
-         <h2>Drive</h2>
-         <a href="https://youtu.be/xuZA6qiJVfU" target="_blank">The Cars</a><br><br>
-         
-         <h2>The Way - 1998 HD & HQ</h2>
-         <a href="https://youtu.be/OFf7-qbhxKY" target="_blank">Fastball </a><br>
-
-         <h2>Angel Of The Morning (Subtitulos en Español)</h2>
-        <a  class="a" href="https://youtu.be/T3rjgmwNjpw" target="_blank">Leap Year</a>
-        
-        <h2>Take a Look at Me Now </h2>
-        <a class="a" href="https://youtu.be/b8HxE_6eLiQ" target="_blank">Phil Collins</a>   
-
-        <h2>A todo riesgo pelicula 1984</h2>
-        <a class="a" href="https://repelisflis.com/peliculas/contra-todo-riesgo/" target="_blank">Ver: Pelicula</a>
-                
-        <h2>Allo réseau (Clip officiel)</h2>
-        <a class="a" href="https://youtu.be/fRzjTEXqStc" target="_blank">Bon Entendeur</a>
-
-        <h2>Bette Davis Eyes (Official Music Video)</h2>
-        <a href="https://youtu.be/EPOIS5taqA8" target="_blank">Kim Carnes</a><br>
-        
-        <h2>Baby Come Back -[traducida / sub. español]</h2>
-        <a href="https://youtu.be/cN1OIsjugVM" target="_blank">Player</a><br><br>
-
-        <h2>California Dreamin</h2>
-        <a href="https://youtu.be/dN3GbF9Bx6E" target="_blank">Mamas and Papas</a><br>
-        <a href="https://youtu.be/dZiM_8cbrxU"></a>
-
-        <h2>Cuando el amor se va  THE BREAK UP SONG </h2>
-        <a href="https://youtu.be/a4r7N1SSYSQ" target="_blank">THE GREG KIHN BAND</a><br>
-
-        <h2>Careless Whisper (Subtitulos en Español)</h2>
-        <a href="https://youtu.be/Fih6q-naF78" target="_blank">Shall We Dance</a><br><br>
-
-        <h2>Camilo Sesto Éxitos Sus Mejores Canciones </h2>
-        <a href="https://youtu.be/VcGcN09Sa-k" target="_blank">Camilo Sesto</a><br>
-        
-        <h2>Children [Dream Version]</h2>
-        <a href="https://youtu.be/CC5ca6Hsb2Q" target="_blank">Robert Miles</a><br>
-
-        <h2>Can't take my eyes off of you (I Love You Baby)</h2>
-        <a href="https://youtu.be/pb28lMAm5UM" target="_blank">Frankie Valli</a><br><br>
-
-        <h2>Don't Let Me Be Misunderstood (1977) </h2>
-        <a href="https://youtu.be/uvXeeus94GY" target="_blank">Santa Esmeralda</a><br>
-        
-        <h2>Dont you forget about me(extended)</h2>
-        <a href="https://youtu.be/Zfcwq44q-vA" target="_blank">Simple Mind</a><br><br>
-        
-        <h2>Everybody Wants To Rule The World (Official Music Video)</h2>
-        <a href="https://youtu.be/aGCdLKXNF3w" target="_blank">Tears of fears</a><br>
-
-        <h2>eye in the sky</h2>
-        <a href="https://youtu.be/BRqzjA6UcXw" target="_blank">Alan Parson</a><br>
-
-        <h2> Everybody Wants To Rule The World</h2>
-        <a href="https://youtu.be/aGCdLKXNF3w" target="_blank">Tears For Fears</a><br><br>
-
-        <h2>Everybody Wants to Rule The World [12" Extended]</h2>
-        <a href="https://youtu.be/LIeYFHy6rhA" target="_blank">Tears of fears</a><br><br>
-        
-        <h2>Frente a frente</h2>
-        <a href="https://youtu.be/6ys7i-kW-lQ" target="_blank">Jeanette</a><br>
-
-        <h2> ͟G͟et͟ ͟a͟ ͟G͟r͟ip͟ full album </h2>
-        <a href="https://youtu.be/mKYNM9Q62Ok" target="_blank">A͟e͟ros͟m͟i͟t͟h͟</a><br>
-        
-        <h2>Guns N’ Roses Greatest Hits(playlist)</h2>
-        <a href="https://youtu.be/2ED9l2sbV34" target="_blank">Guns and roses</a><br>
-        
-        <h2>Hurts to be in love </h2>
-        <a href="https://youtu.be/GAcBshQvGkM" target="_blank">Gino Vannelli </a><br><br>
-
-        <h2> Happy Children; subtitulada español e inglés.</h2>
-        <a href="https://youtu.be/712ED1YqEm0" target="_blank">P. Lion </a><br>
-         
-        <h2>Hungry Eyes (Official HD Video)</h2>
-        <a href="https://youtu.be/2ssCL292DQA" target="_blank">Eric Carmen</a><br>
-
-        <h2>Is my life</h2>
-        <a href="https://youtu.be/cFH5JgyZK1I" target="_blank">Talk talk</a><br>
-
-        <h2>I'm Not In Love (Subtitulos en Español) </h2>
-        <a href="https://youtu.be/o5bM7xq7nY0" target="_blank">The crush</a><br><br>
-        
-        <h2>(I Just) Died In Your Arms (Official Music Video)</h2>
-        <a href="https://youtu.be/6dOwHzCHfgA" target="_blank">Cutting Crew</a><br>
-
-        <h2>I Want To Know What Love Is (Sub español e inglés)</h2>
-        <a href="https://youtu.be/bADFIiTDbSo" target="_blank">Foreigner</a><br><br>
-        
-        <h2> I Was Made For Lovin' You</h2>
-        <a href="https://youtu.be/ZhIsAZO5gl0" target="_blank">Kiss </a><br>
-
-        <h2> I Was Made For Lovin (Subtítulos En Español) 1979 Hard Rock</h2>
-        <a href="https://youtu.be/_J2fFhY6WMA" target="_blank">KISS-</a><br>
-
-        <h2> It Must Have Been Love (Official Music Video)</h2>
-        <a href="https://youtu.be/k2C5TjS2sh4" target="_blank">Roxette</a><br>
-
-        <h2>Jeannete-lo Mejor</h2>
-        <a href="https://youtu.be/OL7-GiVYZNM" target="_blank">Jeanette</a><br>
-
-        <h2> Knock On Wood (Official Video)</h2>
-        <a href="https://youtu.be/XKuJUxGntRI" target="_blank">Amii Stewart </a><br>
-
-        <h2>Las Mejores Baladas 80s Ingles</h2>
-        <a href="https://youtu.be/vj1ENuP8c18" target="_blank">Romanticas Viejitas en Ingles 80's</a><br><br>
-
-        <h2>Like a fool</h2>
-        <a href="https://youtu.be/RoinPaZuqv8" target="_blank">ROBIN GIBB</a><br><br>
-
-        <h2>Luis angel 12 exitos de </h2>
-        <a href="https://youtu.be/8lRoAZnSLfs" target="_blank">Luis Angel</a><br>
-
-        <h2>Luis Miguel- hits de 1982 a 1987 versiones originales</h2>
-        <a href="https://youtu.be/be31tQ3cnAM" target="_blank">Luis Miguel</a><br>
-
-        <h2>Maniate</h2>
-        <a href="https://youtu.be/4TokrkU1YjQ" target="_blank">Daryl Hall & John Oates</a><br>
-
-        <h2> Never Can Say Goodbye / Reach Out I’ll Be There</h2>
-        <a href="https://youtu.be/ofcgjeELS0M" target="_blank">Gloria Gaynor</a><br>
-        
-        <h2>Shape of My Heart (The soundtrack of "Leon the Professional")</h2>
-        <a href="https://youtu.be/CWEEc3RipYE" target="_blank">Sting</a><br>
-
-        <h2>Santana Greates Hits</h2>
-        <a href="https://youtu.be/lR4ZjMVHCuM" target="_blank">santana</a><br>
-
-        <h2>Stay the Night (Official Music Video)</h2>
-        <a href="https://youtu.be/2ySLmwsfP4Q" target="_blank">Benjamin Orr</a><br>
-
-        <h2>She's Like The Wind (Official HD Video) ft. Wendy Fraser</h2>
-        <a href="https://youtu.be/lU9p1WRfA9w" target="_blank">Patrick Swayze</a><br>
-        
-        <h2>Seasons in the Sun</h2>
-        <a href="https://youtu.be/dWZ_-5s_eDQ" target="_blank">Terry Jacks</a><br>
-
-        <h2>Thank You [Lyrics English - Español Subtitulado]</h2>
-        <a href="https://youtu.be/C4FNN_gvrnY" target="_blank">Dido</a><br>
-
-        <h2>Telefone line</h2>
-        <a href="https://youtu.be/S9WO1FSGTPg" target="_blank">Electric Light Orchestra 1977 version original</a><br>
-        
-        <h2>The Scandinavian Experience (1969)</h2>
-        <a href="https://youtu.be/OIoN6z8Uy88" target="_blank">JIMI HENDRIX</a><br>
-
-        <h2>The Power Of Love (Official Video)</h2>
-        <a href="https://youtu.be/b_zHQ6kFuQ0" target="_blank">Jennifer Rush </a><br>
-    
-        <h2> Just the Way You Are [Lyrics] Sub [Español/ Ingles]</h2>
-        <a href="https://youtu.be/TXEEZUYd4c0" target="_blank">Billy Joel</a><br>
-        
-        <h2>Live @ Tomorrowland 2019</h2>
-        <a href="https://youtu.be/keAW7CDF3_0" target="_blank">Tiësto</a><br>
-
-        <h2>(New Album Version feat. Gavin Rossdale)</h2>
-        <a href="https://youtu.be/a8zsOkNs13s" target="_blank">The Current</a><br>
-
-        <h2>Oxygene II ( Live in your living room )</h2>
-        <a href="https://youtu.be/6HYtkbv5A6A" target="_blank">Jean Michel Jarre</a><br>
-
-        <h2> Oxygene 8 (Madis Remix) (2018)</h2>
-        <a href="https://youtu.be/B9KqM9dG6LU" target="_blank">Jean-Michel Jarre</a><br>
-
-        <h2>piri & tommy</h2>
-        <a href="https://youtu.be/AVRZXmg_iFE" target="_blank">on & on (official video)</a><br>
-
-        <h2>Passion</h2>
-        <a href="https://youtu.be/YPj9_FqyMKk" target="_blank">The Flirts </a><br>
-        
-        <h2>Stay the Night</h2>
-        <a href="https://youtu.be/9JciBwqKWR4" target="_blank">BENJAMIN ORR</a><br>
-        
-        <h2>Selfcontrol</h2>
-        <a href="https://youtu.be/RP0_8J7uxhs" target="_blank">Laura branigan</a><br>
-        
-        <h2>Sacrifice2-(INGLES-ESPAÑOL)</h2>
-        <a href="https://youtu.be/dHRQc_zuFSE" target="_blank">ELTON JOHN</a><br><br>
-
-        <h2>Ring My Bell-1979</h2>
-        <a href="https://youtu.be/URAqnM1PP5E" target="_blank">Anita Ward</a><br>
-
-        <h2>The best Hit (live concert)</h2>
-        <a href="https://youtu.be/3rQ6FhjkSEs" target="_blank">The Blue Men Group</a><br>
-
-        <h2>Take a Look at Me Now - Against All Odds (1984)</h2>
-        <a href="https://youtu.be/b8HxE_6eLiQ" target="_blank">focusing Rachel Ward</a><br><br>
-
-        <h2>Take on my</h2>
-        <a href="https://youtu.be/0aqdvotKjhk" target="_blank">a-Ha</a><br>
-        
-        <h2>Time to Start Live Full</h2>
-        <a href="https://youtu.be/oUBWRglc8iY" target="_blank">The blue men</a><br>
-        
-        <h2>What Have I Done To Deserve This</h2>
-        <a href="https://youtu.be/EpWcoUoF-m8" target="_blank">Pet Shop Boys & Dusty Springfield</a><br>
-        
-        <h2>Waiting for a Girl Like You (Foreigner)</h2>
-        <a href="https://youtu.be/ZgiIFBgJ-lM" target="_blank">Lexington Lab Band</a><br><br>
-
-        <h2>Words - Subtitulado En Español</h2>
-        <a href="https://youtu.be/y5p-llAhXcI" target="_blank">F. R. David</a><br><br>
-        
-        <h2>You Belong to the City</h2>
-        <a href="https://youtu.be/H-QCKnlD0R0" target="_blank">Glenn Frey (1985) HD video</a><br>
-
-        <h2>Year of the Cat || Letra en español</h2>
-        <a href="https://youtu.be/9rqx9kevj5g" target="_blank">Al Stewart </a><br>
-
-        <h2>Caribean quin</h2>
-        <a href="https://youtu.be/uxX2gA18grk" target="_blank">Bilie ocean</a><br>
-
-        <h2>Kiss and Say Goodbye</h2>
-        <a href="https://youtu.be/wtjro7_R3-4" target="_blank">The Manhattans </a><br>
-
-        <h2>Bye Bye (Dejame) Video Oficial</h2>
-        <a href="https://youtu.be/1r-XsNYFhiU" target="_blank">Vilma Palma e Vampiros</a><br>
-
-        <h2>Lobo Hombre en París (1984)</h2>
-        <a href="https://youtu.be/sl4GO6pgRas" target="_blank">LA UNIÓN</a><br>
-        
-        <h2>Vuela, Vuela (Voyage, Voyage)</h2>
-        <a href="https://youtu.be/JGVnWuQW-ow" target="_blank">Magneto</a><br>
-
-        <h2>Azucar amargo</h2>
-        <a href="https://youtu.be/baYFW6WAXLU" target="_blank">Fey</a><br>
-        
-        <h2>Así No Te Amará Jamás (Video Oficial)</h2>
-        <a href="https://youtu.be/G7ktj4mWwEE" target="_blank">Amanda Miguel</a><br>
-
-        <h2>MALDITA PRIMAVERA</h2>
-        <a href="https://youtu.be/-Jxpybi-N78" target="_blank">YURI - 1982</a><br>
-
-        <h2>The Neverending Story y</h2>
-        <a href="https://youtu.be/lHytjEj7B9g" target="_blank">Theme Song • Limahl</a><br>
-
-        <h2>Mannequin (1987) </h2>
-        <a href="https://youtu.be/OUXsXQ359pk" target="_blank">Starship</a><br>
-
-        <h2>Leon el perfecto asesino</h2>
-        <a href="https://ok.ru/video/851297110681" target="_blank">Ver: Léon The Professional (1994)</a><br>
-        
-        <h2>Me Quedare Slo</h2>
-        <a href="https://youtu.be/95JHOXoXR6M" target="_blank">Amistades Peligrosas</a><br>
-
-        <h2>Lo Mejor de Amanda Miguel Sus Mejores Canciones</h2>
-        <a href="https://youtu.be/GGwix0WdRsU" target="_blank" id="amanda">Amanda Miguel</a><br>
-
-        <h2>Raphael 25 grandes exitos</h2>
-        <a href="https://youtu.be/sSoMK3iBQNM" target="_blank" id="raphael">Raphael</a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-        
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-        
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-        
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-        
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-        
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-        <h2></h2>
-        <a href="" target="_blank"></a><br>
-
-
-
-
-
-    
+<body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // ObtÃ©n la fecha actual
+    var currentDate = new Date();
+
+    //Obtiene el dÃ­a actual
+    var currentDay = currentDate.getDate();
+
+    //Agrega la clase al dÃ­a actual
+    var dayElement = document.getElementById('day' + currentDay);
+    if (dayElement) {
+      dayElement.classList.add('current-day');
+    }
+  });
+</script>
+
+<header><h1>Calendario Interactivo JS</h1></header>
+<br><br>
+<div class="calendario-1">
+    <div class="encabezado">Enero 2024</div>
+    <div class="dia-semana">L</div>
+<div class="dia-semana">M</div>
+    <div class="dia-semana">M</div>
+<div class="dia-semana">J</div>
+    <div class="dia-semana">V</div>
+<div class="dia-semana">S</div>
+    <div class="dia-semana">D</div>
+
+<a href="feriadoUnoEnero.html">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">1</span><br> D.A.N</span>
+</div></a>
+
+ <div class="dia" id="day2">2</div>
+<div class="dia" id="day3">3</div>
+    <div class="dia" id="day4">4</div>
+<div class="dia" id="day5">5</div>
+
+    <a href="https://es.m.wikipedia.org/wiki/Epifan%C3%ADa" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">6</span><br> D.A.N</span>
+</div></a>
+    <div class="dia" id="day7">7</div>
+<div class="dia" id="day8">8</div>
+    <div class="dia" id="day9">9</div>
+<div class="dia" id="day10">10</div>
+    <div class="dia" id="day11">11</div>
+<div class="dia" id="day12">12</div>
+    <div class="dia" id="day13">13</div>
+<div class="dia" id="day14">14</div>
+    <a href="feriado.html"><div class="dia-feriado" id="day15"><spam class="feriado"><span class="d-15">15 </span><br> D,,MLk</span></div></a>
+<div class="dia" id="day16">16</div>
+    <div class="dia" id="day17">17</div>
+<div class="dia"id=" day18">18</div>
+    <div class="dia" id="day19">19</div>
+<div class="dia" id="day20">20</div>
+    <div class=" dia"id="day21">21</div>
+<div class="dia" id="day22">22</div>
+    <div class=" dia"id="day23">23</div>
+    <div class=" dia"id="day24">24</div>
+<div class="dia" id="day25">25</div>
+<div class="dia" id="day26">26</div>
+<div class="dia" id="day27">27</div>
+<div class="dia" id="day28">28</div>
+<div class="dia" id="day29">29</div>
+<div class="dia" id="day30">30</div>
+<div class="dia" id="day31">31</div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+</div>
+<br><br>
+<div class="calendario">
+    <div class="encabezado">Febrero 2024</div>
+    <div class="dia-semana">L</div>
+    <div class="dia-semana">M</div>
+<div class="dia-semana">M</div>
+    <div class="dia-semana">J</div>
+<div class="dia-semana">V</div>
+    <div class="dia-semana">S</div>
+<div class="dia-semana">D</div>
+
+    <div class="dia"></div>
+<div class="dia"></div>
+     <div class="dia"></div>
+<div class="dia" id="dia1">1</div>
+     
+<a href="https://es.m.wikipedia.org/wiki/D%C3%ADa_de_la_Marmota" target=_"blank">
+<div class="dia-feriado" id="day2"><spam class="feriado">
+<span class="d-15">2</span><br>dm</span>
+</div></a>
+
+<div class="dia" id="dia3">3</div>
+    <div class="dia" id="dia4">4</div>
+<div class="dia" id="dia5">5</div>
+    <div class="dia" id="dia6">6</div>
+<div class="dia" id="dia7">7</div>
+    <div class="dia" id="dia8">8</div>
+<div class="dia" id="dia9">9</div>
+    <div class="dia" id="dia10">10</div>
+<div class="dia" id="dia11">11</div>
+    <div class="dia" id="dia12">12</div>
+<div class="dia" id="dia13">13</div>
+<!--14 de febrero se selebra tambien miercoles de ceniza catolico--->
+    <a href="feriadoAA.html">
+<div class="dia-feriado" id="dia14">
+<spam class="feriado"><span class="d-15">14 </span><br> DAA</span>
+</div></a>
+
+<div class="dia" id="dia15">15</div>
+    <div class="dia" id="dia16">16</div>
+<div class="dia" id="dia17">17</div>
+    <div class="dia" id="dia18">18</div>
+
+<a href="https://es.m.wikipedia.org/wiki/D%C3%ADa_de_los_Presidentes" target=_"blank">
+<div class="dia-feriado" id="dia19"><spam class="feriado">
+<span class="d-15">19</span><br>p-d</span>
+</div></a>
+
+ <div class="dia" id="dia20">20</div>
+<div class="dia" id="dia21">21</div>
+    <div class="dia" id="dia22">22</div>
+    <div class="dia" id="dia23">23</div>
+<div class="dia" id="dia24">24</div>
+<div class="dia" id="dia25">25</div>
+    <div class="dia" id="dia26">26</div>
+<div class="dia" id="dia27">27</div>
+    <div class="dia" id="dia28">28</div>
+<div class="dia" id="dia29">29</div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+</div>
+<br><br>
+<div class="calendario">
+    <div class="encabezado">Marzo 2024</div>
+    <div class="dia-semana">L</div>
+    <div class="dia-semana">M</div>
+<div class="dia-semana">M</div>
+    <div class="dia-semana">J</div>
+<div class="dia-semana">V</div>
+    <div class="dia-semana">S</div>
+<div class="dia-semana">D</div>
+
+<div class="dia"></div>
+<div class="dia"></div>
+    <div class="dia"></div>
+    <div class="dia"></div>
+<div class="dia" id="dia1">1</div>
+    <div class="dia" id="dia2">2</div>
+<div class="dia" id="dia3">3</div>
+    <div class="dia" id="4">4</div>
+<div class="dia" id="5">5</div>
+    <div class="dia" id="6">6</div>
+<div class="dia" id="7">7</div>
+    <div class="dia" id="8">8</div>
+<div class="dia" id="9">9</div>
+    <div class="dia" id="10">10</div>
+<div class="dia" id="11">11</div>
+    <div class="dia" id="12">12</div>
+<div class="dia" id="13">13</div>
+    <div class="dia" id="14">14</div>
+<div class="dia" id="15">15</div>
+    <div class="dia" id="16">16</div>
+ <a href="https://es.m.wikipedia.org/wiki/D%C3%ADa_de_San_Patricio" target=_"blank">
+<div class="dia-feriado" id="day17"><spam class="feriado">
+<span class="d-15">17</span><br>s-p</span>
+</div></a>
+
+<div class="dia" id="18">18</div>
+    <a href="https://es.m.wikipedia.org/wiki/Viernes_Santo" target=_"blank">
+<div class="dia-feriado" id="day19"><spam class="feriado">
+<span class="d-15">19</span><br>v-s</span>
+</div></a>
+
+    <div class="dia" id="20">20</div>
+<div class="dia" id="21">21</div>
+<div class="dia" id="22">22</div>
+    <div class="dia" id="21">21</div>
+<div class="dia" id="22">22</div>
+ <div class="dia" id="23">23</div>
+<a href="https://es.m.wikipedia.org/wiki/Semana_Santa" target=_"blank">
+<div class="dia-feriado" id="day24"><spam class="feriado">
+<span class="d-15">24</span><br>s-sta</span>
+</div></a>
+<div class="dia" id="25">25</div>
+<div class="dia" id="26">26</div>
+<div class="dia" id="27">27</div>
+    <div class="dia" id="28">28</div>
+  <div class="dia" id="29">29</div>
+<a href="https://es.m.wikipedia.org/wiki/Semana_Santa" target=_"blank">
+<div class="dia-feriado" id="day30"><spam class="feriado">
+<span class="d-15">30</span><br>t-s-santa</span>
+</div></a>
+  <div class="dia" id="31">31</div>
+<div class="dia"></div>
+    <div class="dia"></div>
+  <div class="dia"></div>
+<div class="dia"></div>
+  <div class="dia"></div>
+</div>  
+ <br><br>
+<div class="calendario">
+    <div class="encabezado">Abril 2024</div>
+    <div class="dia-semana">L</div>
+<div class="dia-semana">M</div>
+    <div class="dia-semana">M</div>
+<div class="dia-semana">J</div>
+    <div class="dia-semana">V</div>
+<div class="dia-semana">S</div>
+    <div class="dia-semana">D</div>
+
+<div class="dia"></div>
+<div class="dia"></div>
+    <div class="dia"></div>
+<div class="dia"></div>
+    <div class="dia"></div>
+    <div class="dia"></div>
+
+<div class="dia">1</div>
+    <a href="#" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">2</span><br></span>
+</div></a>
+<a href="https://es.m.wikipedia.org/wiki/D%C3%ADa_del_Ni%C3%B1o" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">3</span><br>d-niño</span>
+</div></a>
+    <div class="dia">4</div>
+<div class="dia">5</div>
+    <div class="dia">6</div>
+<div class="dia">7</div>
+<div class="dia">8</div>
+    <div class="dia">9</div>
+<div class="dia">10</div>
+    <div class="dia">11</div>
+<div class="dia">12</div>
+    <div class="dia">13</div>
+<div class="dia">14</div>
+    <div class="dia">15</div>
+    <div class="dia">16</div>
+<div class="dia">17</div>
+<div class="dia">18</div>
+<div class="dia">19</div>
+<div class="dia">20</div>
+<div class="dia">21</div>
+<div class="dia">22</div>
+<div class="dia">23</div>
+<div class="dia">24</div>
+<div class="dia">25</div>
+<div class="dia">26</div>
+<div class="dia">27</div>
+<div class="dia">28</div>
+<div class="dia">29</div>
+<div class="dia">30</div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+</div>
+<br><br>
+<div class="calendario">
+    <div class="encabezado">Mayo 2024</div>
+    <div class="dia-semana">L</div>
+    <div class="dia-semana">M</div>
+<div class="dia-semana">M</div>
+    <div class="dia-semana">J</div>
+<div class="dia-semana">V</div>
+    <div class="dia-semana">S</div>
+<div class="dia-semana">D</div>
+
+<div class="dia"></div>
+<a href="https://es.m.wikipedia.org/wiki/D%C3%ADa_Internacional_de_los_Trabajadores" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">1</span><br>d-tr</span>
+</div></a>
+<div class="dia">2</div>
+<div class="dia">3</div>
+    <div class="dia">4</div>
+<div class="dia">5</div>
+    <div class="dia">6</div>
+<div class="dia">7</div>
+    <div class="dia">8</div>
+<div class="dia">9</div>
+    <a href="#" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">10</span><br>d-madre</span>
+</div></a>
+<div class="dia">11</div>
+    <div class="dia">12</div>
+<div class="dia">13</div>
+    <div class="dia">14</div>
+<div class="dia">15</div>
+<div class="dia">16</div>
+    <div class="dia">17</div>
+<div class="dia">18</div>
+    <div class="dia">19</div>
+ <div class="dia">20</div>
+<div class="dia">21</div>
+    <div class="dia">22</div>
+    <div class="dia">23</div>
+<div class="dia">24</div>
+<div class="dia">25</div>
+    <div class="dia">26</div>
+<div class="dia">27</div>
+    <div class="dia">28</div>
+<div class="dia">29</div>
+<div class="dia">30</div>
+<div class="dia">31</div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+</div>
+<br><br>
+<div class="calendario">
+    <div class="encabezado">Junio 2024</div>
+    <div class="dia-semana">L</div>
+    <div class="dia-semana">M</div>
+<div class="dia-semana">M</div>
+    <div class="dia-semana">J</div>
+<div class="dia-semana">V</div>
+    <div class="dia-semana">S</div>
+<div class="dia-semana">D</div>
+
+<div class="dia"></div>
+<div class="dia"></div>
+    <div class="dia"></div>
+    <div class="dia"></div>
+<div class="dia">1</div>
+    <div class="dia">2</div>
+<div class="dia">3</div>
+    <div class="dia">4</div>
+<div class="dia">5</div>
+    <div class="dia">6</div>
+<div class="dia">7</div>
+    <div class="dia">8</div>
+    <div class="dia">9</div>
+<div class="dia">10</div>
+    <div class="dia">11</div>
+<div class="dia">12</div>
+    <div class="dia">13</div>
+<div class="dia">14</div>
+ <div class="dia">15</div>
+<a href="#" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">16</span><br>d-padre</span>
+</div></a>
+    <div class="dia">17</div>
+    <div class="dia">18</div>
+<a href="https://www.usa.gov/es/juneteenth" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">19</span><br>junnet</span>
+</div></a>
+<div class="dia">20</div>
+    <div class="dia">21</div>
+<div class="dia">22</div>
+ <div class="dia">23</div>
+<div class="dia">24</div>
+<div class="dia">25</div>
+<div class="dia">26</div>
+<div class="dia">27</div>
+<div class="dia">28</div>
+<div class="dia">29</div>
+<div class="dia">30</div>
+<div class="dia"></div>
+   
+  </div>  
+ <br><br>
+<div class="calendario">
+    <div class="encabezado">Julio 2024</div>
+    <div class="dia-semana">L</div>
+<div class="dia-semana">M</div>
+    <div class="dia-semana">M</div>
+<div class="dia-semana">J</div>
+    <div class="dia-semana">V</div>
+<div class="dia-semana">S</div>
+    <div class="dia-semana">D</div>
+
+<div class="dia" id="dia1">1</div>
+ <div class="dia" dia="dia2">2</div>
+<div class="dia" id="dia3">3</div>
+    <a href="#" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">4</span><br>d-ind</span>
+</div></a>
+<div class="dia">5</div>
+    <div class="dia">6</div>
+    <div class="dia">7</div>
+<div class="dia">8</div>
+    <div class="dia">9</div>
+<div class="dia">10</div>
+    <div class="dia">11</div>
+<div class="dia">12</div>
+    <div class="dia">13</div>
+<div class="dia">14</div>
+    <a href="#" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">15</span><br>junnet</span>
+</div></a>
+<div class="dia">16</div>
+    <div class="dia">17</div>
+<div class="dia">18</div>
+    <div class="dia">19</div>
+<div class="dia">20</div>
+    <div class="dia">21</div>
+<div class="dia">22</div>
+    <div class="dia">23</div>
+    <div class="dia">24</div>
+<div class="dia">25</div>
+<div class="dia">26</div>
+<div class="dia">27</div>
+<div class="dia">28</div>
+<div class="dia">29</div>
+<div class="dia">30</div>
+<div class="dia">31</div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+</div>
+<br><br>
+<div class="calendario">
+    <div class="encabezado">Agosto 2024</div>
+    <div class="dia-semana">L</div>
+    <div class="dia-semana">M</div>
+<div class="dia-semana">M</div>
+    <div class="dia-semana">J</div>
+<div class="dia-semana">V</div>
+    <div class="dia-semana">S</div>
+<div class="dia-semana">D</div>
+
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia">1</div>
+    <div class="dia">2</div>
+<div class="dia">3</div>
+    <div class="dia">4</div>
+<div class="dia">5</div>
+    <div class="dia">6</div>
+<div class="dia">7</div>
+    <div class="dia">8</div>
+<div class="dia">9</div>
+    <div class="dia">10</div>
+<div class="dia">11</div>
+    <div class="dia">12</div>
+<div class="dia">13</div>
+    <a href="feriadoAA.html"><div class="dia-feriado"><spam class="feriado"><span class="d-15">14 </span><br> DAA</span></div></a>
+<div class="dia">15</div>
+    <div class="dia">16</div>
+<div class="dia">17</div>
+    <div class="dia">18</div>
+<a href="feriadoDP.html"><div class="dia-feriado"><spam class="feriado"><span class="d-15">19 </span><br> DDlosP</span></div></a>
+ <div class="dia">20</div>
+<div class="dia">21</div>
+    <div class="dia">22</div>
+    <div class="dia">23</div>
+<div class="dia">24</div>
+<div class="dia">25</div>
+    <div class="dia">26</div>
+<div class="dia">27</div>
+    <div class="dia">28</div>
+<div class="dia">29</div>
+<div class="dia">30</div>
+    <div class="dia">31</div>
+<div class="dia"></div>
+
+</div>
+<br><br>
+<div class="calendario">
+    <div class="encabezado">Septiembre 2024</div>
+    <div class="dia-semana">L</div>
+    <div class="dia-semana">M</div>
+<div class="dia-semana">M</div>
+    <div class="dia-semana">J</div>
+<div class="dia-semana">V</div>
+    <div class="dia-semana">S</div>
+<div class="dia-semana">D</div>
+
+<div class="dia"></div>
+<div class="dia"></div>
+    <div class="dia"></div>
+    <div class="dia"></div>
+<div class="dia"></div>
+    <div class="dia"></div>
+<div class="dia">1</div>
+   <a href="#" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">2</span><br>d-tr-usa</span>
+</div></a>
+<div class="dia">3</div>
+    <div class="dia">4</div>
+<div class="dia">5</div>
+    <div class="dia">6</div>
+<div class="dia">7</div>
+    <div class="dia">8</div>
+<div class="dia">9</div>
+    <div class="dia">10</div>
+<div class="dia">11</div>
+    <div class="dia">12</div>
+<div class="dia">13</div>
+<div class="dia">14</div>
+ <div class="dia">15</div>
+<div class="dia">16</div>
+    <div class="dia">17</div>
+    <div class="dia">18</div>
+<div class="dia">19</div>
+<div class="dia">20</div>
+    <div class="dia">21</div>
+<div class="dia">22</div>
+ <div class="dia">23</div>
+<div class="dia">24</div>
+<div class="dia">25</div>
+<div class="dia">26</div>
+<div class="dia">27</div>
+<div class="dia">28</div>
+  <div class="dia">29</div>
+<div class="dia">30</div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+  <div class="dia"></div>
+<div class="dia"></div>
+</div>  
+ <br><br>
+<div class="calendario">
+    <div class="encabezado">Octubre 2024</div>
+    <div class="dia-semana">L</div>
+<div class="dia-semana">M</div>
+    <div class="dia-semana">M</div>
+<div class="dia-semana">J</div>
+    <div class="dia-semana">V</div>
+<div class="dia-semana">S</div>
+    <div class="dia-semana">D</div>
+
+<div class="dia"></div>
+ <div class="dia">1</div>
+<div class="dia">2</div>
+    <div class="dia">3</div>
+<div class="dia">4</div>
+    <div class="dia">5</div>
+    <div class="dia">6</div>
+<a href="#" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">7</span><br>&%&5^</span>
+</div></a>
+    <div class="dia">8</div>
+<div class="dia">9</div>
+    <div class="dia">10</div>
+<div class="dia">11</div>
+    <div class="dia">12</div>
+<div class="dia">13</div>
+    <div class="dia">14</div>
+<div class="dia">15</div>
+    <div class="dia">16</div>
+<div class="dia">17</div>
+    <div class="dia">18</div>
+<div class="dia">19</div>
+    <div class="dia">20</div>
+<div class="dia">21</div>
+    <div class="dia">22</div>
+    <div class="dia">23</div>
+<div class="dia">24</div>
+<div class="dia">25</div>
+<div class="dia">26</div>
+<div class="dia">27</div>
+<div class="dia">28</div>
+<div class="dia">29</div>
+<div class="dia">30</div>
+<div class="dia">31</div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+</div>
+<br><br>
+<div class="calendario">
+    <div class="encabezado">Noviembre 2024</div>
+    <div class="dia-semana">L</div>
+    <div class="dia-semana">M</div>
+<div class="dia-semana">M</div>
+    <div class="dia-semana">J</div>
+<div class="dia-semana">V</div>
+    <div class="dia-semana">S</div>
+<div class="dia-semana">D</div>
+
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+    <a href="#" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">1</span><br>Halloween</span>
+</div></a>
+<div class="dia">2</div>
+    <div class="dia">3</div>
+<div class="dia">4</div>
+    <div class="dia">5</div>
+<div class="dia">6</div>
+    <div class="dia">7</div>
+<div class="dia">8</div>
+    <div class="dia">9</div>
+
+<a href="" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">10</span><br>*%^</span>
+</div></a>
+    <div class="dia">11</div>
+<div class="dia">12</div>
+    <div class="dia">13</div>
+<div class="dia">14</div>
+    <div class="dia">15</div>
+<div class="dia">16</div>
+    <div class="dia">17</div>
+<div class="dia">18</div>
+ <div class="dia">19</div>
+<div class="dia">20</div>
+    <a href="" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">21</span><br>*^^&</span>
+</div></a>
+    <div class="dia">22</div>
+<div class="dia">23</div>
+<a href="#" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">24</span><br>pavo</span>
+</div></a>
+    <div class="dia">25</div>
+<div class="dia">26</div>
+    <div class="dia">27</div>
+<div class="dia">28</div>
+<div class="dia">29</div>
+<div class="dia"><30</div>
+<div class="dia"></div>
+</div>
+<br><br>
+<div class="calendario">
+    <div class="encabezado">Diciembre 2024</div>
+    <div class="dia-semana">L</div>
+    <div class="dia-semana">M</div>
+<div class="dia-semana">M</div>
+    <div class="dia-semana">J</div>
+<div class="dia-semana">V</div>
+    <div class="dia-semana">S</div>
+<div class="dia-semana">D</div>
+
+<div class="dia"></div>
+<div class="dia"></div>
+    <div class="dia"></div>
+    <div class="dia"></div>
+<div class="dia"></div>
+    <div class="dia"></div>
+<div class="dia">1</div>
+    <div class="dia">2</div>
+<div class="dia">3</div>
+    <div class="dia">4</div>
+<div class="dia">5</div>
+    <div class="dia">6</div>
+    <div class="dia">7</div>
+<div class="dia">8</div>
+    <div class="dia">9</div>
+<div class="dia">10</div>
+    <div class="dia">11</div>
+<div class="dia">12</div>
+    <div class="dia">13</div>
+ <div class="dia">14</div>
+<div class="dia">15</div>
+    <div class="dia">16</div>
+    <div class="dia">17</div>
+<div class="dia">18</div>
+<div class="dia">19</div>
+    <div class="dia">20</div>
+<div class="dia">21</div>
+ <div class="dia">22</div>
+<div class="dia">23</div>
+<a href="" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">24</span><br>navida</span>
+</div></a>
+<div class="dia">25</div>
+<div class="dia">26</div>
+<div class="dia">27</div>
+<div class="dia">28</div>
+<div class="dia">29</div>
+<div class="dia">30</div>
+<a href="" target=_"blank">
+<div class="dia-feriado" id="day1"><spam class="feriado">
+<span class="d-15">31</span><br>nuevo</span>
+</div></a>
+<div class="dia">1</div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+<div class="dia"></div>
+ </div>  
+ <br><br>
+<footer style="color:blue;text-align:center; background-color:aqua;padding:10px; border-radius:20px; border:2px black solid;"><p>&copy; 2024  Cuitlahuac Developer. Todos los derechos reservados.</p></footer>
 </body>
 </html>
