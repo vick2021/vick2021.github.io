@@ -121,34 +121,19 @@ font-weight:900;
 <body>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-  // ObtÃ©n el aÃ±o actual
-  const currentYear = new Date().getFullYear();
+  document.addEventListener('DOMContentLoaded', function() {
+    // ObtÃ©n la fecha actual
+    var currentDate = new Date();
 
-  // Llama a la funciÃ³n para construir el calendario
-  buildCalendar(currentYear);
-});
+    //Obtiene el dÃ­a actual
+    var currentDay = currentDate.getDate();
 
-function buildCalendar(year) {
-  const calendarContainer = document.getElementById('calendar');
-
-  // Construye tu calendario aquÃ­, teniendo en cuenta el aÃ±o proporcionado
-
-  // Ejemplo: marca el dÃ­a actual con un color diferente
-  const today = new Date();
-  const currentMonth = today.getMonth();
-  const currentDay = today.getDate();
-
-  // AsegÃºrate de que tu lÃ³gica para marcar el dÃ­a actual sea correcta para todo el aÃ±o
-  // ...
-
-  // Agrega clases o estilos para resaltar el dÃ­a actual
-  const currentDayElement = document.getElementById(`day-${currentDay}`);
-  if (currentDayElement) {
-    currentDayElement.classList.add('current-day');
-  }
-}
-
+    //Agrega la clase al dÃ­a actual
+    var dayElement = document.getElementById('day' + currentDay);
+    if (dayElement) {
+      dayElement.classList.add('current-day');
+    }
+  });
 </script>
 
 <header><h1>Calendario de Pagos de  la Señora.. </h1></header>
