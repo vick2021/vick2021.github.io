@@ -394,7 +394,7 @@ margin-bottom:33px;
 
 
   <div class="calendario-1">
-    <div class="encabezado">Febrero 2025</div>
+    <div class="encabezado">Febrero 2025<modall
 
     <div class="dia-semana">D</div>
     <div class="dia-semana">L</div>
@@ -1469,6 +1469,33 @@ margin-bottom:33px;
       // Function to handle modal opening and closing
       function setupModal(buttonId, modalId) {
         var modal = document.getElementById(modalId);
+    <div class="dia" id="day31"><button id="myBtn-hallowen" class="btn"><p>31 <span class="azul">Temo</span></p></button></div>
+    
+    <div id="myModal-hallowen" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p><strong>Dia de Hallowen <br>https://share.google/aY4LeIIUUgc9DLw8N</strong></p>
+      </div>
+    </div>
+<div class="dia" id="day"></div>
+  </div>
+  <br>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Obtén la fecha actual
+      var currentDate = new Date();
+      // Obtiene el día actual
+      var currentDay = currentDate.getDate();
+
+      // Agrega la clase al día actual
+      var dayElement = document.getElementById('day' + currentDay);
+      if (dayElement) {
+        dayElement.classList.add('current-day');
+      }
+
+      // Function to handle modal opening and closing
+      function setupModal(buttonId, modalId) {
+        var modal = document.getElementById(modalId);
         var btn = document.getElementById(buttonId);
         // Ensure the close button is within the modal content
         var span = modal.querySelector(".close"); 
@@ -1495,6 +1522,7 @@ margin-bottom:33px;
       setupModal("myBtn-reyesMagos", "myModal-reyesMagos");
       setupModal("myBtn-martinLutherKing", "myModal-martinLutherKing");
        setupModal("myBtn-columbus", "myModal-columbus");
+       setupModal("myBtn-hallowen", "myModal-hallowen");
     });
   </script>
 
