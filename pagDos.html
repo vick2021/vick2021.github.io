@@ -1,32 +1,260 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi primer documento HTML</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auándar Anapu — Dossier estilo revista</title>
+  <meta name="description" content="Contexto completo y lectura curada sobre Auándar Anapu (El que cayó del cielo), película mexicana de Rafael Corkidi, 1975." />  <!-- Tipografías -->  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">  <style>
+    :root {
+      --bg: #f9f6f2;
+      --paper: #fffdfa;
+      --ink: #1d1c1a;
+      --muted: #6f6a60;
+      --accent: #c46a2e; /* tierra/óxido */
+      --accent-2: #556b2f; /* verde milpa */
+      --rule: #e6dfd2;
+      --shadow: 0 12px 40px rgba(0,0,0,.08);
+    }
+
+    html, body { background: var(--bg); color: var(--ink); }
+    body {
+      margin: 0; padding: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6; font-size: 17px;
+    }
+
+    .container {
+      max-width: 1050px; margin: 40px auto; padding: 0 20px;
+    }
+
+    .cover {
+      background: linear-gradient(135deg, #fff, var(--paper));
+      border: 1px solid var(--rule);
+      box-shadow: var(--shadow);
+      border-radius: 18px; overflow: hidden;
+    }
+
+    .cover-head {
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px;
+      padding: 36px 36px 20px;
+      align-items: end;
+    }
+
+    .kicker { letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 700; font-size: 13px; }
+
+    h1.title {
+      font-family: "Playfair Display", serif; font-weight: 800; line-height: 1.05;
+      font-size: clamp(34px, 5.4vw, 56px); margin: 8px 0 10px;
+    }
+    .dek { color: var(--muted); font-size: 18px; }
+
+    .hero-badge {
+      justify-self: end; align-self: start;
+      background: radial-gradient(90% 90% at 50% 10%, #ffe, #fff);
+      border: 1px solid var(--rule); color: var(--accent-2);
+      border-radius: 12px; padding: 14px 16px; font-weight: 600; font-size: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-img {
+      width: 100%; aspect-ratio: 6/7.5; object-fit:; display: block; border-top: 1px solid var(--rule);
+      filter: saturate(1.02) contrast(1.02);
+    }
+
+    .grid {
+      display: grid; grid-template-columns: 2.2fr 1fr; gap: 36px;
+      padding: 30px 36px 42px;
+    }
+
+    .byline { color: var(--muted); font-size: 14px; margin-top: 8px; }
+
+    article { font-size: 18px; }
+
+    article h2 { font-family: "Playfair Display", serif; font-weight: 800; font-size: 28px; line-height: 1.15; margin: 32px 0 10px; }
+    article h3 { font-family: "Playfair Display", serif; font-weight: 700; font-size: 22px; margin: 26px 0 8px; }
+
+    p { margin: 12px 0; }
+
+    .lead { font-size: 20px; color: #2a2926; }
+
+    .dropcap:first-letter {
+      float: left; font-family: "Playfair Display", serif; font-weight: 900;
+      font-size: 64px; line-height: .9; margin: 6px 10px 0 0; color: var(--accent);
+    }
+
+    .rule { height: 1px; background: var(--rule); margin: 18px 0 22px; }
+
+    .pull {
+      border-left: 4px solid var(--accent);
+      padding: 8px 14px; margin: 18px 0; background: #fffaf4; color: #3c2d20;
+      font-family: "Playfair Display", serif; font-weight: 600; font-size: 20px;
+    }
+
+    ul.nice {
+      list-style: none; padding: 0; margin: 14px 0 22px;
+    }
+    ul.nice li {
+      display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; margin: 10px 0;
+    }
+    ul.nice li::before { content: "✦"; color: var(--accent-2); font-weight: 700; margin-top: 1px; }
+
+    .sidebar {
+      position: relative;
+    }
+    .sidebar .card {
+      background: #ffffff; border: 1px solid var(--rule); border-radius: 14px; padding: 16px 16px 18px; box-shadow: var(--shadow); margin-bottom: 18px;
+    }
+    .sidebar .card h4 { margin: 0 0 8px; font-family: "Playfair Display", serif; font-size: 20px; }
+    .sidebar .meta { color: var(--muted); font-size: 14px; }
+
+    .cta {
+      background: linear-gradient(180deg, #fffaf3 0%, #ffffff 100%);
+      border: 1px solid var(--rule); border-radius: 16px; padding: 18px; box-shadow: var(--shadow);
+      display: grid; gap: 10px; align-items: center; justify-items: start;
+    }
+    .cta strong { color: var(--accent-2); }
+    .cta a {
+      display: inline-block; padding: 10px 14px; border: 1px solid var(--accent-2);
+      border-radius: 10px; text-decoration: none; color: var(--accent-2); font-weight: 700; font-size: 14px;
+      transition: .2s ease;
+    }
+    .cta a:hover { background: var(--accent-2); color: white; }
+
+    footer {
+      padding: 22px 36px 34px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--rule);
+    }
+
+    /* Responsivo */
+    @media (max-width: 900px) {
+      .cover-head { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      .hero-badge { justify-self: start; }
+    }
+.enlace{
+text-align:center;
+color:blue;
+}
+.enlace-uno{
+text-align:center;
+font-weight:900;
+color:blue;
+}
+.link{
+background-color:red;
+border-radius:6px;
+}
+  </style>
+
 </head>
-<style>
-*{
-Text-align:center;
-}
-P{
-Text-align:left;
-Padding:20px;
-}
-</style>
 <body>
-  <h1>El rey Dodo e Lilithia</h1>
-<a href="../index.html">Home</a>
-<br><br>
-<img src="img/dodo.jpg" width="100%">
-<article>
+  <div class="container">
+    <div class="cover">
+      <header class="cover-head">
+        <div>
+          <div class="kicker">Dossier · Cine mexicano experimental</div>
+          <h1 class="title">Auándar Anapu <span style="font-weight:600">(El que cayó del cielo)</span></h1>
+          <p class="dek">Una de las películas más simbólicas, poéticas y olvidadas del cine mexicano experimental: contexto curado para lectura ágil en formato revista.</p>
+          <div class="byline">Fuente: petición del lector · Maquetación estilo revista</div>
+        </div>
+<audio controls autoplay loop>
+    <source src="audios/auandarAnapu.mp3" type="audio/mp3">
+    Tu navegador no soporta el elemento de audio.
+</audio>
+        <div class="hero-badge">🎥 Rafael Corkidi · 1975 · México</div>
+      </header><img class="hero-img" alt="Ilustración editorial estilo revista con tonos tierra" src="https://mx.web.img3.acsta.net/pictures/20/07/26/23/31/1297807.jpg
 
-<p>
+" />
 
+  <div class="grid">
+    <article>
+      <section id="contexto-general">
+        <h2>🎥 Contexto general</h2>
+        <p class="lead dropcap"><strong>Título:</strong> <em>Auándar Anapu (El que cayó del cielo)</em>. <strong>Director:</strong> Rafael Corkidi. <strong>Año:</strong> 1975. <strong>País:</strong> México. <strong>Género:</strong> Drama místico, político y alegórico. <strong>Protagonista:</strong> Ernesto Gómez Cruz como Auándar Anapu. <strong>Lugar de rodaje:</strong> Escenarios naturales de Michoacán, principalmente zonas rurales e indígenas.</p>
+        <div class="rule"></div>
+      </section>
 
-</p>
-</article>
+      <section id="significado">
+        <h2>🌎 Significado del título</h2>
+        <p>El nombre <em>Auándar Anapu</em> proviene del purépecha, lengua originaria de Michoacán, y se traduce aproximadamente como “El que cayó del cielo”. El título ya anuncia el carácter mesiánico y simbólico del protagonista: un ser que aparece misteriosamente para anunciar un cambio profundo, tanto espiritual como social.</p>
+      </section>
+
+      <section id="trama-simbolismo">
+        <h2>🕊️ Trama y simbolismo</h2>
+        <p>La historia narra la llegada de un personaje enigmático —Auándar Anapu— a un pueblo campesino oprimido. Este personaje tiene un aire profético o divino, realiza milagros, habla de justicia y libertad, y despierta conciencia entre los más pobres.</p>
+        <p>Su mensaje es revolucionario, pero no desde las armas, sino desde la conciencia moral y espiritual. Representa al nuevo hombre que busca liberar al pueblo de la ignorancia, la opresión política y el control religioso.</p>
+        <p>Poco a poco, el poder establecido (los caciques, la Iglesia, el Estado) se siente amenazado por su influencia. Como en un espejo de Cristo, Auándar Anapu es perseguido y finalmente sacrificado. Su muerte simboliza la incomprensión del pueblo hacia sus propios libertadores, un eco de los mitos mesías-redentores universales.</p>
+        <div class="pull">“La redención no viene del cielo, sino del despertar del hombre ante su propia servidumbre.”</div>
+      </section>
+
+      <section id="temas">
+        <h2>🔥 Temas centrales</h2>
+        <ul class="nice">
+          <li><span><strong>Sincretismo religioso:</strong> mezcla de mitología cristiana con cosmovisiones indígenas purépechas.</span></li>
+          <li><span><strong>Crítica social:</strong> denuncia del caciquismo, la desigualdad y el dominio de la Iglesia sobre los pobres.</span></li>
+          <li><span><strong>Renacimiento espiritual:</strong> llamado a recuperar la conexión con la naturaleza, la comunidad y la verdad interior.</span></li>
+          <li><span><strong>Relectura de Cristo:</strong> Auándar Anapu como un Cristo campesino mexicano, reinterpretado en clave indígena y agrarista.</span></li>
+          <li><span><strong>Lenguaje visual y experimental:</strong> Corkidi usa fotografía onírica, cámara lenta, colores intensos, metáforas visuales y ritos simbólicos.</span></li>
+        </ul>
+      </section>
+
+      <section id="estilo">
+        <h2>🎞️ Estilo cinematográfico</h2>
+        <p>Rafael Corkidi, quien fue fotógrafo de Luis Buñuel y de otras figuras del cine de vanguardia, creó un estilo místico-surrealista. La película carece de narrativa lineal tradicional: combina poesía, simbolismo, y estética barroca. Se acerca más a una “visión profética filmada” que a una historia convencional.</p>
+      </section>
+
+      <section id="interpretacion">
+        <h2>✝️ Interpretación espiritual</h2>
+        <p>En su esencia, <em>Auándar Anapu</em> plantea que el verdadero Mesías puede nacer entre los pobres, no como figura celestial sino como conciencia colectiva despierta. El mensaje:</p>
+        <div class="pull">“La redención no viene del cielo, sino del despertar del hombre ante su propia servidumbre.”</div>
+        <p>El “caído del cielo” no viene a imponer una religión, sino a recordar el equilibrio perdido entre el hombre, la tierra y el espíritu.</p>
+      </section>
+
+      <section id="conexion-gj">
+        <h2>🪶 En relación con tu narrativa (La Gran Jerusalén)</h2>
+        <ul class="nice">
+          <li><span><strong>Auándar Anapu</strong> sería como un <em>Barrendero-profeta</em>, una encarnación del arquetipo redentor que desciende para limpiar, sanar y despertar.</span></li>
+          <li><span>El pueblo representa la <strong>humanidad dormida</strong>, dominada por estructuras corruptas (como tu “Metrópoli del Mal”).</span></li>
+          <li><span>Su caída y sacrificio reflejan la <strong>lucha entre el espíritu libre (luz)</strong> y el <strong>sistema opresor (oscuridad)</strong>.</span></li>
+          <li><span>El uso del paisaje natural y el lenguaje simbólico se asemeja a la estética que tú imaginas para la <strong>Gran Jerusalén</strong> como “nave viva”, donde lo divino se manifiesta en la materia.</span></li>
+        </ul>
+      </section>
+
+      <section class="cta">
+        <div><strong>¿Quieres un resumen poético o un pasaje narrativo</strong> donde Auándar Anapu entre como uno de los primeros “Mensajeros del Arquitecto” dentro del universo de la Gran Jerusalén?</div>
+        <a href="#" onclick="alert('¡Lo escribimos! Dime el tono (poético, épico, íntimo) y la extensión.'); return false;">Pídelo aquí</a>
+      </section>
+    </article>
+
+    <aside class="sidebar" aria-label="Notas y ficha técnica">
+      <div class="card">
+        <h4>Ficha rápida</h4>
+        <div class="meta">• Título: <em>Auándar Anapu</em><br>• Director: Rafael Corkidi<br>• Año: 1975 · México<br>• Protagonista: Ernesto Gómez Cruz</div>
+      </div>
+
+      <div class="card">
+        <h4>Claves de lectura</h4>
+        <div class="meta">Misticismo rural · Alegoría política · Sincretismo · Poética visual · Barroco-surreal</div>
+      </div>
+
+      <div class="card">
+        <h4>Glosario breve</h4>
+        <div class="meta"><strong>Purépecha:</strong> Pueblo y lengua originaria de Michoacán. <br><strong>Sincretismo:</strong> Fusión de creencias y símbolos de tradiciones distintas.</div>
+      </div>
+    </aside>
+  </div>
+
+<div class="link">
+<p class="enlace-uno"> Ver Pelicula</p>
+<p class="enlace">http://ok.ru/video/5940144114341</p>
+ </div>
+<br>
+ <footer>
+
+    Dossier maquetado para lectura cómoda en móvil y escritorio · Compatible para impresión en A4 desde el navegador (Ctrl/Cmd+P).
+  </footer>
+</div>
+
+  </div>
 </body>
 </html>
-
