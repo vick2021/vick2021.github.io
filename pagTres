@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Canoa: memoria de un hecho vergonzoso — Análisis</title>
+  <style>
+*{
+
+background-color:#57578F;
+}
+    :root{
+      --bg: #0e0f12;
+      --paper: #141621;
+      --ink: #e9ebf5;
+      --ink-soft:#b8bdd1;
+      --accent:#b48cff;      /* lavanda */
+      --accent-2:#5eead4;    /* aqua */
+      --line:#2b2f44;
+      --muted:#0f111a;
+      --shadow: 0 24px 60px rgba(0,0,0,.35);
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+      --radius: 12px;
+      --maxw: 1100px;
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 600px at 8% -10%, rgba(180,140,255,.12), transparent 60%),
+        radial-gradient(900px 500px at 110% 10%, rgba(94,234,212,.10), transparent 60%),
+        var(--bg);
+      color:var(--ink);
+      font: 16px/1.7 ui-sans-serif,-apple-system,BlinkMacSystemFont,Inter,Roboto,system-ui,"Segoe UI",Helvetica,Arial;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    .wrap{max-width:var(--maxw); margin:clamp(18px,4vw,48px) auto; padding:0 18px}/* Hero */
+.mast{display:grid; grid-template-columns: 1.1fr .9fr; gap:clamp(16px,3vw,28px); align-items:end}
+.cover{position:relative; aspect-ratio:16/9; border-radius:var(--radius-xl); overflow:hidden; background:var(--muted); box-shadow:var(--shadow)}
+.cover img{width:100%; height:100%; object-fit:; filter:saturate(1.05) contrast(1.05)}
+.cover::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.45) 75%)}
+.kicker{letter-spacing:.22em; text-transform:uppercase; color:var(--accent-2); font-weight:800; font-size:.8rem}
+h1{margin:.3rem 0 .5rem; font-weight:900; line-height:1.05; font-size:clamp(1.8rem,4vw,3rem)}
+.lede{margin:.4rem 0 0; color:#eef1ff; font-size:1.06rem}
+.meta{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+.tag{padding:.28rem .6rem; border:1px solid var(--line); border-radius:999px; color:#d5d8ea}
+
+/* Layout */
+.grid{display:grid; grid-template-columns: 270px 1fr; gap:clamp(18px,3.5vw,36px); margin-top:clamp(20px,3vw,34px)}
+
+/* Sidebar */
+aside{position:; top:18px; align-self:start; background:linear-gradient(180deg, rgba(94,234,212,.06), rgba(180,140,255,.06)); border:1px solid var(--line); border-radius:var(--radius-lg); padding:16px; box-shadow:var(--shadow)}
+aside h3{margin:0 0 6px; font-size:.9rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent)}
+.toc{list-style:none; padding:0; margin:6px 0 0}
+.toc li{margin:.25rem 0}
+.toc a{color:var(--ink-soft); text-decoration:none; border-left:2px solid transparent; padding-left:.5rem; display:block}
+.toc a:hover{color:var(--ink); border-color:var(--accent)}
+
+/* Article */
+article{background:linear-gradient(180deg, rgba(20,22,33,.9), rgba(20,22,33,.98)); border:1px solid var(--line); border-radius:var(--radius-xl); padding:clamp(16px,3vw,36px); box-shadow:var(--shadow)}
+article h2{margin:2rem 0 .7rem; font-size:clamp(1.3rem,2.6vw,1.9rem)}
+article h3{margin:1.6rem 0 .4rem}
+article h4{margin:1rem 0 .3rem}
+p{margin:.9rem 0; color:#dfe2f1}
+.dropcap:first-letter{float:left; font-weight:900; font-size:3.2rem; line-height:.9; padding:.18rem .6rem .18rem 0; color:var(--accent)}
+
+/* Lists */
+ul,ol{margin:.6rem 0 .9rem .9rem}
+li{margin:.45rem 0}
+
+/* Pullquote */
+.pull{margin:1rem 0; border-left:4px solid var(--accent-2); padding:.6rem 1rem; background:rgba(94,234,212,.06); border-radius:0 var(--radius) var(--radius) 0}
+.pull em{font-style:normal; font-weight:800; color:#f0f6ff}
+
+/* Cards */
+.callout{display:grid; grid-template-columns:1fr 1fr; gap:16px; background:var(--muted); border:1px solid var(--line); border-radius:var(--radius-lg); padding:14px 14px 6px; margin:1.2rem 0}
+.card{background:#10121b; border:1px solid var(--line); border-radius:var(--radius); padding:14px}
+.card h4{margin:.1rem 0 .35rem; font-size:1rem; color:#e6e0ff}
+.card p{margin:.2rem 0 .5rem; font-size:.97rem; color:#cfd4e7}
+
+/* Figures */
+.figrow{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:.8rem 0 0}
+figure{margin:0; background:#0d1020; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden}
+figure img{width:100%; height:100%; object-fit:cover; display:block}
+figure figcaption{font-size:.85rem; color:var(--ink-soft); padding:8px 10px; border-top:1px dashed var(--line)}
+
+/* Footer */
+.footer{margin-top:22px; color:var(--ink-soft); font-size:.95rem}
+
+/* Links */
+a.inline{color:var(--accent-2); text-decoration:none}
+a.inline:hover{text-decoration:underline}
+
+/* Responsive */
+@media (max-width: 980px){
+  .mast{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  .callout{grid-template-columns:1fr}
+  .figrow{grid-template-columns:1fr}
+}
+
+/* Print */
+@media print{
+  body{background:#fff; color:#111}
+  .wrap{max-width:900px}
+  .mast,.grid,article{box-shadow:none}
+  aside{position:static}
+  .cover::after{background:none}
+  a.inline{text-decoration:none}
+}
+.enlace{
+font-size:20px;
+text-align:center;
+display: flex;
+  justify-content: center;
+  align-items: center;
+border-radius:10px;
+background:red;
+color:black;
+}
+.pelicula{
+font-weight:800;
+
+}
+.link{
+color:blue;
+}
+audio{
+width:30%;
+height:30px;
+background-color:red;
+border-radius:7px;
+}
+  </style>
+</head>
+<body>
+  <div class="wrap"><!-- HERO -->
+<section class="mast">
+  <div class="cover">
+    <img src="https://m.media-amazon.com/images/M/MV5BZTcyZTVmYTAtNGM1Zi00NDY1LTkzZWUtY2NlNjdmNzRjNWU1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Póster de Canoa (1976)"/>
+
+
+</div>
+<audio controls autoplay loop>
+    <source src="audios/canoa.mp3" type="audio/mp3">
+    Tu navegador no soporta el elemento de audio.
+</audio>
+
+  <header>
+    <div class="kicker">Cine mexicano · 1976</div>
+    <h1>Canoa: memoria de un hecho vergonzoso</h1>
+    <p class="lede">Síntesis, análisis y claves de lectura del filme de Felipe Cazals.</p>
+    <div class="meta">
+      <span class="tag">Felipe Cazals</span>
+      <span class="tag">Semidocumental</span>
+      <span class="tag">Política · 1968</span>
+    </div>
+  </header>
+</section>
+
+<!-- BODY GRID -->
+<div class="grid">
+  <aside>
+    <h3>Contenido</h3>
+    <ul class="toc">
+      <li><a href="#intro">Introducción</a></li>
+      <li><a href="#sinopsis">Sinopsis resumida</a></li>
+      <li><a href="#analisis">Análisis crítico</a></li>
+      <li><a href="#por-que">¿Por qué verla?</a></li>
+      <li><a href="#discusion">Puntos para discusión</a></li>
+      <li><a href="#conclusion">Conclusión</a></li>
+    </ul>
+  </aside>
+
+  <article>
+    <section id="intro">
+      <h2>Introducción</h2>
+      <p class="dropcap">La película <strong>Canoa: memoria de un hecho vergonzoso</strong> (1976) del cineasta mexicano Felipe Cazals está basada en hechos reales ocurridos el 14 de septiembre de 1968 en el poblado de San Miguel Canoa, Puebla, cuando un grupo de cinco jóvenes trabajadores de la Benemérita Universidad Autónoma de Puebla, que habían ido a escalar el volcán La Malinche, fueron acusados de comunistas por el sacerdote local y linchados por los pobladores. La película se presenta con estilo semidocumental, mezclando recreación dramática con elementos de testimonio, para reconstruir ese episodio como metáfora de la violencia política, la histeria colectiva y la represión estatal en México en ese momento.</p>
+    </section>
+
+    <section id="sinopsis">
+      <h2>Sinopsis resumida</h2>
+      <ul>
+        <li>Cinco jóvenes empleados de la universidad se dirigen a escalar La Malinche, pero debido al mal clima, deciden pasar la noche en el pueblo de San Miguel Canoa.</li>
+        <li>En el pueblo, el párroco local incita miedo al comunismo entre los habitantes; los visitantes son identificados como “agentes comunistas” y entonces se desata la violencia contra ellos.</li>
+        <li>La narración muestra el desarrollo del linchamiento, la complicidad social, el miedo y la manipulación ideológica, así como la indiferencia o complicidad de las autoridades.</li>
+      </ul>
+      <div class="pull">“<em>El terror en Canoa no es sobrenatural: es humano, colectivo y político.</em>”</div>
+    </section>
+
+    <section id="analisis">
+      <h2>Análisis crítico</h2>
+      <p>Aquí algunos ejes de análisis que considero relevantes:</p>
+      <h3>1. Tema de histeria colectiva y manipulación ideológica</h3>
+      <p>La obra retrata cómo una comunidad, manipulada por un líder moral (el cura) y en un contexto de alta tensión política (el México de 1968), termina convirtiendo a los visitantes en chivos expiatorios. En este sentido, la película muestra cómo el miedo al “otro” (los comunistas, los forasteros) se articula con la idea de “pureza” de la comunidad y religiosidad autoritaria. Esto conecta con el contexto del movimiento estudiantil de 1968 y la represión estatal —la película, aunque no lo menciona de frente todo el tiempo, lo sugiere como un trasfondo esencial.</p>
+
+      <h3>2. Memoria social y denuncia</h3>
+      <p>La película no se limita a narrar un crimen aislado: lo convierte en emblema de una herida colectiva en la historia mexicana. En ese sentido, se trata de “memoria social” —se busca que este episodio no se olvide, que sirva de advertencia. El uso del estilo casi documental enfatiza este propósito: se usan intertítulos con fechas, se mezclan escenas de archivo (o al menos simuladas para parecerlo), para dar verosimilitud.</p>
+
+      <h3>3. Género y estilo</h3>
+      <ul>
+        <li>Estilo semidocumental, lo que le da una atmósfera de veracidad y cercanía al horror.</li>
+        <li>Fotografía, montaje y actuación que buscan transmitir tensión, miedo y caos interno, más que efectos espectaculares. Por ejemplo, el montaje colapsa el tiempo, mezcla planos testimoniales con dramatización.</li>
+        <li>La película puede visualizarse como parte del “cine de horror social”: no horror sobrenatural, sino horror humano, colectivo, político. Le sirve la atmósfera de cine de terror para mostrar que lo terrorífico es la masa, la manipulación, la violencia.</li>
+      </ul>
+
+      <h3>4. Relevancia histórica y política</h3>
+      <p>El momento de México (finales de los sesenta) está cargado: se menciona la famosa masacre de Matanza de Tlatelolco (2 de octubre 1968) como telón de fondo. La película sugiere que lo que ocurre en San Miguel Canoa es microcosmos de esa represión. Por tanto, la película sirve para entender la lógica de la represión, del control ideológico, de la construcción del enemigo interno (“comunista”), y del linchamiento simbólico —literal y figurado— de quienes son vistos como una amenaza al orden.</p>
+
+      <h3>5. Simbolismo e implicaciones morales</h3>
+      <ul>
+        <li>El sacerdote como figura de autoridad, que mezcla poder religioso, comunitario y político, funciona como antagonista simbólico: no es sólo un individuo, sino parte de una estructura que domina al pueblo mediante la fe y el miedo.</li>
+        <li>Los visitantes (jóvenes universitarios) representan juventud, cambio, libertad de pensamiento; su condena representa el miedo del statu quo al cambio, al “otro”, a lo impredecible.</li>
+        <li>El pueblo funciona como masa, sin individualizar responsabilidades. Aquí la película plantea preguntas morales potenciales: ¿cómo actúa el individuo en la masa? ¿hasta dónde llega su responsabilidad? ¿qué pasa cuando la autoridad legitima la violencia?</li>
+        <li>También está la cuestión de la memoria: ¿qué pasa con los eventos traumáticos que se desean olvidar? La película plantea que hay un deber de recordar para prevenir que se repitan.</li>
+      </ul>
+    </section>
+
+    <section id="por-que">
+      <h2>¿Por qué ver esta película?</h2>
+      <ul>
+        <li>Es considerada <strong>una de las más importantes obras del cine político mexicano</strong>.</li>
+        <li>Aporta reflexión sobre violencia, manipulación, comunidad, ideología —temas que siguen vigentes.</li>
+        <li>Estilísticamente ofrece una experiencia de cine que mezcla drama, documental, suspense: rompe con entretenimiento ligero y exige reflexión.</li>
+        <li>Puede servirte como material simbólico: dado tu interés por narrativa simbólica, espiritual y social, esta película encaja con temas de justicia, poder, traición, violencia del sistema.</li>
+      </ul>
+    </section>
+
+    <section id="discusion">
+      <h2>Puntos para discusión o reflexión</h2>
+      <ul>
+        <li>¿Cómo se construyen los “otros” en la película (los jóvenes universitarios)? ¿Qué mecanismo se utiliza para transformarlos en enemigos?</li>
+        <li>¿Qué papel juega la autoridad (religiosa, estatal, local) en la dinámica de violencia?</li>
+        <li>¿Cómo se representa la masa vs. el individuo? ¿Hay espacio para la resistencia, la duda, la compasión?</li>
+        <li>¿Hasta qué punto la película habla de un “hecho real” y hasta qué punto lo usa como metáfora?</li>
+        <li>¿Qué relevancia tiene para hoy? ¿Se pueden trazar paralelos con dinámicas de miedo, de “enemigos internos”, de manipulación ideológica contemporánea?</li>
+      </ul>
+    </section>
+<div class="enlace">
+Ver Pelicula<br>
+http://ok.ru/video/2326477605543
+
+  </div>
+  <section id="conclusion">
+      <h2>Conclusión</h2>
+      <p>En resumen, <strong>Canoa: memoria de un hecho vergonzoso</strong> es un filme que va más allá de contar una anécdota trágica: se convierte en espejo y advertencia. No sólo muestra una violencia brutal, sino cómo la ignorancia, el temor y la manipulación social pueden llevar a que comunidades enteras cometan atrocidades. Para tu narrativa simbólica —que trabaja con temas de poder, traición, restauración, conciencia— esta película puede servir como un referente fuerte: la masa manipulada, el guía corrupto, el “inocente” perseguido, y la necesidad de memoria para sanar.</p>
+     <!--<p class="footer"></p>-->
+    </section>
+
+  </article>
+</div>
+
+  </div>
+  <br><br>
+</body>
+</html>
