@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Análisis de "Los olvidados" – Luis Buñuel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #f5f2ec;
+      --bg-alt: #fffaf3;
+      --accent: #b33b2f;
+      --accent-soft: #e3b7ae;
+      --text: #222222;
+      --text-soft: #555555;
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      background: radial-gradient(circle at top, #fdf7ed 0, #eee8dd 45%, #e5ded2 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 32px auto;
+      padding: 24px 16px 40px;
+    }
+
+    .magazine {
+      background: linear-gradient(135deg, var(--bg-alt), var(--bg));
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 40px 28px 44px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Banda decorativa lateral */
+    .magazine::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -80px;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), transparent 60%),
+                  radial-gradient(circle at 70% 70%, rgba(179, 59, 47, 0.35), transparent 65%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    header {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      padding-bottom: 18px;
+      margin-bottom: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .masthead {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      color: var(--text-soft);
+      font-weight: 600;
+    }
+
+    .issue-info {
+      font-size: 11px;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .title-block {
+      margin-top: 4px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", "Georgia", serif;
+      font-size: 32px;
+      line-height: 1.1;
+      margin: 4px 0 6px;
+      letter-spacing: 0.03em;
+    }
+
+    h1 span {
+      display: block;
+      font-weight: 900;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 600;
+    }
+
+    .byline {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    /* Cita destacada */
+    .pullquote {
+      border-left: 3px solid var(--accent);
+      padding-left: 14px;
+      margin: 14px 0 20px;
+      font-size: 14px;
+      color: var(--text-soft);
+      max-width: 560px;
+    }
+
+    .pullquote strong {
+      color: var(--accent);
+    }
+
+    /* Cuerpo del artículo */
+    .article {
+      column-gap: 40px;
+      font-size: 15px;
+      text-align: justify;
+    }
+
+    /* Dos columnas solo en pantallas grandes */
+    @media (min-width: 900px) {
+      .article {
+        column-count: 2;
+      }
+    }
+
+    .section-title {
+      font-family: "Playfair Display", "Georgia", serif;
+      font-size: 19px;
+      margin: 22px 0 6px;
+      color: var(--accent);
+      break-inside: avoid;
+    }
+
+    .section-subtitle {
+      font-weight: 600;
+      font-size: 14px;
+      margin: 14px 0 4px;
+      color: #333;
+      break-inside: avoid;
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    ul {
+      margin: 6px 0 12px 18px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    /* Letra capital */
+    .article p:first-of-type::first-letter {
+      float: left;
+      font-size: 42px;
+      line-height: 0.8;
+      padding-right: 6px;
+      padding-top: 4px;
+      padding-left: 1px;
+      font-family: "Playfair Display", "Georgia", serif;
+      color: var(--accent);
+    }
+
+    /* Bloque de “para tu narrativa” */
+    .highlight-box {
+      margin: 20px 0 10px;
+      padding: 14px 14px 10px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(179, 59, 47, 0.18);
+      break-inside: avoid;
+    }
+
+    .highlight-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .footer-note {
+      margin-top: 24px;
+      font-size: 12px;
+      color: var(--text-soft);
+      border-top: 1px dashed rgba(0, 0, 0, 0.16);
+      padding-top: 10px;
+      text-align: right;
+    }
+
+    /* Ajustes responsivos */
+    @media (max-width: 640px) {
+      .magazine {
+        padding: 26px 18px 30px;
+        border-radius: 12px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+    }
+
+.hero-img{
+width :100%;
+
+}
+.enlace{
+text-align:center;
+color:blue;
+}
+.enlace-uno{
+text-align:center;
+font-weight:900;
+color:blue;
+}
+.link{
+background-color:red;
+border-radius:6px;
+}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <article class="magazine">
+      <header>
+        <div>
+          <div class="masthead">Revista de Cine y Conciencia</div>
+          <div class="title-block">
+            <h1>
+              <span>Los olvidados</span>
+              Luis Buñuel
+            </h1>
+            <div class="subtitle">Realismo brutal y pobreza como destino</div>
+            <div class="byline">Análisis y lectura simbólica</div>
+          </div>
+        </div>
+
+        <div class="issue-info">
+          NÚM. ESPECIAL · CINE MEXICANO · S. XX
+        </div>
+      </header>
+
+<img class="hero-img" alt="Ilustración editorial estilo revista con tonos tierra" src="https://i.postimg.cc/25jbfg1s/grok-image-x6c4t4p.jpg" />
+     <div class="pullquote">
+        <strong>*Los olvidados*</strong> rompe el mito del “México feliz” y nos obliga a mirar de frente
+        un infierno muy real: el de los niños y jóvenes condenados por la pobreza, la indiferencia
+        y la ausencia de amor.
+      </div>
+
+      <div class="article">
+        <p>
+          Antes de entrar a la película, hay que entender la época. México, a mediados del siglo XX,
+          vivía una rápida urbanización: miles de campesinos migraban a la ciudad con la esperanza
+          de una vida mejor, pero la ciudad no tenía cómo recibirlos. Surgieron cinturones de miseria,
+          trabajos informales, delincuencia juvenil y una enorme masa de personas “sobrantes” para el sistema.
+        </p>
+
+        <p>
+          En ese contexto, Luis Buñuel, con su mirada crítica y a la vez surrealista, decide romper la
+          imagen idealizada del México de progreso y mostrar la brutal realidad de los marginados.
+          Por eso <em>Los olvidados</em> causó escándalo en su estreno: mostraba un México herido, que
+          muchos preferían no ver.
+        </p>
+
+        <h2 class="section-title">1. La pobreza como destino trágico</h2>
+
+        <p>
+          La pobreza en la película no es solo falta de dinero; es una condena que atraviesa lo económico,
+          lo emocional, lo moral y lo espiritual. Los jóvenes del barrio —Pedro, Jaibo, Ojitos— son víctimas
+          de un sistema que ya los había sentenciado antes de nacer.
+        </p>
+
+        <p>
+          Buñuel muestra que la miseria genera:
+        </p>
+
+        <ul>
+          <li>Violencia y resentimiento.</li>
+          <li>Falta de afecto y vínculos dañados.</li>
+          <li>Ausencia casi total de oportunidades reales.</li>
+        </ul>
+
+        <p>
+          La pobreza aparece como una maldición hereditaria, una cadena que se transmite de generación
+          en generación. Es un infierno terrenal, muy en la línea de la idea de que el cielo y el infierno
+          se viven aquí, según nuestras decisiones y según las estructuras que construimos o toleramos
+          como sociedad.
+        </p>
+
+        <h2 class="section-title">2. Ausencias: padres, madres y adultos</h2>
+
+        <h3 class="section-subtitle">a) La figura paterna evaporada</h3>
+
+        <p>
+          En <em>Los olvidados</em> casi no hay padres presentes. El único “guía” que tiene peso
+          entre los jóvenes es Jaibo, pero él es un líder corruptor: un padrastro simbólico que arrastra
+          a los demás hacia el delito y la destrucción. Es el “capitán” oscuro de su pequeña pandilla.
+        </p>
+
+        <p>
+          Esa figura contrasta con la idea de un líder moral o espiritual. Jaibo representa al guía
+          sin brújula, al jefe sin ética que dirige desde la rabia y el resentimiento. En un mundo sin
+          referentes sanos, los jóvenes terminan siguiendo al que grita más fuerte, no al que tiene razón.
+        </p>
+
+        <h3 class="section-subtitle">b) El amor materno fallido</h3>
+
+        <p>
+          Uno de los golpes más duros de la película es la relación entre Pedro y su madre.
+          Ella no puede darle amor: está cansada, desconfiada, emocionalmente rota. Y aunque no
+          se la presenta como un monstruo, sí como alguien tan herida por la vida que ya no le queda
+          casi nada para ofrecer.
+        </p>
+
+        <p>
+          Ese vacío afectivo empuja a Pedro todavía más hacia la delincuencia que la falta de dinero.
+          Buñuel muestra que el hambre no es solo de pan: es también un hambre de cariño y de reconocimiento.
+        </p>
+
+        <p>
+          La familia aparece como estructura rota; lo que podría ser el fundamento de una vida digna,
+          se convierte en el origen de la desconfianza y el dolor. Donde hay una familia sana, se puede
+          construir; donde solo hay ruina emocional, el terreno se abre para la tragedia.
+        </p>
+
+        <h2 class="section-title">3. Una sociedad moralmente enferma</h2>
+
+        <p>
+          Buñuel no se limita a señalar a individuos. La película señala a la sociedad completa como
+          enferma: policías indiferentes, instituciones que no transforman nada, adultos que explotan
+          o ignoran, y un entorno que parece empujar siempre hacia abajo.
+        </p>
+
+        <p>
+          En este mundo:
+        </p>
+
+        <ul>
+          <li>Los sistemas de “reeducación” no rescatan realmente a los jóvenes.</li>
+          <li>Los adultos protegen más su comodidad que a los niños.</li>
+          <li>El barrio se acostumbra a la violencia como si fuera algo natural.</li>
+        </ul>
+
+        <p>
+          Es un universo sin arquitecto, sin plano, sin moral compartida. No hay una “constitución del alma”
+          que sostenga algo justo. Solo sobrevivencia y fragmentos de buena voluntad que no alcanzan a cambiar
+          el rumbo de las cosas.
+        </p>
+
+        <h2 class="section-title">4. El surrealismo como ventana al interior</h2>
+
+        <h3 class="section-subtitle">a) El sueño de Pedro</h3>
+
+        <p>
+          Una de las secuencias más famosas es el sueño de Pedro. Allí se mezclan su madre, la comida
+          (carne, alimento) y elementos de violencia y culpa. Buñuel abre una ventana al inconsciente
+          del personaje:
+        </p>
+
+        <ul>
+          <li>Hambre física: la necesidad real de comer.</li>
+          <li>Hambre emocional: necesidad de cariño y aceptación.</li>
+          <li>Hambre espiritual: el deseo de ser visto como alguien digno y bueno.</li>
+        </ul>
+
+        <p>
+          El lenguaje onírico de Buñuel condensa en unas pocas imágenes todo lo que le falta a Pedro
+          y todo lo que lo persigue.
+        </p>
+
+        <h3 class="section-subtitle">b) El círculo de violencia</h3>
+
+        <p>
+          La película insiste en que la violencia juvenil no es un accidente, sino parte de un ciclo.
+          La muerte de Pedro y Jaibo no son solo tragedias individuales: son el símbolo de un sistema
+          que se devora a sus hijos una y otra vez.
+        </p>
+
+        <p>
+          Nada se resuelve al final; la violencia no se sublima ni se transforma, simplemente continúa
+          bajo otras formas. Es la imagen de un círculo infernal que solo podría romperse cambiando desde
+          la raíz las condiciones sociales y morales.
+        </p>
+
+        <h3 class="section-subtitle">c) La ciudad como monstruo</h3>
+
+        <p>
+          La Ciudad de México se percibe como un organismo enorme y frío, que devora a los que llegan
+          sin protección. No es un espacio de promesas, sino de abandono. Los edificios, los terrenos
+          baldíos, los mercados y las calles polvorientas componen un laberinto sin salida.
+        </p>
+
+        <p>
+          La ciudad es casi un personaje más: indiferente, gigantesco y ciego al sufrimiento de sus
+          habitantes más vulnerables.
+        </p>
+
+        <h2 class="section-title">5. Un golpe contra el mito del “México feliz”</h2>
+
+        <p>
+          <em>Los olvidados</em> fue revolucionaria porque se atrevió a contradecir la imagen oficial
+          de un México en progreso, unido y alegre. En lugar de folclor colorido y música festiva,
+          Buñuel ofreció:
+        </p>
+
+        <ul>
+          <li>Un retrato descarnado de la pobreza urbana.</li>
+          <li>Niños y jóvenes como víctimas del sistema, no solo “delincuentes”.</li>
+          <li>Una denuncia de la indiferencia social y política.</li>
+          <li>Un realismo sin romanticismo ni adornos.</li>
+        </ul>
+
+        <p>
+          En el fondo, la película plantea que la sociedad fabrica a sus propios monstruos, y que
+          después finge escandalizarse cuando esos mismos monstruos actúan.
+        </p>
+
+        <h2 class="section-title">6. ¿Hay esperanza en esta historia?</h2>
+
+        <p>
+          El tono general de Buñuel es pesimista. La película termina con muerte, injusticia y olvido.
+          No hay una redención clara; lo que queda es una advertencia severa:
+        </p>
+
+        <p>
+          <strong>Si no cambiamos las estructuras, repetimos la tragedia una y otra vez.</strong>
+        </p>
+
+        <p>
+          La obra funciona como espejo incómodo y como profecía social: mientras haya pobreza, familias
+          rotas e indiferencia, habrá nuevos “olvidados”.
+        </p>
+<br><br>
+       <!-- <div class="highlight-box">-->
+          <!--<div class="highlight-title">LECTURA PARA UNA NARRATIVA ÉPICA</div>-->
+          <!--<p>-->
+           <!-- En una clave simbólica, el mundo de <em>Los olvidados</em> representa una ciudad sin plano,-->
+           <!-- sin arquitecto y sin brújula moral. Un territorio donde la luz casi no entra, y donde los-->
+           <!-- “capitanes” que mandan son como Jaibo: líderes sin amor, formados en la rabia.
+          <!--</p>-->
+         <!-- <p>-->
+           <!-- Frente a ese universo, se puede imaginar la llegada de una conciencia distinta: un “barrendero”
+            <!--que no solo limpia basura física, sino también la basura moral e institucional. Su presencia
+           <!-- pondría en evidencia que la tragedia no es inevitable, sino el resultado de decisiones humanas-->
+            <!--y estructuras injustas que pueden, al menos en teoría, ser transformadas.-->
+          <!--</p>-->
+        <!--</div>-->
+        <br><bt>
+        <h2 class="section-title">7. Conclusión</h2>
+
+        <p>
+          <em>Los olvidados</em> es mucho más que una película sobre niños de barrio: es un diagnóstico
+          duro de la sociedad moderna y de su capacidad para producir infiernos muy concretos.
+        </p>
+
+        <p>
+          La pobreza, la falta de amor, la ausencia de una moral compartida y la indiferencia colectiva
+          convierten a la ciudad en un espacio donde los más vulnerables son primero utilizados, luego
+          temidos, y finalmente arrojados al olvido.
+        </p>
+
+        <p>
+          Buñuel no ofrece consuelo fácil. Su mensaje es una alarma: mientras no miremos de frente
+          a nuestros “olvidados” y transformemos las condiciones que los generan, estaremos condenados
+          a repetir la misma historia en distintos barrios, épocas y países.
+        </p>
+      </div>
+<div class="link">
+<p class="enlace-uno"> Ver Pelicula</p>
+<p class="enlace">http://ok.ru/video/5940144114341</p>
+ </div>
+<br>
+
+      <!--<div class="footer-note">-->
+        <!--Análisis adaptado para lectura tipo revista. Se puede reutilizar, recortar o insertar
+        <!--como capítulo en un proyecto narrativo mayor.-->
+      <!--</div>-->
+    </article>
+  </div>
+</body>
+</html>
