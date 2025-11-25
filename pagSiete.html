@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>El Resplandor – Remembranza</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #15151d 0, #050509 55%, #000 100%);
+      color: #f5f5f5;
+      line-height: 1.7;
+      padding: 30px 10px;
+    }
+
+    .magazine {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #111018;
+      border-radius: 18px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .magazine-header {
+      position: relative;
+      padding: 40px 40px 30px;
+      background: linear-gradient(135deg, #2b1b1b, #09020c 55%, #10121f);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .tagline {
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      font-size: 11px;
+      color: #f2d9b8;
+      margin-bottom: 10px;
+    }
+
+    .title {
+      font-size: 40px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #ffe4c4;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #f0f0f0;
+      opacity: 0.85;
+      max-width: 480px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      margin-top: 22px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #f9d7b0;
+      opacity: 0.9;
+    }
+
+    .meta-item span {
+      opacity: 0.7;
+    }
+
+    .corner-label {
+      position: absolute;
+      right: 40px;
+      top: 32px;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #ffb347;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,179,71,0.7);
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-strip {
+      padding: 12px 40px;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: linear-gradient(to right, rgba(255,255,255,0.02), rgba(255,255,255,0));
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-strip strong {
+      color: #ffcc66;
+    }
+
+    .content {
+      padding: 32px 40px 40px;
+      column-count: 2;
+      column-gap: 40px;
+    }
+
+    @media (max-width: 800px) {
+      .content {
+        column-count: 1;
+        padding: 24px 20px 32px;
+      }
+      .magazine-header {
+        padding: 28px 20px 22px;
+      }
+      .hero-strip {
+        padding: 10px 20px;
+      }
+      .corner-label {
+        right: 20px;
+        top: 20px;
+      }
+    }
+
+    .section-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: #f8c58a;
+      margin-bottom: 6px;
+      break-inside: avoid;
+    }
+
+    .section-sub {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 14px;
+      break-inside: avoid;
+    }
+
+    p {
+      font-size: 15px;
+      margin-bottom: 14px;
+      color: #f2f2f2;
+    }
+
+    p.dropcap:first-letter {
+      float: left;
+      font-size: 50px;
+      line-height: 0.9;
+      padding-right: 10px;
+      padding-top: 4px;
+      font-weight: 700;
+      color: #ffcc66;
+      text-shadow: 0 0 12px rgba(255,204,102,0.35);
+    }
+
+    .quote {
+      font-size: 15px;
+      font-style: italic;
+      border-left: 3px solid #ffcc66;
+      padding-left: 14px;
+      margin: 18px 0;
+      color: #ffe4c4;
+      break-inside: avoid;
+    }
+
+    .quote span {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-top: 6px;
+    }
+
+    .highlight {
+      background: linear-gradient(120deg, rgba(255,204,102,0.12), transparent);
+      padding: 2px 0;
+    }
+
+    .mini-meta {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 6px;
+    }
+
+    .footer-note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <article class="magazine">
+    <header class="magazine-header">
+      <div class="tagline">Dossier de cine · Horror psicológico</div>
+      <h1 class="title">El resplandor</h1>
+      <p class="subtitle">
+        Una remembranza del invierno eterno en el Overlook Hotel: pasillos sin fin,
+        locura, silencio… y el eco de un hacha contra la puerta equivocada.
+      </p>
+
+      <div class="meta-row">
+        <div class="meta-item">
+          <span>Dirección</span> · Stanley Kubrick · 1980
+        </div>
+        <div class="meta-item">
+          <span>Basada en</span> · novela de Stephen King (1977)
+        </div>
+        <div class="meta-item">
+          <span>Reparto</span> · Jack Nicholson · Shelley Duvall · Danny Lloyd
+        </div>
+      </div>
+
+      <div class="corner-label">
+        Especial · Cine de culto
+      </div>
+    </header>
+
+    <div class="hero-strip">
+      <div>Una familia aislada. Un hotel vacío. <strong>El mal nunca está realmente solo.</strong></div>
+      <div>“All work and no play makes Jack a dull boy.”</div>
+    </div>
+
+    <section class="content">
+      <header>
+        <div class="section-title">Remembranza</div>
+        <div class="section-sub">El eco de un invierno que nunca termina</div>
+      </header>
+
+      <p class="dropcap">
+        Recordar <span class="highlight">El resplandor</span> es como caminar de nuevo por los pasillos del Overlook Hotel:
+        reconoces la alfombra, las puertas numeradas, el eco del triciclo de Danny, pero algo
+        en la atmósfera sigue siendo inquietante, como si el hotel aún respirara detrás de la pantalla.
+      </p>
+
+      <p>
+        La película nos presenta a Jack Torrance, escritor frustrado y alcohólico en recuperación, que acepta
+        el trabajo de cuidador invernal en un enorme hotel de montaña. Lo acompaña su esposa Wendy y su hijo
+        Danny, un niño silencioso que esconde un don peligroso: el “resplandor”, una capacidad psíquica que
+        le permite ver lo que otros no pueden —ecos del pasado, visiones del futuro y presencias que nunca se fueron.
+      </p>
+
+      <p>
+        En esta remembranza, la trama se siente casi secundaria frente a lo que Kubrick construye en lo visual:
+        <span class="highlight">corredores interminables, encuadres geométricos y un silencio que pesa</span>.
+        No es sólo una historia de fantasmas; es un descenso lento y metódico hacia la locura, donde no sabemos
+        si el hotel posee a Jack… o simplemente desnuda la violencia que él ya llevaba adentro.
+      </p>
+
+      <div class="quote">
+        “El Overlook no sólo está embrujado: parece estar <strong>vivo</strong>, hambriento de repetir sus tragedias.”
+        <span>Crónica del pasillo rojo</span>
+      </div>
+
+      <header>
+        <div class="section-title">Momentos grabados en la memoria</div>
+        <div class="section-sub">Imágenes que se quedan incluso cuando la película termina</div>
+      </header>
+
+      <p>
+        La llegada en auto entre montañas, con la cámara flotando sobre la carretera, ya anuncia el aislamiento.
+        Más tarde, Danny recorre el hotel en su triciclo, y la Steadicam lo sigue de cerca: el sonido
+        alternado de las ruedas sobre alfombra y madera es como un metrónomo de la tensión.
+      </p>
+
+      <p>
+        De pronto, el pasillo se interrumpe con la visión de las gemelas: inmóviles, con sus vestidos azules,
+        invitando a Danny a jugar “para siempre”. Son apenas segundos, pero se convierten en una de las imágenes
+        más icónicas del cine de terror.
+      </p>
+
+      <p>
+        Mientras tanto, Jack se hunde en su propia espiral. Su incapacidad para escribir, el alcohol que
+        acecha como tentación y las voces del bar fantasma lo empujan hacia la violencia. La escena del
+        “<em>Heeere’s Johnny!</em>” no es sólo un susto famoso: es la explosión final de un deterioro que
+        hemos visto crecer, plano a plano, gesto a gesto.
+      </p>
+
+      <header>
+        <div class="section-title">Más allá del susto</div>
+        <div class="section-sub">Aislamiento, familia y laberintos</div>
+      </header>
+
+      <p>
+        En esta remembranza, <strong>El resplandor</strong> aparece menos como una película de monstruos
+        y más como una disección de la familia encerrada en sí misma. El hotel amplifica todo:
+        el resentimiento de Jack, el miedo de Wendy, la vulnerabilidad de Danny. El monstruo está
+        a la vez dentro y fuera de ellos.
+      </p>
+
+      <p>
+        El laberinto exterior repite el laberinto interior del hotel y el laberinto mental de Jack.
+        Nada es lineal: los pasillos se enredan, el tiempo se dobla, el pasado regresa disfrazado de fiesta
+        elegante en el Salón Dorado. La foto final, con Jack en una celebración de 1921, es la firma
+        de ese tiempo circular: “Siempre has estado aquí”.
+      </p>
+
+      <div class="quote">
+        “El horror no está sólo en los fantasmas, sino en la fragilidad de la mente humana cuando no
+        tiene a dónde escapar.”
+        <span>Notas desde el Overlook</span>
+      </div>
+
+      <header>
+        <div class="section-title">Por qué sigue “resplandeciendo”</div>
+        <div class="section-sub">De película polémica a clásico absoluto</div>
+      </header>
+
+      <p>
+        Cuando se estrenó en 1980, la película no fue abrazada de inmediato. Algunos críticos la vieron
+        fría y distante, e incluso Stephen King la rechazó como adaptación de su novela. Con el tiempo,
+        sin embargo, <span class="highlight">El resplandor</span> se convirtió en una de las grandes obras del
+        cine de terror: su ritmo hipnótico, su ambigüedad y su imaginería visual han inspirado análisis,
+        teorías, documentales y nuevas generaciones de cineastas y espectadores.
+      </p>
+
+      <p>
+        Volver a verla ya no es sólo “pasar miedo”. Es revisitar un espacio mental: un hotel vacío lleno
+        de historias, un padre que se rompe por dentro, una madre que descubre su fuerza en medio del pánico,
+        y un niño que aprende demasiado pronto que algunos lugares recuerdan todo lo que se hizo entre sus paredes.
+      </p>
+
+      <p>
+        En nuestra memoria cinéfila, <strong>El resplandor</strong> queda como esa puerta entreabierta
+        en el fondo del pasillo: sabemos que algo nos espera del otro lado, pero aun así volvemos,
+        una y otra vez, a tocar la manija.
+      </p>
+
+      <p class="footer-note">
+        Esta remembranza no pretende explicar todos los misterios del Overlook:
+        sólo dejar encendida una luz tenue en el corredor, por si alguna noche
+        decides volver a caminarlo.
+      </p>
+    </section>
+  </article>
+</body>
+</html>
