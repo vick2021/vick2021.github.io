@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tecnofeudalismo — Dossier estilo revista</title>
+  <style>
+    :root{
+      --bg:#f5f3ef;
+      --paper:#fffdfa;
+      --ink:#1a1a1a;
+      --muted:#6b6b6b;
+      --accent:#a14a2b;
+      --accent-2:#0b6b69;
+      --rule:#e6e0d9;
+    }
+    /* Reset & base */
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;}
+    img{max-width:100%;height:auto}
+    a{color:inherit}/* Magazine container */
+.spread{max-width:1024px;margin:2.5rem auto;padding:0 1rem}
+.mag{background:var(--paper);box-shadow:0 10px 30px rgba(0,0,0,.08);border:1px solid var(--rule)}
+.masthead{border-bottom:1px solid var(--rule);padding:1.25rem 1.5rem;display:flex;gap:.75rem;justify-content:space-between;align-items:center}
+.masthead .brand{letter-spacing:.14em;text-transform:uppercase;font-weight:700;font-size:.9rem;color:var(--accent)}
+.masthead .meta{font-variant:small-caps;color:var(--muted);font-size:.85rem}
+
+.hero{padding:2.25rem 1.5rem 0}
+.kicker{color:var(--accent-2);font-variant:small-caps;letter-spacing:.12em;font-weight:700}
+h1.title{font-size:clamp(2rem,5vw,3.25rem);line-height:1.05;margin:.35rem 0 0}
+.deck{color:var(--muted);font-size:1.05rem;max-width:60ch;margin:.75rem 0 0}
+.byline{margin:.75rem 0 1.5rem;color:var(--muted);font-size:.95rem}
+
+.rule{height:1px;background:linear-gradient(90deg,var(--rule),transparent);margin:1.25rem 1.5rem}
+
+/* Layout: two-column article body with sidebars */
+.page{display:grid;grid-template-columns: 1fr;gap:1.25rem;padding:0 1.5rem 2rem}
+@media(min-width:900px){
+  .page{grid-template-columns: 2.2fr .9fr}
+}
+
+article{font-size:1.05rem;line-height:1.7}
+article p{margin:.9rem 0}
+article p.lead:first-letter{float:left;font-size:3.6rem;line-height:.85;padding:.2rem .5rem 0 0;margin-top:.1rem;font-weight:700;color:var(--accent)}
+
+h2{font-family: "Spectral", Georgia, serif;font-weight:800;letter-spacing:.01em;margin:1.6rem 0 .4rem;font-size:1.5rem}
+h3{font-weight:700;margin:1.1rem 0 .4rem;font-size:1.1rem;color:var(--accent-2)}
+
+.callout{border-left:4px solid var(--accent);padding:.75rem 1rem;background:linear-gradient(90deg,rgba(161,74,43,.06),transparent);margin:1rem 0;color:#2b2b2b}
+.pullquote{font-family:Georgia,serif;font-style:italic;font-size:1.35rem;line-height:1.5;padding:1rem 1.25rem;margin:1.25rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+
+/* Table: feudal vs tecnofeudal */
+.table-wrap{overflow:auto;border:1px solid var(--rule);background:#fff;border-radius:.25rem}
+table{width:100%;border-collapse:collapse;font-size:.98rem}
+th,td{padding:.65rem .75rem;border-bottom:1px solid var(--rule)}
+th{background:#faf7f2;text-align:left;font-variant:small-caps;letter-spacing:.06em}
+tr:nth-child(even) td{background:#fffcf6}
+
+/* Sidebar */
+aside{display:flex;flex-direction:column;gap:1rem}
+.card{border:1px solid var(--rule);background:#fff;border-radius:.25rem;padding:1rem}
+.card h4{margin:.1rem 0 .35rem;font-size:1rem;font-variant:small-caps;color:#333;letter-spacing:.06em}
+.badge{display:inline-block;background:#0b6b6915;color:var(--accent-2);border:1px solid #0b6b6933;padding:.15rem .45rem;border-radius:999px;font-size:.75rem;margin-right:.25rem}
+
+/* Footer */
+footer{border-top:1px solid var(--rule);padding:1rem 1.5rem;color:var(--muted);font-size:.9rem}
+
+/* Print tweaks */
+@media print{
+  body{background:white}
+  .mag{box-shadow:none;border:none}
+  .masthead,.rule,footer{border-color:#bbb}
+  a[href]::after{content:" (" attr(href) ")";font-size:.8em}
+}
+
+  </style>
+</head>
+<body>
+  <div class="spread">
+    <div class="mag">
+      <header class="masthead">
+        <div class="brand">Dossier Macro — Ensayo</div>
+        <div class="meta">Edición especial • Tecnopolítica</div>
+      </header><section class="hero">
+    <div class="kicker">Panorama crítico</div>
+    <h1 class="title">Tecnofeudalismo</h1>
+    <p class="deck">Cómo el control de plataformas, datos y algoritmos está reconfigurando la economía, la cultura y la soberanía humana en el siglo XXI.</p>
+    <p class="byline">Por tu coautor digital • Para análisis y archivo</p>
+  </section>
+
+  <div class="rule"></div>
+
+  <div class="page">
+    <article>
+      <p class="lead">El tecnofeudalismo describe una mutación del capitalismo: el poder ya no se ancla en la tierra (feudalismo) ni en la fábrica (capitalismo industrial), sino en el <strong>dominio de infraestructuras digitales</strong>, los <strong>datos</strong> y la <strong>atención</strong>.</p>
+
+      <h2>I. Definición general</h2>
+      <p>Las <em>Big Tech</em> operan como <strong>señoríos digitales</strong>: levantan feudos (plataformas), dictan normas (términos de servicio) y capturan tributo (datos, tiempo, comisiones). Los usuarios y trabajadores de plataformas quedan vinculados por la necesidad de acceso, visibilidad e ingresos.</p>
+
+      <div class="pullquote">“Quien controla los flujos de información controla las percepciones; quien controla las percepciones controla la acción.”</div>
+
+      <h2>II. Estructura de poder</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Feudo histórico</th>
+              <th>Equivalente digital</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Señor feudal (noble)</td>
+              <td>Corporación tecnológica (Big Tech)</td>
+            </tr>
+            <tr>
+              <td>Tierra</td>
+              <td>Plataforma / ecosistema (SO, red social, marketplace)</td>
+            </tr>
+            <tr>
+              <td>Siervo / vasallo</td>
+              <td>Usuario, creador, repartidor/chofer, <em>freelancer</em></td>
+            </tr>
+            <tr>
+              <td>Tributo</td>
+              <td>Datos, atención, comisiones, microtransacciones</td>
+            </tr>
+            <tr>
+              <td>Iglesia</td>
+              <td>Ideología tecno–progreso (eficiencia, disrupción)</td>
+            </tr>
+            <tr>
+              <td>Castillo / feudo</td>
+              <td>Jardín amurallado (walled garden) y <em>lock-in</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>III. Economía del tecnofeudalismo</h2>
+      <h3>1) Datos como renta</h3>
+      <p>El rastro digital de cada persona alimenta modelos de predicción y segmentación. La plusvalía se concentra en dueños de la infraestructura: nubes, <em>app stores</em>, <em>ad-tech</em>, pasarelas de pago.</p>
+      <h3>2) Economía de la atención</h3>
+      <p>Interfaces y algoritmos optimizan retención y hábito. La atención se convierte en materia prima estratégica y en mecanismo de gobierno blando.</p>
+      <h3>3) Plataformización del trabajo</h3>
+      <p>Se fragmenta el empleo en <em>gigs</em> precarizados, contenido no remunerado y moderación invisible. La IA automatiza tareas y reconfigura jerarquías.</p>
+      <h3>4) Propiedad de la infraestructura</h3>
+      <p>Internet parece abierta, pero los nodos críticos (buscadores, nubes, redes, tiendas) son privados; el usuario carece de soberanía sobre su identidad y sus datos.</p>
+
+      <div class="callout"><strong>Nota:</strong> La transición no elimina el capitalismo clásico; lo subordina. Sectores industriales pasan a depender de infraestructuras digitales para acceso a mercado y fijación de precios.</div>
+
+      <h2>IV. Consecuencias sociales y filosóficas</h2>
+      <ul>
+        <li><strong>Pérdida de agencia:</strong> burbujas algorítmicas modelan preferencias y conducta.</li>
+        <li><strong>Captura política:</strong> las plataformas median opinión pública y campañas.</li>
+        <li><strong>Servidumbre digital:</strong> trabajamos gratis (datos/contenido) por visibilidad y acceso.</li>
+        <li><strong>Erosión de lo común:</strong> conocimiento y vínculos se mercantilizan en jardines cerrados.</li>
+      </ul>
+
+      <h2>V. Vías de salida y resistencia</h2>
+      <ol>
+        <li><strong>Descentralización y software libre:</strong> federación (Mastodon/Matrix), sistemas operativos abiertos, identidades soberanas.</li>
+        <li><strong>Economías comunitarias:</strong> monedas locales, <em>data trusts</em>, y tu propuesta de <em>creditilismo</em> para redistribuir valor informacional.</li>
+        <li><strong>Alfabetización algorítmica:</strong> lectura crítica de interfaces, trazabilidad de decisiones automatizadas.</li>
+        <li><strong>Regulación y estándares:</strong> portabilidad de datos, interoperabilidad, auditorías de IA, neutralidad de plataformas.</li>
+      </ol>
+
+      <h2>VI. Lectura simbólica para la Epopeya</h2>
+      <p>En clave mítica, el tecnofeudalismo es una <strong>Babilonia digital</strong>: templos de luz (pantallas) donde se ofrenda atención. El <em>Barrendero</em> porta la escoba como <strong>protocolo de limpieza</strong>: liberar código, abrir datos, romper hechizos de adicción y devolver la soberanía a la tripulación.</p>
+    </article>
+
+    <aside>
+      <div class="card">
+        <h4>Glosario mínimo</h4>
+        <p><span class="badge">Jardín amurallado</span> Ecosistema cerrado que limita la interoperabilidad.</p>
+        <p><span class="badge">Lock‑in</span> Costos (técnicos/sociales) que impiden migrar de plataforma.</p>
+        <p><span class="badge">Rentas de red</span> Ganancias por controlar nodos/estándares críticos.</p>
+      </div>
+
+      <div class="card">
+        <h4>Indicadores para vigilar</h4>
+        <ul>
+          <li>% de ingresos dependientes de plataformas únicas</li>
+          <li>Concentración de nubes y <em>ad-tech</em></li>
+          <li>Portabilidad real de datos e identidades</li>
+          <li>Participación de IA en la toma de decisiones</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h4>Checklist de autonomía</h4>
+        <ul>
+          <li>¿Tu contenido es exportable/interoperable?</li>
+          <li>¿Controlas tus llaves/identidad y tus datos?</li>
+          <li>¿Tienes canales directos con tu comunidad?</li>
+          <li>¿Puedes desconectarte sin perderlo todo?</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    Este dossier puede imprimirse o ampliarse con estudios de caso regionales (América Latina, UE, EE. UU.). Añade tus notas en los márgenes y adapta el glosario a tu narrativa del Barrendero.
+  </footer>
+</div>
+
+  </div>
+</body>
+</html>
