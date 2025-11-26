@@ -1,259 +1,737 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Auándar Anapu — Dossier estilo revista</title>
-  <meta name="description" content="Contexto completo y lectura curada sobre Auándar Anapu (El que cayó del cielo), película mexicana de Rafael Corkidi, 1975." />  <!-- Tipografías -->  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta charset="UTF-8" />
+  <title>Manual para el Despertar de la Conciencia · Tripulante de la Gran Jerusalén</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fuente opcional (puedes quitarla si quieres offline total) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">  <style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
     :root {
-      --bg: #f9f6f2;
-      --paper: #fffdfa;
-      --ink: #1d1c1a;
-      --muted: #6f6a60;
-      --accent: #c46a2e; /* tierra/óxido */
-      --accent-2: #556b2f; /* verde milpa */
-      --rule: #e6dfd2;
-      --shadow: 0 12px 40px rgba(0,0,0,.08);
+      --bg-main: #050816;
+      --bg-card: rgba(10, 20, 40, 0.96);
+      --bg-card-soft: rgba(13, 25, 55, 0.9);
+      --accent: #ffcc66;
+      --accent-2: #7de2ff;
+      --accent-3: #ff8ad6;
+      --accent-soft: rgba(255, 204, 102, 0.16);
+      --text-main: #f5f5f5;
+      --text-muted: #b7c0da;
+      --border-glow: rgba(255, 204, 102, 0.6);
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.7);
+      --radius-xl: 22px;
+      --radius-pill: 999px;
+      --gap-section: 1.4rem;
     }
 
-    html, body { background: var(--bg); color: var(--ink); }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      margin: 0; padding: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      line-height: 1.6; font-size: 17px;
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #1b2a4a 0%, #050816 45%, #010109 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: center;
     }
 
-    .container {
-      max-width: 1050px; margin: 40px auto; padding: 0 20px;
+    .page {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    .cover {
-      background: linear-gradient(135deg, #fff, var(--paper));
-      border: 1px solid var(--rule);
-      box-shadow: var(--shadow);
-      border-radius: 18px; overflow: hidden;
+    /* HEADER */
+
+    .header {
+      background: radial-gradient(circle at top left, rgba(125, 226, 255, 0.16), rgba(5, 8, 22, 0.96));
+      border-radius: 28px;
+      padding: 2.4rem 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      margin-bottom: 2.3rem;
     }
 
-    .cover-head {
-      display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px;
-      padding: 36px 36px 20px;
-      align-items: end;
+    .header::before,
+    .header::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(30px);
+      opacity: 0.65;
+      pointer-events: none;
     }
 
-    .kicker { letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 700; font-size: 13px; }
-
-    h1.title {
-      font-family: "Playfair Display", serif; font-weight: 800; line-height: 1.05;
-      font-size: clamp(34px, 5.4vw, 56px); margin: 8px 0 10px;
-    }
-    .dek { color: var(--muted); font-size: 18px; }
-
-    .hero-badge {
-      justify-self: end; align-self: start;
-      background: radial-gradient(90% 90% at 50% 10%, #ffe, #fff);
-      border: 1px solid var(--rule); color: var(--accent-2);
-      border-radius: 12px; padding: 14px 16px; font-weight: 600; font-size: 14px;
-      box-shadow: var(--shadow);
+    .header::before {
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(255, 204, 102, 0.9), transparent 60%);
+      top: -80px;
+      right: -60px;
     }
 
-    .hero-img {
-      width: 100%; aspect-ratio: 6/7.5; object-fit:; display: block; border-top: 1px solid var(--rule);
-      filter: saturate(1.02) contrast(1.02);
+    .header::after {
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(125, 226, 255, 0.9), transparent 60%);
+      bottom: -80px;
+      left: -20px;
     }
 
-    .grid {
-      display: grid; grid-template-columns: 2.2fr 1fr; gap: 36px;
-      padding: 30px 36px 42px;
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(5, 8, 22, 0.9);
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
     }
 
-    .byline { color: var(--muted); font-size: 14px; margin-top: 8px; }
-
-    article { font-size: 18px; }
-
-    article h2 { font-family: "Playfair Display", serif; font-weight: 800; font-size: 28px; line-height: 1.15; margin: 32px 0 10px; }
-    article h3 { font-family: "Playfair Display", serif; font-weight: 700; font-size: 22px; margin: 26px 0 8px; }
-
-    p { margin: 12px 0; }
-
-    .lead { font-size: 20px; color: #2a2926; }
-
-    .dropcap:first-letter {
-      float: left; font-family: "Playfair Display", serif; font-weight: 900;
-      font-size: 64px; line-height: .9; margin: 6px 10px 0 0; color: var(--accent);
+    .badge-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent-3);
+      box-shadow: 0 0 8px var(--accent-3);
     }
 
-    .rule { height: 1px; background: var(--rule); margin: 18px 0 22px; }
-
-    .pull {
-      border-left: 4px solid var(--accent);
-      padding: 8px 14px; margin: 18px 0; background: #fffaf4; color: #3c2d20;
-      font-family: "Playfair Display", serif; font-weight: 600; font-size: 20px;
+    .title-block {
+      position: relative;
+      z-index: 1;
     }
 
-    ul.nice {
-      list-style: none; padding: 0; margin: 14px 0 22px;
+    .title-main {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 2.15rem;
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+      color: #fff8e6;
+      text-shadow: 0 0 18px rgba(0, 0, 0, 0.75);
     }
-    ul.nice li {
-      display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; margin: 10px 0;
+
+    .title-sub {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 620px;
     }
-    ul.nice li::before { content: "✦"; color: var(--accent-2); font-weight: 700; margin-top: 1px; }
+
+    .title-highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .meta {
+      margin-top: 1.3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta-pill {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-pill);
+      background: rgba(5, 8, 22, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-muted);
+    }
+
+    .meta-pill span {
+      font-weight: 600;
+      color: var(--accent-2);
+    }
+
+    /* LAYOUT */
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.1fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .content {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-section);
+    }
+
+    .step-card {
+      background: linear-gradient(145deg, var(--bg-card), var(--bg-card-soft));
+      border-radius: var(--radius-xl);
+      padding: 1.35rem 1.3rem 1.4rem;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-card::before {
+      content: attr(data-index);
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.04);
+      font-family: "Playfair Display", serif;
+      pointer-events: none;
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .step-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 12px;
+      border: 1px solid var(--border-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      background: radial-gradient(circle at top, var(--accent-soft), transparent 70%);
+    }
+
+    .step-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #fff7e1;
+    }
+
+    .step-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-body {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--text-main);
+    }
+
+    .step-body p + p {
+      margin-top: 0.4rem;
+    }
+
+    .step-body ul {
+      margin-top: 0.3rem;
+      padding-left: 1.1rem;
+      list-style: none;
+    }
+
+    .step-body ul li {
+      position: relative;
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+
+    .step-body ul li::before {
+      content: "⋄";
+      position: absolute;
+      left: -1rem;
+      top: 0;
+      font-size: 0.75rem;
+      color: var(--accent);
+    }
+
+    .practice-label {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-2);
+    }
+
+    .practice-text {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    /* SIDEBAR */
 
     .sidebar {
-      position: relative;
-    }
-    .sidebar .card {
-      background: #ffffff; border: 1px solid var(--rule); border-radius: 14px; padding: 16px 16px 18px; box-shadow: var(--shadow); margin-bottom: 18px;
-    }
-    .sidebar .card h4 { margin: 0 0 8px; font-family: "Playfair Display", serif; font-size: 20px; }
-    .sidebar .meta { color: var(--muted); font-size: 14px; }
-
-    .cta {
-      background: linear-gradient(180deg, #fffaf3 0%, #ffffff 100%);
-      border: 1px solid var(--rule); border-radius: 16px; padding: 18px; box-shadow: var(--shadow);
-      display: grid; gap: 10px; align-items: center; justify-items: start;
-    }
-    .cta strong { color: var(--accent-2); }
-    .cta a {
-      display: inline-block; padding: 10px 14px; border: 1px solid var(--accent-2);
-      border-radius: 10px; text-decoration: none; color: var(--accent-2); font-weight: 700; font-size: 14px;
-      transition: .2s ease;
-    }
-    .cta a:hover { background: var(--accent-2); color: white; }
-
-    footer {
-      padding: 22px 36px 34px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
     }
 
-    /* Responsivo */
-    @media (max-width: 900px) {
-      .cover-head { grid-template-columns: 1fr; }
-      .grid { grid-template-columns: 1fr; }
-      .hero-badge { justify-self: start; }
+    .sidebar-card {
+      background: radial-gradient(circle at top left, rgba(255, 204, 102, 0.12), rgba(5, 8, 22, 0.97));
+      border-radius: var(--radius-xl);
+      padding: 1.3rem 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow-soft);
     }
-.enlace{
-text-align:center;
-color:blue;
-}
-.enlace-uno{
-text-align:center;
-font-weight:900;
-color:blue;
-}
-.link{
-background-color:red;
-border-radius:6px;
-}
+
+    .sidebar-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #fff9e8;
+    }
+
+    .sidebar-text {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .sidebar-list {
+      list-style: none;
+      margin-top: 0.45rem;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .sidebar-list li {
+      margin-bottom: 0.3rem;
+      display: flex;
+      gap: 0.4rem;
+      line-height: 1.5;
+    }
+
+    .sidebar-bullet {
+      font-size: 0.85rem;
+      color: var(--accent);
+      line-height: 1.4;
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.45rem;
+    }
+
+    .tag {
+      font-size: 0.73rem;
+      padding: 0.23rem 0.7rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(5, 8, 22, 0.96);
+      color: var(--text-muted);
+    }
+
+    .footer-note {
+      margin-top: 1.4rem;
+      font-size: 0.75rem;
+      color: #7680a3;
+      text-align: right;
+    }
+
+    .footer-note span {
+      color: var(--accent-3);
+    }
   </style>
-
 </head>
 <body>
-  <div class="container">
-    <div class="cover">
-      <header class="cover-head">
-        <div>
-          <div class="kicker">Dossier · Cine mexicano experimental</div>
-          <h1 class="title">Auándar Anapu <span style="font-weight:600">(El que cayó del cielo)</span></h1>
-          <p class="dek">Una de las películas más simbólicas, poéticas y olvidadas del cine mexicano experimental: contexto curado para lectura ágil en formato revista.</p>
-          <div class="byline">Fuente: petición del lector · Maquetación estilo revista</div>
+  <div class="page">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="badge">
+        <div class="badge-dot"></div>
+        GRAN JERUSALÉN · MANUAL DE DESPERTAR DEL TRIPULANTE
+      </div>
+
+      <div class="title-block">
+        <h1 class="title-main">Pasos para el Despertar de la Conciencia</h1>
+        <p class="title-sub">
+          Guía práctica para el <span class="title-highlight">tripulante de la Gran Jerusalén</span>,
+          combinando el código de la Orden, la visión budista adaptada y la experiencia del
+          <span class="title-highlight">Barrendero</span>.
+        </p>
+      </div>
+
+      <div class="meta">
+        <div class="meta-pill"><span>Enfoque:</span> Práctico, simbólico y gradual</div>
+        <div class="meta-pill"><span>Rol:</span> Manual interno de entrenamiento</div>
+        <div class="meta-pill"><span>Ámbito:</span> Conciencia, moral, servicio</div>
+      </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="content">
+      <!-- STEPS -->
+      <section class="steps">
+        <!-- 1 -->
+        <article class="step-card" data-index="01">
+          <div class="step-header">
+            <div class="step-icon">⭑</div>
+            <h2 class="step-title">Reconocer que la nave está medio en automático</h2>
+          </div>
+          <p class="step-subtitle">
+            El Llamado de la Conciencia: aceptar que hay partes de ti que viven dormidas.
+          </p>
+          <div class="step-body">
+            <p>
+              El primer paso del despertar es humilde y poderoso: admitir
+              <strong>“no estoy completamente despierto”</strong>. Hay áreas de tu vida que funcionan
+              por costumbre, impulso o miedo.
+            </p>
+            <p>
+              Dejar de creer que ya ves todo es abrir la puerta a la luz. A partir de aquí, cada día
+              se vuelve una oportunidad de observar si actuaste por elección o por reflejo.
+            </p>
+            <div class="practice-label">Práctica concreta (diaria, 5 min)</div>
+            <p class="practice-text">
+              Antes de dormir, anota 3 momentos del día en los que sentiste que actuaste en automático
+              (reacción, enojo, distracción, impulso). No te juzgues; solo registra.
+            </p>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="step-card" data-index="02">
+          <div class="step-header">
+            <div class="step-icon">📡</div>
+            <h2 class="step-title">Encender el radar: aprender a observar</h2>
+          </div>
+          <p class="step-subtitle">
+            El Radar de la Nave: ver lo que piensas, sientes y haces sin maquillarlo.
+          </p>
+          <div class="step-body">
+            <p>
+              Antes de cambiar nada, el deber del tripulante es <strong>observar</strong>. El budismo
+              lo llama atención plena. En la nave, es encender el radar.
+            </p>
+            <ul>
+              <li>Ver qué piensas.</li>
+              <li>Ver qué sientes en el cuerpo.</li>
+              <li>Ver qué haces cuando te aburres, te enojas o te frustras.</li>
+            </ul>
+            <p>
+              No vienes a juzgar esos estados todavía, solo a aprender cómo se mueve tu propia nave.
+            </p>
+            <div class="practice-label">Práctica concreta (2–3 veces al día, 1–2 min)</div>
+            <p class="practice-text">
+              Detente y pregúntate: “¿Qué estoy pensando ahora? ¿Qué siento en el cuerpo? ¿Qué estoy
+              haciendo justo ahora?”. Respira y observa sin etiquetar.
+            </p>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="step-card" data-index="03">
+          <div class="step-header">
+            <div class="step-icon">🧹</div>
+            <h2 class="step-title">Limpiar la cabina: ver tus tres venenos</h2>
+          </div>
+          <p class="step-subtitle">
+            El Trabajo del Barrendero: identificar ignorancia, apego y aversión dentro de ti.
+          </p>
+          <div class="step-body">
+            <p>
+              Los tres venenos se convierten en basura de la cabina: ignorancia (no ver), apego (no
+              soltar), aversión (rechazo rabioso). El Barrendero no se asusta de la suciedad: la
+              ilumina para luego barrerla.
+            </p>
+            <ul>
+              <li>Algo que evitas ver → ignorancia.</li>
+              <li>Algo a lo que te aferras aunque te haga daño → apego.</li>
+              <li>Algo o alguien que rechazas con rabia → aversión.</li>
+            </ul>
+            <div class="practice-label">Práctica concreta (semanal)</div>
+            <p class="practice-text">
+              Elige uno de los tres puntos y escribe una página respondiendo:
+              “¿Qué no he querido ver?”, “¿Qué me da miedo soltar?”, o “¿Por qué me irrita tanto
+              esta persona/situación?”. Escribir es barrer por dentro.
+            </p>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="step-card" data-index="04">
+          <div class="step-header">
+            <div class="step-icon">⚖</div>
+            <h2 class="step-title">Alinear la brújula moral</h2>
+          </div>
+          <p class="step-subtitle">
+            La Constitución Interna del Cosmos: definir en qué quieres creer de verdad.
+          </p>
+          <div class="step-body">
+            <p>
+              Sin brújula, cualquier rumbo parece bueno. La Orden enseña que por encima de todo está
+              la <strong>moral</strong>, la Constitución del Cosmos. En ti se traduce en un pequeño
+              código que quieres respetar sí o sí.
+            </p>
+            <p>
+              No es copiar mandamientos ajenos: es escribir tu propio pacto como Capitán de tu nave.
+            </p>
+            <div class="practice-label">Práctica concreta (un día dedicado a esto)</div>
+            <p class="practice-text">
+              Escribe 5–7 principios que quieres vivir (ej.: no traicionar mi palabra, no abusar del
+              débil, no usar violencia salvo defensa extrema, cuidar mi cuerpo/mente, etc.). Léelos
+              cada semana. Si una decisión va en contra de esto, ya sabes que va contra tu despertar.
+            </p>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="step-card" data-index="05">
+          <div class="step-header">
+            <div class="step-icon">👥</div>
+            <h2 class="step-title">Ordenar la tripulación interna</h2>
+          </div>
+          <p class="step-subtitle">
+            El Consejo Interior de la Nave: reconocer tus “yoes” en vez de confundirte con todos.
+          </p>
+          <div class="step-body">
+            <p>
+              Dentro de ti no hay un solo personaje. Hay <strong>tripulación</strong>: el Miedoso, el
+              Niño, el Guerrero, el Sabio, el Saboteador, el Curandero. El no-yo budista se vuelve
+              mapa de estos tripulantes internos.
+            </p>
+            <p>
+              El Barrendero no los reprime: los conoce y los sienta en la mesa del Consejo.
+            </p>
+            <div class="practice-label">Práctica concreta (ejercicio profundo)</div>
+            <p class="practice-text">
+              Elige al menos 5 personajes internos y descríbelos en 3–4 líneas:
+              qué quieren, de qué tienen miedo, cómo te ayudan y cómo te estorban. Verlos así te
+              da distancia y más capacidad de pilotearlos.
+            </p>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="step-card" data-index="06">
+          <div class="step-header">
+            <div class="step-icon">🛰</div>
+            <h2 class="step-title">Aligerar la nave: soltar apegos concretos</h2>
+          </div>
+          <p class="step-subtitle">
+            Soltar Peso Muerto: quitar gravedad a aquello que te impide despegar.
+          </p>
+          <div class="step-body">
+            <p>
+              No se trata de abandonar el mundo, sino de no encadenarse a todo. El apego excesivo
+              vuelve pesada la nave y te obliga a dar vueltas en la misma órbita.
+            </p>
+            <p>
+              Cuando algo define completamente tu valor o tu felicidad, se ha vuelto demasiado
+              pesado para un tripulante que quiere despertar.
+            </p>
+            <div class="practice-label">Práctica concreta (30 días)</div>
+            <p class="practice-text">
+              Elige un apego: objeto, hábito, idea, orgullo, vicio. Reduce su control sobre ti:
+              menos tiempo, menos dependencia, más espacio. A la par, tira o regala algo físico
+              que ya no necesitas. La nave externa refleja a la interna.
+            </p>
+          </div>
+        </article>
+
+        <!-- 7 -->
+        <article class="step-card" data-index="07">
+          <div class="step-header">
+            <div class="step-icon">⌘</div>
+            <h2 class="step-title">Entrenar los 8 mandos del panel</h2>
+          </div>
+          <p class="step-subtitle">
+            Escuela de Navegación Interior: trabajar un mando por vez, sin prisa pero sin pausa.
+          </p>
+          <div class="step-body">
+            <p>
+              El panel interno tiene ocho controles: pensamiento, intención, palabra, acción,
+              modo de vida, esfuerzo, atención, concentración. No necesitas dominar todos a la vez:
+              basta enfocarte en uno por semana.
+            </p>
+            <p>
+              Pequeños ajustes constantes cambian más la ruta que grandes teorías que nunca se
+              practican.
+            </p>
+            <div class="practice-label">Práctica concreta (ciclos semanales)</div>
+            <p class="practice-text">
+              Elige un mando por semana. Ejemplo: Semana del Habla → sin chismes, sin insultos,
+              sin mentiras “para quedar bien”. Semana de la Atención → comer una vez al día sin
+              celular, solo sintiendo. Ve rotando los mandos.
+            </p>
+          </div>
+        </article>
+
+        <!-- 8 -->
+        <article class="step-card" data-index="08">
+          <div class="step-header">
+            <div class="step-icon">⚠</div>
+            <h2 class="step-title">Convertir el dolor en maestro, no en enemigo</h2>
+          </div>
+          <p class="step-subtitle">
+            Escuchar las Alarmas de la Nave: el sufrimiento como mensaje, no como castigo.
+          </p>
+          <div class="step-body">
+            <p>
+              Despertar no significa no volver a sufrir, sino aprender a leer el mensaje del dolor.
+              El sufrimiento señala desajustes: traiciones a tu Constitución, apegos rígidos,
+              choques con la realidad.
+            </p>
+            <p>
+              Sin embargo, cuando el dolor es extremo (trauma, depresión profunda, ideas de hacerse
+              daño), el camino lúcido incluye pedir <strong>ayuda profesional</strong>. Cuidar la
+              nave también es responsabilidad del Capitán.
+            </p>
+            <div class="practice-label">Práctica concreta (cuando algo duela)</div>
+            <p class="practice-text">
+              Antes de escapar a la pantalla, comida o distracción, pregúntate:
+              “¿Qué parte de mi Constitución estoy traicionando aquí?” y
+              “¿Qué apego me impide aceptar esto?”. Si el dolor es muy fuerte, busca ayuda
+              especializada: eso también es conciencia.
+            </p>
+          </div>
+        </article>
+
+        <!-- 9 -->
+        <article class="step-card" data-index="09">
+          <div class="step-header">
+            <div class="step-icon">🤝</div>
+            <h2 class="step-title">Servir a otros: salir del ombligo</h2>
+          </div>
+          <p class="step-subtitle">
+            Camino del Barrendero-Bodhisattva: no solo limpiarte a ti, sino también cuidar el pasillo del otro.
+          </p>
+          <div class="step-body">
+            <p>
+              Ningún despertar es completo si todo gira alrededor del propio ego. El Barrendero-Bodhisattva
+              se reconoce en los demás y entiende que la verdadera luz
+              <strong>se comparte</strong>.
+            </p>
+            <p>
+              El servicio rompe la burbuja del “yo, yo, yo” y recuerda que la nave es comunitaria.
+            </p>
+            <div class="practice-label">Práctica concreta (una acción semanal)</div>
+            <p class="practice-text">
+              Haz algo por alguien sin esperar recompensa: escuchar de verdad, ayudar con una tarea,
+              compartir comida, ordenar un espacio común. Servicio pequeño, intención grande.
+            </p>
+          </div>
+        </article>
+
+        <!-- 10 -->
+        <article class="step-card" data-index="10">
+          <div class="step-header">
+            <div class="step-icon">∞</div>
+            <h2 class="step-title">Aceptar que el despertar es un viaje, no un evento</h2>
+          </div>
+          <p class="step-subtitle">
+            La Nave Nunca se Detiene: avanzar, caer, levantarse, seguir afinando el panel.
+          </p>
+          <div class="step-body">
+            <p>
+              No hay clic mágico que te deje “iluminado para siempre”. Hay ciclos: claridad y
+              confusión, avance y retroceso. La diferencia es que, una vez que conoces el panel,
+              siempre puedes volver a él.
+            </p>
+            <p>
+              El verdadero tripulante no se juzga por caer, sino por <strong>volver a ajustar</strong>:
+              observar, limpiar, alinear, servir y continuar.
+            </p>
+            <div class="practice-label">Práctica concreta (visión de largo plazo)</div>
+            <p class="practice-text">
+              Repítete cuando falles: “Estoy en entrenamiento permanente”. Revisa de vez en cuando
+              este manual, corrige uno o dos puntos y sigue viajando. Esa constancia es el corazón
+              del despertar.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <h3 class="sidebar-title">Resumen del Proceso</h3>
+          <p class="sidebar-text">
+            El despertar de la conciencia, visto desde la Gran Jerusalén, combina
+            <strong>observación budista</strong>, <strong>código moral de la Orden</strong> y
+            <strong>metáfora de la nave</strong>. No es huir del mundo, sino aprender a pilotearlo
+            desde dentro.
+          </p>
+          <ul class="sidebar-list">
+            <li><span class="sidebar-bullet">①</span><span>Reconocer el sueño.</span></li>
+            <li><span class="sidebar-bullet">②</span><span>Observar sin juicio.</span></li>
+            <li><span class="sidebar-bullet">③</span><span>Ver venenos y apegos.</span></li>
+            <li><span class="sidebar-bullet">④</span><span>Definir Constitución moral.</span></li>
+            <li><span class="sidebar-bullet">⑤</span><span>Ordenar tripulación interna.</span></li>
+            <li><span class="sidebar-bullet">⑥</span><span>Aligerar la nave.</span></li>
+            <li><span class="sidebar-bullet">⑦</span><span>Entrenar los 8 mandos.</span></li>
+            <li><span class="sidebar-bullet">⑧</span><span>Escuchar el dolor.</span></li>
+            <li><span class="sidebar-bullet">⑨</span><span>Servir a otros.</span></li>
+            <li><span class="sidebar-bullet">⑩</span><span>Entender que es un viaje eterno.</span></li>
+          </ul>
         </div>
-<audio controls autoplay loop>
-    <source src="audios/auandarAnapu.mp3" type="audio/mp3">
-    Tu navegador no soporta el elemento de audio.
-</audio>
-        <div class="hero-badge">🎥 Rafael Corkidi · 1975 · México</div>
-      </header>
-<!--<img class="hero-img" alt="Ilustración editorial estilo revista con tonos tierra" src="https://mx.web.img3.acsta.net/pictures/20/07/26/23/31/1297807.jpg" />-->
 
-  <div class="grid">
-    <article>
-      <section id="contexto-general">
-        <h2>🎥 Contexto general</h2>
-        <p class="lead dropcap"><strong>Título:</strong> <em>Auándar Anapu (El que cayó del cielo)</em>. <strong>Director:</strong> Rafael Corkidi. <strong>Año:</strong> 1975. <strong>País:</strong> México. <strong>Género:</strong> Drama místico, político y alegórico. <strong>Protagonista:</strong> Ernesto Gómez Cruz como Auándar Anapu. <strong>Lugar de rodaje:</strong> Escenarios naturales de Michoacán, principalmente zonas rurales e indígenas.</p>
-        <div class="rule"></div>
-      </section>
+        <div class="sidebar-card">
+          <h3 class="sidebar-title">Palabras Clave</h3>
+          <div class="tag-cloud">
+            <span class="tag">Despertar</span>
+            <span class="tag">Conciencia</span>
+            <span class="tag">Barrendero</span>
+            <span class="tag">Tres venenos</span>
+            <span class="tag">Apego</span>
+            <span class="tag">Brújula moral</span>
+            <span class="tag">Tripulación interna</span>
+            <span class="tag">Panel de mandos</span>
+            <span class="tag">Servicio</span>
+            <span class="tag">Viaje eterno</span>
+          </div>
+        </div>
 
-      <section id="significado">
-        <h2>🌎 Significado del título</h2>
-        <p>El nombre <em>Auándar Anapu</em> proviene del purépecha, lengua originaria de Michoacán, y se traduce aproximadamente como “El que cayó del cielo”. El título ya anuncia el carácter mesiánico y simbólico del protagonista: un ser que aparece misteriosamente para anunciar un cambio profundo, tanto espiritual como social.</p>
-      </section>
+        <div class="sidebar-card">
+          <h3 class="sidebar-title">Uso en la Epopeya</h3>
+          <p class="sidebar-text">
+            Este manual puede aparecer como:
+          </p>
+          <ul class="sidebar-list">
+            <li><span class="sidebar-bullet">✦</span><span>Manual de entrenamiento entregado a
+                nuevos tripulantes.</span></li>
+            <li><span class="sidebar-bullet">✦</span><span>Texto que el Barrendero escribe después
+                de muchas batallas.</span></li>
+            <li><span class="sidebar-bullet">✦</span><span>Documento encontrado por Caty en los
+                archivos de la nave.</span></li>
+          </ul>
+        </div>
 
-      <section id="trama-simbolismo">
-        <h2>🕊️ Trama y simbolismo</h2>
-        <p>La historia narra la llegada de un personaje enigmático —Auándar Anapu— a un pueblo campesino oprimido. Este personaje tiene un aire profético o divino, realiza milagros, habla de justicia y libertad, y despierta conciencia entre los más pobres.</p>
-        <p>Su mensaje es revolucionario, pero no desde las armas, sino desde la conciencia moral y espiritual. Representa al nuevo hombre que busca liberar al pueblo de la ignorancia, la opresión política y el control religioso.</p>
-        <p>Poco a poco, el poder establecido (los caciques, la Iglesia, el Estado) se siente amenazado por su influencia. Como en un espejo de Cristo, Auándar Anapu es perseguido y finalmente sacrificado. Su muerte simboliza la incomprensión del pueblo hacia sus propios libertadores, un eco de los mitos mesías-redentores universales.</p>
-        <div class="pull">“La redención no viene del cielo, sino del despertar del hombre ante su propia servidumbre.”</div>
-      </section>
-
-      <section id="temas">
-        <h2>🔥 Temas centrales</h2>
-        <ul class="nice">
-          <li><span><strong>Sincretismo religioso:</strong> mezcla de mitología cristiana con cosmovisiones indígenas purépechas.</span></li>
-          <li><span><strong>Crítica social:</strong> denuncia del caciquismo, la desigualdad y el dominio de la Iglesia sobre los pobres.</span></li>
-          <li><span><strong>Renacimiento espiritual:</strong> llamado a recuperar la conexión con la naturaleza, la comunidad y la verdad interior.</span></li>
-          <li><span><strong>Relectura de Cristo:</strong> Auándar Anapu como un Cristo campesino mexicano, reinterpretado en clave indígena y agrarista.</span></li>
-          <li><span><strong>Lenguaje visual y experimental:</strong> Corkidi usa fotografía onírica, cámara lenta, colores intensos, metáforas visuales y ritos simbólicos.</span></li>
-        </ul>
-      </section>
-
-      <section id="estilo">
-        <h2>🎞️ Estilo cinematográfico</h2>
-        <p>Rafael Corkidi, quien fue fotógrafo de Luis Buñuel y de otras figuras del cine de vanguardia, creó un estilo místico-surrealista. La película carece de narrativa lineal tradicional: combina poesía, simbolismo, y estética barroca. Se acerca más a una “visión profética filmada” que a una historia convencional.</p>
-      </section>
-
-      <section id="interpretacion">
-        <h2>✝️ Interpretación espiritual</h2>
-        <p>En su esencia, <em>Auándar Anapu</em> plantea que el verdadero Mesías puede nacer entre los pobres, no como figura celestial sino como conciencia colectiva despierta. El mensaje:</p>
-        <div class="pull">“La redención no viene del cielo, sino del despertar del hombre ante su propia servidumbre.”</div>
-        <p>El “caído del cielo” no viene a imponer una religión, sino a recordar el equilibrio perdido entre el hombre, la tierra y el espíritu.</p>
-      </section>
-
-      <!--<section id="conexion-gj">-->
-        <!--<h2>🪶 En relación con tu narrativa (La Gran Jerusalén)</h2>-->
-        <!--<ul class="nice">-->
-          <!--<li><span><strong>Auándar Anapu</strong> sería como un <em>Barrendero-profeta</em>, una encarnación del arquetipo redentor que desciende para limpiar, sanar y despertar.</span></li>-->
-          <!--<li><span>El pueblo representa la <strong>humanidad dormida</strong>, dominada por estructuras corruptas (como tu “Metrópoli del Mal”).</span></li>-->
-          <!--<li><span>Su caída y sacrificio reflejan la <strong>lucha entre el espíritu libre (luz)</strong> y el <strong>sistema opresor (oscuridad)</strong>.</span></li>-->
-          <!--<li><span>El uso del paisaje natural y el lenguaje simbólico se asemeja a la estética que tú imaginas para la <strong>Gran Jerusalén</strong> como “nave viva”, donde lo divino se manifiesta en la materia.</span></li>-->
-        <!--</ul>-->
-      <!--</section>-->
-
-      <!--<section class="cta">-->
-       <!-- <div><strong>¿Quieres un resumen poético o un pasaje narrativo</strong> donde Auándar Anapu entre como uno de los primeros “Mensajeros del Arquitecto” dentro del universo de la Gran Jerusalén?</div>-->
-        <!--<a href="#" onclick="alert('¡Lo escribimos! Dime el tono (poético, épico, íntimo) y la extensión.'); return false;">Pídelo aquí</a>-->
-      <!--</section>-->
-   <!-- </article>-->
-
-    <aside class="sidebar" aria-label="Notas y ficha técnica">
-      <div class="card">
-        <h4>Ficha rápida</h4>
-        <div class="meta">• Título: <em>Auándar Anapu</em><br>• Director: Rafael Corkidi<br>• Año: 1975 · México<br>• Protagonista: Ernesto Gómez Cruz</div>
-      </div>
-
-      <div class="card">
-        <h4>Claves de lectura</h4>
-        <div class="meta">Misticismo rural · Alegoría política · Sincretismo · Poética visual · Barroco-surreal</div>
-      </div>
-
-      <div class="card">
-        <h4>Glosario breve</h4>
-        <div class="meta"><strong>Purépecha:</strong> Pueblo y lengua originaria de Michoacán. <br><strong>Sincretismo:</strong> Fusión de creencias y símbolos de tradiciones distintas.</div>
-      </div>
-    </aside>
-  </div>
-
-<!--<div class="link">
-<p class="enlace-uno"> Ver Pelicula</p>
-<p class="enlace">http://ok.ru/video/5940144114341</p>
- </div>-->
-<br>
- <footer>
-
-    Dossier maquetado para lectura cómoda en móvil y escritorio · Compatible para impresión en A4 desde el navegador (Ctrl/Cmd+P).
-  </footer>
-</div>
-
+        <p class="footer-note">
+          Manual base para seguir expandiendo la <span>pedagogía del despertar</span> en la Gran Jerusalén.
+        </p>
+      </aside>
+    </main>
   </div>
 </body>
 </html>
