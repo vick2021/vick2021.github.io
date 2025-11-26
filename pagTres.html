@@ -1,256 +1,769 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Canoa: memoria de un hecho vergonzoso — Análisis</title>
+  <meta charset="UTF-8" />
+  <title>Mapa Comparativo · Orden de la Gran Jerusalén</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fuente opcional -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
-*{
-
-background-color:#57578F;
-}
-    :root{
-      --bg: #0e0f12;
-      --paper: #141621;
-      --ink: #e9ebf5;
-      --ink-soft:#b8bdd1;
-      --accent:#b48cff;      /* lavanda */
-      --accent-2:#5eead4;    /* aqua */
-      --line:#2b2f44;
-      --muted:#0f111a;
-      --shadow: 0 24px 60px rgba(0,0,0,.35);
+    :root {
+      --bg-main: #050816;
+      --bg-card: rgba(10, 20, 40, 0.96);
+      --bg-card-soft: rgba(13, 25, 55, 0.92);
+      --accent-1: #ffcc66;
+      --accent-2: #7de2ff;
+      --accent-3: #ff8ad6;
+      --text-main: #f5f5f5;
+      --text-muted: #b7c0da;
+      --border-glow-1: rgba(255, 204, 102, 0.6);
+      --border-glow-2: rgba(125, 226, 255, 0.6);
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.7);
       --radius-xl: 22px;
-      --radius-lg: 16px;
-      --radius: 12px;
-      --maxw: 1100px;
+      --radius-pill: 999px;
     }
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:
-        radial-gradient(1200px 600px at 8% -10%, rgba(180,140,255,.12), transparent 60%),
-        radial-gradient(900px 500px at 110% 10%, rgba(94,234,212,.10), transparent 60%),
-        var(--bg);
-      color:var(--ink);
-      font: 16px/1.7 ui-sans-serif,-apple-system,BlinkMacSystemFont,Inter,Roboto,system-ui,"Segoe UI",Helvetica,Arial;
-      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    .wrap{max-width:var(--maxw); margin:clamp(18px,4vw,48px) auto; padding:0 18px}/* Hero */
-.mast{display:grid; grid-template-columns: 1.1fr .9fr; gap:clamp(16px,3vw,28px); align-items:end}
-.cover{position:relative; aspect-ratio:16/9; border-radius:var(--radius-xl); overflow:hidden; background:var(--muted); box-shadow:var(--shadow)}
-.cover img{width:100%; height:100%; object-fit:; filter:saturate(1.05) contrast(1.05)}
-.cover::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.45) 75%)}
-.kicker{letter-spacing:.22em; text-transform:uppercase; color:var(--accent-2); font-weight:800; font-size:.8rem}
-h1{margin:.3rem 0 .5rem; font-weight:900; line-height:1.05; font-size:clamp(1.8rem,4vw,3rem)}
-.lede{margin:.4rem 0 0; color:#eef1ff; font-size:1.06rem}
-.meta{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-.tag{padding:.28rem .6rem; border:1px solid var(--line); border-radius:999px; color:#d5d8ea}
 
-/* Layout */
-.grid{display:grid; grid-template-columns: 270px 1fr; gap:clamp(18px,3.5vw,36px); margin-top:clamp(20px,3vw,34px)}
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #1b2a4a 0%, #050816 45%, #010109 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
 
-/* Sidebar */
-aside{position:; top:18px; align-self:start; background:linear-gradient(180deg, rgba(94,234,212,.06), rgba(180,140,255,.06)); border:1px solid var(--line); border-radius:var(--radius-lg); padding:16px; box-shadow:var(--shadow)}
-aside h3{margin:0 0 6px; font-size:.9rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent)}
-.toc{list-style:none; padding:0; margin:6px 0 0}
-.toc li{margin:.25rem 0}
-.toc a{color:var(--ink-soft); text-decoration:none; border-left:2px solid transparent; padding-left:.5rem; display:block}
-.toc a:hover{color:var(--ink); border-color:var(--accent)}
+    .page {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-/* Article */
-article{background:linear-gradient(180deg, rgba(20,22,33,.9), rgba(20,22,33,.98)); border:1px solid var(--line); border-radius:var(--radius-xl); padding:clamp(16px,3vw,36px); box-shadow:var(--shadow)}
-article h2{margin:2rem 0 .7rem; font-size:clamp(1.3rem,2.6vw,1.9rem)}
-article h3{margin:1.6rem 0 .4rem}
-article h4{margin:1rem 0 .3rem}
-p{margin:.9rem 0; color:#dfe2f1}
-.dropcap:first-letter{float:left; font-weight:900; font-size:3.2rem; line-height:.9; padding:.18rem .6rem .18rem 0; color:var(--accent)}
+    /* HEADER */
 
-/* Lists */
-ul,ol{margin:.6rem 0 .9rem .9rem}
-li{margin:.45rem 0}
+    .header {
+      background: radial-gradient(circle at top left, rgba(255, 204, 102, 0.13), rgba(5, 8, 22, 0.96));
+      border-radius: 28px;
+      padding: 2.4rem 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 2.3rem;
+    }
 
-/* Pullquote */
-.pull{margin:1rem 0; border-left:4px solid var(--accent-2); padding:.6rem 1rem; background:rgba(94,234,212,.06); border-radius:0 var(--radius) var(--radius) 0}
-.pull em{font-style:normal; font-weight:800; color:#f0f6ff}
+    .header::before,
+    .header::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(30px);
+      opacity: 0.65;
+      pointer-events: none;
+    }
 
-/* Cards */
-.callout{display:grid; grid-template-columns:1fr 1fr; gap:16px; background:var(--muted); border:1px solid var(--line); border-radius:var(--radius-lg); padding:14px 14px 6px; margin:1.2rem 0}
-.card{background:#10121b; border:1px solid var(--line); border-radius:var(--radius); padding:14px}
-.card h4{margin:.1rem 0 .35rem; font-size:1rem; color:#e6e0ff}
-.card p{margin:.2rem 0 .5rem; font-size:.97rem; color:#cfd4e7}
+    .header::before {
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(255, 204, 102, 0.9), transparent 60%);
+      top: -80px;
+      right: -60px;
+    }
 
-/* Figures */
-.figrow{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:.8rem 0 0}
-figure{margin:0; background:#0d1020; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden}
-figure img{width:100%; height:100%; object-fit:cover; display:block}
-figure figcaption{font-size:.85rem; color:var(--ink-soft); padding:8px 10px; border-top:1px dashed var(--line)}
+    .header::after {
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(125, 226, 255, 0.85), transparent 60%);
+      bottom: -80px;
+      left: -20px;
+    }
 
-/* Footer */
-.footer{margin-top:22px; color:var(--ink-soft); font-size:.95rem}
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(5, 8, 22, 0.9);
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
 
-/* Links */
-a.inline{color:var(--accent-2); text-decoration:none}
-a.inline:hover{text-decoration:underline}
+    .badge-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent-3);
+      box-shadow: 0 0 8px var(--accent-3);
+    }
 
-/* Responsive */
-@media (max-width: 980px){
-  .mast{grid-template-columns:1fr}
-  .grid{grid-template-columns:1fr}
-  .callout{grid-template-columns:1fr}
-  .figrow{grid-template-columns:1fr}
-}
+    .title-block {
+      position: relative;
+      z-index: 1;
+    }
 
-/* Print */
-@media print{
-  body{background:#fff; color:#111}
-  .wrap{max-width:900px}
-  .mast,.grid,article{box-shadow:none}
-  aside{position:static}
-  .cover::after{background:none}
-  a.inline{text-decoration:none}
-}
-.enlace{
-font-size:20px;
-text-align:center;
-display: flex;
-  justify-content: center;
-  align-items: center;
-border-radius:10px;
-background:red;
-color:black;
-}
-.pelicula{
-font-weight:800;
+    .title-main {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 2.1rem;
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+      color: #fff8e6;
+      text-shadow: 0 0 18px rgba(0, 0, 0, 0.75);
+    }
 
-}
-.link{
-color:blue;
-}
-audio{
-width:30%;
-height:30px;
-background-color:red;
-border-radius:7px;
-}
+    .title-sub {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 650px;
+    }
+
+    .title-highlight {
+      color: var(--accent-1);
+      font-weight: 600;
+    }
+
+    .meta {
+      margin-top: 1.3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta-pill {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-pill);
+      background: rgba(5, 8, 22, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-muted);
+    }
+
+    .meta-pill span {
+      font-weight: 600;
+      color: var(--accent-2);
+    }
+
+    /* CONTENT LAYOUT */
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 980px) {
+      .content {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* SIDE LABELS */
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      background: rgba(5, 8, 22, 0.9);
+      border-radius: var(--radius-pill);
+      padding: 0.25rem 0.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+    }
+
+    .legend-color.mason {
+      background: var(--accent-1);
+      box-shadow: 0 0 9px var(--accent-1);
+    }
+
+    .legend-color.buddha {
+      background: var(--accent-2);
+      box-shadow: 0 0 9px var(--accent-2);
+    }
+
+    .legend-color.synthesis {
+      background: var(--accent-3);
+      box-shadow: 0 0 9px var(--accent-3);
+    }
+
+    /* COMPARISON GRID */
+
+    .compare-grid {
+      background: rgba(3, 8, 22, 0.95);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: var(--shadow-soft);
+      padding: 1.2rem;
+    }
+
+    .compare-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 0.9rem;
+      padding: 0.9rem 0.7rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .compare-row:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 880px) {
+      .compare-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .compare-heading {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      opacity: 0.9;
+      margin-bottom: 0.35rem;
+    }
+
+    .compare-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--text-main);
+    }
+
+    .compare-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .compare-col {
+      border-radius: 16px;
+      padding: 0.6rem 0.7rem;
+    }
+
+    .compare-col.mason {
+      background: radial-gradient(circle at top left, rgba(255, 204, 102, 0.12), transparent 60%);
+      border: 1px solid rgba(255, 204, 102, 0.22);
+    }
+
+    .compare-col.buddha {
+      background: radial-gradient(circle at top left, rgba(125, 226, 255, 0.12), transparent 60%);
+      border: 1px solid rgba(125, 226, 255, 0.22);
+    }
+
+    .compare-col.synthesis {
+      background: radial-gradient(circle at top left, rgba(255, 138, 214, 0.12), transparent 60%);
+      border: 1px solid rgba(255, 138, 214, 0.25);
+    }
+
+    .topic-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      color: #fff9e8;
+      margin-bottom: 0.25rem;
+    }
+
+    .topic-tag {
+      font-size: 0.73rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    /* RIGHT COLUMN: NOTES / CONCLUSIONS */
+
+    .side-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .side-card {
+      background: radial-gradient(circle at top left, rgba(255, 204, 102, 0.08), rgba(5, 8, 22, 0.98));
+      border-radius: var(--radius-xl);
+      padding: 1.25rem 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .side-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.45rem;
+      color: #fff9e8;
+    }
+
+    .side-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .side-list {
+      list-style: none;
+      margin-top: 0.45rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .side-list li {
+      margin-bottom: 0.3rem;
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .side-bullet {
+      font-size: 0.85rem;
+      color: var(--accent-1);
+      line-height: 1.4;
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.45rem;
+    }
+
+    .tag {
+      font-size: 0.73rem;
+      padding: 0.23rem 0.7rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(5, 8, 22, 0.96);
+      color: var(--text-muted);
+    }
+
+    .footer-note {
+      margin-top: 1.4rem;
+      font-size: 0.75rem;
+      color: #7680a3;
+      text-align: right;
+    }
+
+    .footer-note span {
+      color: var(--accent-3);
+    }
   </style>
 </head>
 <body>
-  <div class="wrap"><!-- HERO -->
-<section class="mast">
-  <div class="cover">
-    <!--<img src="https://m.media-amazon.com/images/M/MV5BZTcyZTVmYTAtNGM1Zi00NDY1LTkzZWUtY2NlNjdmNzRjNWU1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Póster de Canoa (1976)"/>-->
+  <div class="page">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="badge">
+        <div class="badge-dot"></div>
+        ORDEN DE LA GRAN JERUSALÉN · MAPA COMPARATIVO
+      </div>
 
+      <div class="title-block">
+        <h1 class="title-main">Mapa Comparativo de Principios</h1>
+        <p class="title-sub">
+          Relación entre el <span class="title-highlight">Código de la Orden</span> (inspirado en la masonería)
+          y la <span class="title-highlight">Visión Budista Adaptada</span>, con una síntesis propia para la
+          <span class="title-highlight">Gran Jerusalén</span>.
+        </p>
+      </div>
 
-</div>
-<audio controls autoplay loop>
-    <source src="audios/canoa.mp3" type="audio/mp3">
-    Tu navegador no soporta el elemento de audio.
-</audio>
+      <div class="meta">
+        <div class="meta-pill"><span>Ejes:</span> Conciencia, moral, camino, figura central</div>
+        <div class="meta-pill"><span>Formato:</span> Comparación triple</div>
+        <div class="meta-pill"><span>Uso:</span> Análisis, escritura, ajuste de la epopeya</div>
+      </div>
+    </header>
 
-  <header>
-    <div class="kicker">Cine mexicano · 1976</div>
-    <h1>Canoa: memoria de un hecho vergonzoso</h1>
-    <p class="lede">Síntesis, análisis y claves de lectura del filme de Felipe Cazals.</p>
-    <div class="meta">
-      <span class="tag">Felipe Cazals</span>
-      <span class="tag">Semidocumental</span>
-      <span class="tag">Política · 1968</span>
-    </div>
-  </header>
-</section>
+    <!-- CONTENT -->
+    <main class="content">
+      <!-- LEFT: GRID COMPARATIVA -->
+      <section>
+        <div class="legend">
+          <div class="legend-item">
+            <span class="legend-color mason"></span> Código de la Orden (Masonería adaptada)
+          </div>
+          <div class="legend-item">
+            <span class="legend-color buddha"></span> Visión Budista Adaptada
+          </div>
+          <div class="legend-item">
+            <span class="legend-color synthesis"></span> Síntesis para la Gran Jerusalén
+          </div>
+        </div>
 
-<!-- BODY GRID -->
-<div class="grid">
-  <aside>
-    <h3>Contenido</h3>
-    <ul class="toc">
-      <li><a href="#intro">Introducción</a></li>
-      <li><a href="#sinopsis">Sinopsis resumida</a></li>
-      <li><a href="#analisis">Análisis crítico</a></li>
-      <li><a href="#por-que">¿Por qué verla?</a></li>
-      <li><a href="#discusion">Puntos para discusión</a></li>
-      <li><a href="#conclusion">Conclusión</a></li>
-    </ul>
-  </aside>
+        <div class="compare-grid">
+          <!-- 1: Conciencia y Despertar -->
+          <div class="compare-row">
+            <div>
+              <div class="topic-tag">Eje 01</div>
+              <div class="topic-title">Conciencia y Despertar</div>
+            </div>
 
-  <article>
-    <section id="intro">
-      <h2>Introducción</h2>
-      <p class="dropcap">La película <strong>Canoa: memoria de un hecho vergonzoso</strong> (1976) del cineasta mexicano Felipe Cazals está basada en hechos reales ocurridos el 14 de septiembre de 1968 en el poblado de San Miguel Canoa, Puebla, cuando un grupo de cinco jóvenes trabajadores de la Benemérita Universidad Autónoma de Puebla, que habían ido a escalar el volcán La Malinche, fueron acusados de comunistas por el sacerdote local y linchados por los pobladores. La película se presenta con estilo semidocumental, mezclando recreación dramática con elementos de testimonio, para reconstruir ese episodio como metáfora de la violencia política, la histeria colectiva y la represión estatal en México en ese momento.</p>
-    </section>
+            <div class="compare-col mason">
+              <div class="compare-heading">Código de la Orden</div>
+              <div class="compare-label">El Camino de la Conciencia</div>
+              <p class="compare-text">
+                Despertar es salir de la inconsciencia y subir a la nave. El enemigo principal es
+                estar dormido. El trabajo es encender la propia lámpara y asumir el timón del destino.
+              </p>
+            </div>
 
-    <section id="sinopsis">
-      <h2>Sinopsis resumida</h2>
-      <ul>
-        <li>Cinco jóvenes empleados de la universidad se dirigen a escalar La Malinche, pero debido al mal clima, deciden pasar la noche en el pueblo de San Miguel Canoa.</li>
-        <li>En el pueblo, el párroco local incita miedo al comunismo entre los habitantes; los visitantes son identificados como “agentes comunistas” y entonces se desata la violencia contra ellos.</li>
-        <li>La narración muestra el desarrollo del linchamiento, la complicidad social, el miedo y la manipulación ideológica, así como la indiferencia o complicidad de las autoridades.</li>
-      </ul>
-      <div class="pull">“<em>El terror en Canoa no es sobrenatural: es humano, colectivo y político.</em>”</div>
-    </section>
+            <div class="compare-col buddha">
+              <div class="compare-heading">Visión Budista Adaptada</div>
+              <div class="compare-label">Despertar como Panel Central</div>
+              <p class="compare-text">
+                El sufrimiento es alarma de desalineación. El despertar es encender la consola central
+                de conciencia, dejando de ser pasajero asustado y convirtiéndose en piloto lúcido.
+              </p>
+            </div>
 
-    <section id="analisis">
-      <h2>Análisis crítico</h2>
-      <p>Aquí algunos ejes de análisis que considero relevantes:</p>
-      <h3>1. Tema de histeria colectiva y manipulación ideológica</h3>
-      <p>La obra retrata cómo una comunidad, manipulada por un líder moral (el cura) y en un contexto de alta tensión política (el México de 1968), termina convirtiendo a los visitantes en chivos expiatorios. En este sentido, la película muestra cómo el miedo al “otro” (los comunistas, los forasteros) se articula con la idea de “pureza” de la comunidad y religiosidad autoritaria. Esto conecta con el contexto del movimiento estudiantil de 1968 y la represión estatal —la película, aunque no lo menciona de frente todo el tiempo, lo sugiere como un trasfondo esencial.</p>
+            <div class="compare-col synthesis">
+              <div class="compare-heading">Síntesis Gran Jerusalén</div>
+              <div class="compare-label">Despertar Fractal</div>
+              <p class="compare-text">
+                La conciencia es el núcleo: la Orden enseña a reconocer el dolor como señal, y el
+                budismo aporta el mapa mental. El resultado: una pedagogía del despertar aplicada a
+                la nave cosmológica.
+              </p>
+            </div>
+          </div>
 
-      <h3>2. Memoria social y denuncia</h3>
-      <p>La película no se limita a narrar un crimen aislado: lo convierte en emblema de una herida colectiva en la historia mexicana. En ese sentido, se trata de “memoria social” —se busca que este episodio no se olvide, que sirva de advertencia. El uso del estilo casi documental enfatiza este propósito: se usan intertítulos con fechas, se mezclan escenas de archivo (o al menos simuladas para parecerlo), para dar verosimilitud.</p>
+          <!-- 2: Arquitecto / Madre / No-Yo -->
+          <div class="compare-row">
+            <div>
+              <div class="topic-tag">Eje 02</div>
+              <div class="topic-title">Arquitecto, Madre y No-Yo</div>
+            </div>
 
-      <h3>3. Género y estilo</h3>
-      <ul>
-        <li>Estilo semidocumental, lo que le da una atmósfera de veracidad y cercanía al horror.</li>
-        <li>Fotografía, montaje y actuación que buscan transmitir tensión, miedo y caos interno, más que efectos espectaculares. Por ejemplo, el montaje colapsa el tiempo, mezcla planos testimoniales con dramatización.</li>
-        <li>La película puede visualizarse como parte del “cine de horror social”: no horror sobrenatural, sino horror humano, colectivo, político. Le sirve la atmósfera de cine de terror para mostrar que lo terrorífico es la masa, la manipulación, la violencia.</li>
-      </ul>
+            <div class="compare-col mason">
+              <div class="compare-heading">Código de la Orden</div>
+              <div class="compare-label">Equilibrio Sagrado</div>
+              <p class="compare-text">
+                Arquitecto (orden, estructura) y Madre (sensibilidad, vida) como dos polos que
+                deben estar en equilibrio para que la nave no se estrelle.
+              </p>
+            </div>
 
-      <h3>4. Relevancia histórica y política</h3>
-      <p>El momento de México (finales de los sesenta) está cargado: se menciona la famosa masacre de Matanza de Tlatelolco (2 de octubre 1968) como telón de fondo. La película sugiere que lo que ocurre en San Miguel Canoa es microcosmos de esa represión. Por tanto, la película sirve para entender la lógica de la represión, del control ideológico, de la construcción del enemigo interno (“comunista”), y del linchamiento simbólico —literal y figurado— de quienes son vistos como una amenaza al orden.</p>
+            <div class="compare-col buddha">
+              <div class="compare-heading">Visión Budista Adaptada</div>
+              <div class="compare-label">No-Yo como Tripulación Interna</div>
+              <p class="compare-text">
+                No hay “yo” fijo: hay una tripulación interna (Observador, Niño, Guerrero, Curandero,
+                etc.). El yo es proceso, no estatua.
+              </p>
+            </div>
 
-      <h3>5. Simbolismo e implicaciones morales</h3>
-      <ul>
-        <li>El sacerdote como figura de autoridad, que mezcla poder religioso, comunitario y político, funciona como antagonista simbólico: no es sólo un individuo, sino parte de una estructura que domina al pueblo mediante la fe y el miedo.</li>
-        <li>Los visitantes (jóvenes universitarios) representan juventud, cambio, libertad de pensamiento; su condena representa el miedo del statu quo al cambio, al “otro”, a lo impredecible.</li>
-        <li>El pueblo funciona como masa, sin individualizar responsabilidades. Aquí la película plantea preguntas morales potenciales: ¿cómo actúa el individuo en la masa? ¿hasta dónde llega su responsabilidad? ¿qué pasa cuando la autoridad legitima la violencia?</li>
-        <li>También está la cuestión de la memoria: ¿qué pasa con los eventos traumáticos que se desean olvidar? La película plantea que hay un deber de recordar para prevenir que se repitan.</li>
-      </ul>
-    </section>
+            <div class="compare-col synthesis">
+              <div class="compare-heading">Síntesis Gran Jerusalén</div>
+              <div class="compare-label">Sistema de Mandos Internos</div>
+              <p class="compare-text">
+                El Arquitecto y la Madre son fuerzas mayores, y la tripulación interna es cómo esas
+                fuerzas se expresan dentro de cada persona. La Orden ofrece símbolos; el budismo,
+                psicología. Juntos describen el tablero completo de mando interior.
+              </p>
+            </div>
+          </div>
 
-    <section id="por-que">
-      <h2>¿Por qué ver esta película?</h2>
-      <ul>
-        <li>Es considerada <strong>una de las más importantes obras del cine político mexicano</strong>.</li>
-        <li>Aporta reflexión sobre violencia, manipulación, comunidad, ideología —temas que siguen vigentes.</li>
-        <li>Estilísticamente ofrece una experiencia de cine que mezcla drama, documental, suspense: rompe con entretenimiento ligero y exige reflexión.</li>
-        <li>Puede servirte como material simbólico: dado tu interés por narrativa simbólica, espiritual y social, esta película encaja con temas de justicia, poder, traición, violencia del sistema.</li>
-      </ul>
-    </section>
+          <!-- 3: Figura central: Barrendero / Bodhisattva -->
+          <div class="compare-row">
+            <div>
+              <div class="topic-tag">Eje 03</div>
+              <div class="topic-title">Figuras de Servicio</div>
+            </div>
 
-    <section id="discusion">
-      <h2>Puntos para discusión o reflexión</h2>
-      <ul>
-        <li>¿Cómo se construyen los “otros” en la película (los jóvenes universitarios)? ¿Qué mecanismo se utiliza para transformarlos en enemigos?</li>
-        <li>¿Qué papel juega la autoridad (religiosa, estatal, local) en la dinámica de violencia?</li>
-        <li>¿Cómo se representa la masa vs. el individuo? ¿Hay espacio para la resistencia, la duda, la compasión?</li>
-        <li>¿Hasta qué punto la película habla de un “hecho real” y hasta qué punto lo usa como metáfora?</li>
-        <li>¿Qué relevancia tiene para hoy? ¿Se pueden trazar paralelos con dinámicas de miedo, de “enemigos internos”, de manipulación ideológica contemporánea?</li>
-      </ul>
-    </section>
-<!--<div class="enlace">
-Ver Pelicula<br>
-http://ok.ru/video/2326477605543
+            <div class="compare-col mason">
+              <div class="compare-heading">Código de la Orden</div>
+              <div class="compare-label">El Barrendero</div>
+              <p class="compare-text">
+                Figura suprema de humildad activa. Camina entre ruinas, limpia la basura moral,
+                sostiene al cosmos sin trono ni corona.
+              </p>
+            </div>
 
-  </div>-->
-  <section id="conclusion">
-      <h2>Conclusión</h2>
-      <p>En resumen, <strong>Canoa: memoria de un hecho vergonzoso</strong> es un filme que va más allá de contar una anécdota trágica: se convierte en espejo y advertencia. No sólo muestra una violencia brutal, sino cómo la ignorancia, el temor y la manipulación social pueden llevar a que comunidades enteras cometan atrocidades. Para tu narrativa simbólica —que trabaja con temas de poder, traición, restauración, conciencia— esta película puede servir como un referente fuerte: la masa manipulada, el guía corrupto, el “inocente” perseguido, y la necesidad de memoria para sanar.</p>
-     <!--<p class="footer"></p>-->
-    </section>
+            <div class="compare-col buddha">
+              <div class="compare-heading">Visión Budista Adaptada</div>
+              <div class="compare-label">Tripulante de Luz (Bodhisattva)</div>
+              <p class="compare-text">
+                Quien puede irse pero decide quedarse para ayudar a los demás a despertar. La luz
+                se usa para servir, no para presumir.
+              </p>
+            </div>
 
-  </article>
-</div>
+            <div class="compare-col synthesis">
+              <div class="compare-heading">Síntesis Gran Jerusalén</div>
+              <div class="compare-label">Barrendero-Bodhisattva</div>
+              <p class="compare-text">
+                El Barrendero es un Bodhisattva cósmico: limpia la suciedad histórica y mental de
+                los mundos por los que pasa. Su grandeza está en no abandonar la misión.
+              </p>
+            </div>
+          </div>
 
+          <!-- 4: Moral / Tres Venenos -->
+          <div class="compare-row">
+            <div>
+              <div class="topic-tag">Eje 04</div>
+              <div class="topic-title">Moral y Venenos</div>
+            </div>
+
+            <div class="compare-col mason">
+              <div class="compare-heading">Código de la Orden</div>
+              <div class="compare-label">Moral como Constitución del Cosmos</div>
+              <p class="compare-text">
+                Por encima de todo está la moral: no traicionar la palabra, proteger la vida, no
+                destruir la armonía. La nave se funda en ese código ético.
+              </p>
+            </div>
+
+            <div class="compare-col buddha">
+              <div class="compare-heading">Visión Budista Adaptada</div>
+              <div class="compare-label">Tres Venenos del 666</div>
+              <p class="compare-text">
+                Ignorancia, apego y odio como malware espiritual que sabotea la nave: apaga sensores,
+                agrega peso y lanza misiles contra uno mismo y los otros.
+              </p>
+            </div>
+
+            <div class="compare-col synthesis">
+              <div class="compare-heading">Síntesis Gran Jerusalén</div>
+              <div class="compare-label">Ley Fractal + Diagnóstico Interno</div>
+              <p class="compare-text">
+                La moral marca hacia dónde ir; los tres venenos muestran por qué nos desviamos. La
+                Orden da la Constitución; el budismo ofrece la radiografía de las desviaciones.
+              </p>
+            </div>
+          </div>
+
+          <!-- 5: Camino / Práctica -->
+          <div class="compare-row">
+            <div>
+              <div class="topic-tag">Eje 05</div>
+              <div class="topic-title">Camino y Práctica</div>
+            </div>
+
+            <div class="compare-col mason">
+              <div class="compare-heading">Código de la Orden</div>
+              <div class="compare-label">Trabajo Interior de Luz</div>
+              <p class="compare-text">
+                Encender la lámpara interna, sanar la sombra, enfrentar al adversario interior.
+                Práctica de pulir la propia piedra y sostener la escoba sin huir del dolor.
+              </p>
+            </div>
+
+            <div class="compare-col buddha">
+              <div class="compare-heading">Visión Budista Adaptada</div>
+              <div class="compare-label">Panel Óctuple de Control</div>
+              <p class="compare-text">
+                Ocho mandos internos: pensamiento claro, intención limpia, habla honesta, acción
+                correcta, modo de vida digno, esfuerzo, atención y concentración.
+              </p>
+            </div>
+
+            <div class="compare-col synthesis">
+              <div class="compare-heading">Síntesis Gran Jerusalén</div>
+              <div class="compare-label">Escuela de Navegación Interior</div>
+              <p class="compare-text">
+                El Código da el espíritu del trabajo y el budismo detalla los botones del panel.
+                Juntos describen una escuela completa para aprender a pilotear la mente.
+              </p>
+            </div>
+          </div>
+
+          <!-- 6: Visión de la Vida / Impermanencia -->
+          <div class="compare-row">
+            <div>
+              <div class="topic-tag">Eje 06</div>
+              <div class="topic-title">Visión de la Vida y del Viaje</div>
+            </div>
+
+            <div class="compare-col mason">
+              <div class="compare-heading">Código de la Orden</div>
+              <div class="compare-label">Viaje Eterno</div>
+              <p class="compare-text">
+                La Gran Jerusalén nunca se detiene: cruza dimensiones, observa civilizaciones,
+                enseña y repara. La meta no es un final, sino el viaje consciente.
+              </p>
+            </div>
+
+            <div class="compare-col buddha">
+              <div class="compare-heading">Visión Budista Adaptada</div>
+              <div class="compare-label">Impermanencia Interdimensional</div>
+              <p class="compare-text">
+                Nada es estable: cada misión, mundo y etapa es una estación temporal. Buscar
+                seguridad absoluta es negar la naturaleza del viaje.
+              </p>
+            </div>
+
+            <div class="compare-col synthesis">
+              <div class="compare-heading">Síntesis Gran Jerusalén</div>
+              <div class="compare-label">Peregrinaje Lúcido</div>
+              <p class="compare-text">
+                La combinación produce una espiritualidad viajera: la vida como peregrinaje por el
+                cambio, no como espera pasiva de un destino fijo.
+              </p>
+            </div>
+          </div>
+
+          <!-- 7: Comunidad / Tripulación -->
+          <div class="compare-row">
+            <div>
+              <div class="topic-tag">Eje 07</div>
+              <div class="topic-title">Comunidad y Tripulación</div>
+            </div>
+
+            <div class="compare-col mason">
+              <div class="compare-heading">Código de la Orden</div>
+              <div class="compare-label">Fraternidad Cósmica</div>
+              <p class="compare-text">
+                No hay castas sagradas: la tripulación decide en consenso cuando es posible. El
+                Capitán dirige, pero no domina ni esclaviza.
+              </p>
+            </div>
+
+            <div class="compare-col buddha">
+              <div class="compare-heading">Visión Budista Adaptada</div>
+              <div class="compare-label">Sangha Interior y Exterior</div>
+              <p class="compare-text">
+                La comunidad externa y la interna (tripulación psicológica) sostienen el camino.
+                Nadie despierta del todo solo.
+              </p>
+            </div>
+
+            <div class="compare-col synthesis">
+              <div class="compare-heading">Síntesis Gran Jerusalén</div>
+              <div class="compare-label">Nave-Comunidad</div>
+              <p class="compare-text">
+                La nave es una Sangha estelar: comunidad externa de viajeros y comunidad interna de
+                voces. La Orden estructura la convivencia; el budismo muestra cómo se apoyan
+                mutuamente.
+              </p>
+            </div>
+          </div>
+
+          <!-- 8: Defensa de Inocentes / Compasión -->
+          <div class="compare-row">
+            <div>
+              <div class="topic-tag">Eje 08</div>
+              <div class="topic-title">Defensa y Compasión</div>
+            </div>
+
+            <div class="compare-col mason">
+              <div class="compare-heading">Código de la Orden</div>
+              <div class="compare-label">Defensa de Inocentes</div>
+              <p class="compare-text">
+                La Gran Jerusalén es refugio y escuela, no imperio de conquista. Se enfrenta a
+                tiranías como el 666 y se protege a los vulnerables.
+              </p>
+            </div>
+
+            <div class="compare-col buddha">
+              <div class="compare-heading">Visión Budista Adaptada</div>
+              <div class="compare-label">Compasión del Bodhisattva</div>
+              <p class="compare-text">
+                El Bodhisattva renuncia a la comodidad para ayudar a otros. La compasión guía sus
+                decisiones, incluso a costa de su propia paz.
+              </p>
+            </div>
+
+            <div class="compare-col synthesis">
+              <div class="compare-heading">Síntesis Gran Jerusalén</div>
+              <div class="compare-label">Compasión Militante</div>
+              <p class="compare-text">
+                No es compasión pasiva: es defensa activa de la vida. La Orden aporta estructura
+                ética y la visión budista aporta profundidad de compasión.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT: NOTAS / CONCLUSIONES -->
+      <aside class="side-stack">
+        <div class="side-card">
+          <h3 class="side-title">Lectura General del Mapa</h3>
+          <p class="side-text">
+            El Código de la Orden entrega <strong>símbolos, jerarquías morales y misión</strong>. La
+            Visión Budista Adaptada entrega <strong>mapa psicológico, manejo del apego y técnica
+            interior</strong>. La Gran Jerusalén surge como síntesis: una nave-escuela que combina
+            ambas tradiciones en clave narrativa.
+          </p>
+          <ul class="side-list">
+            <li><span class="side-bullet">✦</span><span>La Orden estructura el juego.</span></li>
+            <li><span class="side-bullet">☸</span><span>El budismo explica la mente del jugador.</span></li>
+            <li><span class="side-bullet">🚀</span><span>La Gran Jerusalén es el tablero donde se
+                juega la partida cósmica.</span></li>
+          </ul>
+        </div>
+
+        <div class="side-card">
+          <h3 class="side-title">Posibles Usos Narrativos</h3>
+          <p class="side-text">
+            Este mapa puede usarse dentro de la epopeya como:
+          </p>
+          <ul class="side-list">
+            <li><span class="side-bullet">①</span><span>Documento interno de formación para nuevos
+                tripulantes.</span></li>
+            <li><span class="side-bullet">②</span><span>Guion base para diálogos entre el
+                Barrendero, Caty y el Dr. Q.</span></li>
+            <li><span class="side-bullet">③</span><span>Libro sagrado encontrado en los archivos de
+                la nave, con anotaciones del Barrendero.</span></li>
+          </ul>
+        </div>
+
+        <div class="side-card">
+          <h3 class="side-title">Palabras Clave de la Síntesis</h3>
+          <div class="tag-cloud">
+            <span class="tag">Conciencia</span>
+            <span class="tag">Fractal moral</span>
+            <span class="tag">Barrendero-Bodhisattva</span>
+            <span class="tag">Nave-escuela</span>
+            <span class="tag">Tripulación interna</span>
+            <span class="tag">Viaje eterno</span>
+            <span class="tag">Compasión militante</span>
+            <span class="tag">Arquitecto y Madre</span>
+            <span class="tag">Tres venenos</span>
+            <span class="tag">Panel de control</span>
+          </div>
+        </div>
+
+        <p class="footer-note">
+          Mapa diseñado para seguir refinando la <span>Constitución espiritual</span> de la Gran Jerusalén
+          y sus futuros capítulos.
+        </p>
+      </aside>
+    </main>
   </div>
-  <br><br>
 </body>
 </html>
