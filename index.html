@@ -1,4 +1,4 @@
-98i<!DOCTYPE html>
+8i<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -222,6 +222,115 @@ position:relative;
 margin-bottom:33px;
 }
 
+.box1 {
+    background-color: #ff6b6b;
+width:45vw;
+border:2px black solid;
+}
+
+.box2 {
+    background-color: #4ecdc4;
+width:45vw;
+height:30px;
+
+}
+.box {
+             width: 100%;
+             height: 25px;
+             padding: 10px;
+             margin: 10px;
+             border: 2px solid brown;
+             overflow-y: auto;
+  }
+.boton{
+   background-color:red;
+width:100%;
+}
+
+.contenedor{
+             display: flex;
+             justify-content: space-between;
+             order:2px blue solid;
+  }
+
+img{
+width:165px;
+height:80px;
+padding:10px;
+}
+span{
+margin-left:10px;
+
+}
+p{
+margin-left:10px;
+margin-top:-5px;
+}
+.mobido{
+margin-left:12px;
+}
+.menu {
+margin-left:50px;
+    position: relative;
+    display: inline-block;
+font-family:Arial, sans-serif ;
+}
+
+.menu-icon {
+    cursor: pointer;
+    font-size: 34px;
+    color: black;
+    display:flex;
+    justify-content:right;
+ font-weight:800; 
+margin-top:13px;
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    /*box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);*/
+      box-shadow:;
+    z-index: 1;
+    min-width: 160px;
+font-family:Arial, sans-serif, ;
+}
+
+.menu-dropdown a {
+    /*color:clear;*/
+      color:black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+font-family:Arial, sans-serif, ;
+}
+
+.menu-dropdown a:hover {
+    background-color: #ddd;
+font-family:Arial, sans-serif, ;
+}
+
+.menu:hover .menu-dropdown {
+    display: block;
+font-family:Arial, sans-serif, ;
+}
+.page-link.active {
+  background-color:red;
+  color: white;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+.nav__icon{
+width :5px;
+}
+.link{
+width:40px;
+height:40px;
+border-radius:20px;
+}
+
   </style>
 </head>
 <body>
@@ -272,7 +381,24 @@ margin-bottom:33px;
   <header>
     <h1>Calendario Interactivo Js</h1>
    <!--<a href="festivo.html"><i class="fas fa-question-circle faq-icon"></i></a>-->
+<div class="menu">
+            <div class="menu-icon">⋮</div>
+            <div class="menu-dropdown">
+                <a href="index.html">Tiendita</a>
+                <a href="pagDos">Quienes Somos</a>
+                <a href="pagTres">Contacto</a>
+                <a href="pagCuatro">ljj</a>
+                 <a href="pagCinco.html">iuu</a>
+                <a href="pagSeis">iyj</a>
+                <a href="pagSiete">igj</a>
+                <a href="pagOcho">iyu</a>
+                 <a href="pagNueve.html">ghu</a>
+                <a href="pagDiez">uhj</a>
+                <a href="pagOnce">khj</a>
+                <a href="pgDoce">CALENDARIO 2026</a>
+            </div>
 
+        </div>
   </header>
   <div class="calendario-1">
     <div class="encabezado">Enero 2025</div>
@@ -391,9 +517,16 @@ margin-bottom:33px;
       setupModal("myBtn-martinLutherKing", "myModal-martinLutherKing");
     });
   </script>
-  <br>
-vick2021.github.io/pagDos
-  <br><br>
+<br>
+<div class="contenedor">
+<div class="box" id="box1" contenteditable="true" alt="jfjhyu"></div>
+<div><a href="https://ibb.co/TDTqyWML"><img src="https://i.ibb.co/1YnJczG6/despertar.jpg" alt="despertar" border="0"></a>
+<p><strong><span class="mobido">Pasos</span> para el Despertar de la Conciencia.<br><br><a href="GRAN-JERUSALEN/pagDos.html">Pagina Dos </a></strong></p>
+</div></div>
+<br>
+<button class="boton" id="btnCompartir">Compartir</button>
+<br><br>
+
   <div class="calendario-1">
     <div class="encabezado">Febrero 2025</div>
 
@@ -516,9 +649,15 @@ vick2021.github.io/pagDos
       setupModal("myBtn-barrendero", "myModal-barrendero");
     });
   </script>
-  <br>
-vick2021.github.io/pagTres
-  <br><br>
+<br>
+<div class="contenedor">
+<div class="box" id="box1" contenteditable="true" alt="jfjhyu"></div>
+<div><a href="https://ibb.co/twBqGRXY"><img src="https://i.ibb.co/CpBbcL2V/mapa-Comparativo.jpg" alt="mapa-Comparativo" border="0"></a>
+<p><strong><span class="mobido">Mapa</span> Comparativo de Principios<br><br><a href="GRAN-JERUSALEN/pagTres.html">Pagina Tres </a></strong></p>
+</div></div>
+<br>
+<button class="boton" id="btnCompartir">Compartir</button>
+<br><br>
 
   <div class="calendario-1">
     <div class="encabezado">Marzo 2025</div>
@@ -644,9 +783,15 @@ vick2021.github.io/pagTres
       setupModal("myBtn-primavera", "myModal-primavera");
     });
   </script>
-  <br>
-vick2021.github.io/pagCuatro
-  <br><br>
+<br>
+<div class="contenedor">
+<div class="box" id="box1" contenteditable="true" alt="jfjhyu"></div>
+<div><a href="https://ibb.co/zW9Z0Ss3"><img src="https://i.ibb.co/dsCDzQBN/principios-Budistas.jpg" alt="principios-Budistas" border="0"></a>
+<p><strong><span class="mobido">Principios</span> Budistas Adaptados a la Gran Jerusalen<br><br><a href="GRAN-JERUSALEN/pagCuatro.html">Pagina Cuatro </a></strong></p>
+</div></div>
+<br>
+<button class="boton" id="btnCompartir">Compartir</button>
+<br><br>
   
   <div class="calendario-1">
     <div class="encabezado">Abril 2025</div>
@@ -807,8 +952,15 @@ vick2021.github.io/pagCuatro
   </script>
 
   <br>
-vick2021.github.io/pagCinco
-  <br><br>  
+<div class="contenedor">
+<div class="box" id="box1" contenteditable="true" alt="jfjhyu"></div>
+<div><a href="https://ibb.co/Xf2tXQRG"><img src="https://i.ibb.co/SDsBNjCZ/revista-Gran-J.jpg" alt="revista-Gran-J" border="0"></a>
+<!--<a href="https://ibb.co/1tM6f617"><img src="https://i.ibb.co/4n2dZdzK/barrendero.jpg" alt="barrendero" border="0"></a>-->
+<p><strong><span class="mobido">Revista </span> La Gran Jerusalen<br><br><a href="GRAN-JERUSALEN/pagCinco.html">Pagina Cinco </a></strong></p>
+</div></div>
+<br>
+<button class="boton" id="btnCompartir">Compartir</button>
+<br><br>
   <div class="calendario-1">
     <div class="encabezado">Mayo 2025</div>
 
@@ -936,8 +1088,16 @@ vick2021.github.io/pagCinco
     });
   </script>
 <br>
-vick2021.github.io/pagSeis  
-  <br><br>
+<div class="contenedor">
+<div class="box" id="box1" contenteditable="true" alt="jfjhyu"></div>
+<div><a href="https://ibb.co/FksGtnJN"><img src="https://i.ibb.co/My8qL9pW/barrendero.jpg" alt="barrendero" border="0"></a>
+<!--<a href="https://ibb.co/Xf2tXQRG"><img src="https://i.ibb.co/SDsBNjCZ/revista-Gran-J.jpg" alt="revista-Gran-J" border="0"></a>-->
+<p><strong><span class="mobido">Quien </span> o que es el Barrendero<br><br><a href="GRAN-JERUSALEN/pagSeis.html">Pagina Seis </a></strong></p>
+</div></div>
+<br>
+<button class="boton" id="btnCompartir">Compartir</button>
+<br><br>
+  
   <div class="calendario-1">
     <div class="encabezado">Junio 2025</div>
 
@@ -1057,10 +1217,17 @@ vick2021.github.io/pagSeis
        setupModal("myBtn-padre", "myModal-padre");
     });
   </script>
-
-    <br>
-vick2021.github.io/pagSiete
-  <br><br>
+<br>
+<div class="contenedor">
+<div class="box" id="box1" contenteditable="true" alt="jfjhyu"></div>
+<div><a href="https://ibb.co/hFXd8cS4"><img src="https://i.ibb.co/F4sY7XFy/Codigo-De.jpg" alt="Codigo-De" border="0"></a>
+<!--<a href="https://ibb.co/BHtKCmv9"><img src="https://i.ibb.co/bjPRKxYk/plano.jpg" alt="plano" border="0"></a>-->
+<p><strong><span class="mobido">Codigo</span> de la Orden Gran Jerusalen<br><br><a href="GRAN-JERUSALEN/pagSiete.html">Pagina Siete </a></strong></p>
+</div></div>
+<br>
+<button class="boton" id="btnCompartir">Compartir</button>
+<br><br>
+  
   <div class="calendario-1">
     <div class="encabezado">Julio 2025</div>
 
@@ -1168,10 +1335,16 @@ vick2021.github.io/pagSiete
       setupModal("myBtn-abuelos", "myModal-abuelos");
     });
   </script>
-
-  <br>
-vick2021.github.io/pagOcho
-  <br><br>    
+<br>
+<div class="contenedor">
+<div class="box" id="box1" contenteditable="true" alt="jfjhyu"></div>
+<div><a href="https://ibb.co/tT8pLwcZ"><img src="https://i.ibb.co/S4RwfD0Q/evolucion-conciencia.jpg" alt="evolucion-conciencia" border="0"></a>
+<p><strong><span class="mobido">La </span>Evoluciin de la Conciencia<br><br><a href="GRAN-JERUSALEN/pagOcho.html">Pagina Ocho</a></strong></p>
+</div></div>
+<br>
+<button class="boton" id="btnCompartir">Compartir</button>
+<br><br>
+  8i
   <div class="calendario-1">
     <div class="encabezado">Agosto 2025</div>
 
@@ -1278,9 +1451,16 @@ vick2021.github.io/pagOcho
       setupModal("myBtn-clases", "myModal-clases");
     });
   </script>
-  <br>
-vick2021.github.io/pagNueve
-  <br><br>  
+<br>
+<div class="contenedor">
+<div class="box" id="box1" contenteditable="true" alt="jfjhyu"></div>
+<div><a href="https://ibb.co/N2zZvCg8"><img src="https://i.ibb.co/hFvD69xP/Screenshot-20251201-204752-Gallery.jpg" alt="Screenshot-20251201-204752-Gallery" border="0"></a>
+<!--<a href="https://ibb.co/XxwpdDSh"><img src="https://i.ibb.co/TMCRn1mV/elMal.jpg" alt="elMal" border="0"></a>-->
+<p><strong><span class="mobido">El </span>Tecnofeudalismo<br><br><a href="GRAN-JERUSALEN/pagNueve.html">Pagina Nueve </a></strong></p>
+</div></div>
+<br>
+<button class="boton" id="btnCompartir">Compartir</button>
+<br><br>
   
   <div class="calendario-1">
     <div class="encabezado">Septiembre 2025</div>
@@ -1408,9 +1588,16 @@ vick2021.github.io/pagNueve
       setupModal("myBtn-grito", "myModal-grito");
     });
   </script>
-  <br>
-vick2021.github.io/pagDiez
-  <br><br>  
+<br>
+<div class="contenedor">
+<div class="box" id="box1" contenteditable="true" alt="jfjhyu"></div>
+<div><a href="https://ibb.co/BHtKCmv9"><img src="https://i.ibb.co/bjPRKxYk/plano.jpg" alt="plano" border="0"></a>
+<!--<a href="https://ibb.co/bg5hpsLJ"><img src="https://i.ibb.co/GvQwgWkT/finanzas.jpg" alt="finanzas" border="0"></a>-->
+<p><strong><span class="mobido">Que</span> es Plano<br><br><a href="GRAN-JERUSALEN/pagDiez.html">Pagina Diez </a></strong></p>
+</div></div>
+<br>
+<button class="boton" id="btnCompartir">Compartir</button>
+<br><br>
   
   <div class="calendario-1">
     <div class="encabezado">Octubre 2025</div>
@@ -1521,10 +1708,16 @@ vick2021.github.io/pagDiez
        setupModal("myBtn-hallowen", "myModal-hallowen");
     });
   </script>
-
-  <br>
-vick2021.github.io/pagOnce
-  <br><br>    
+<br>
+<div class="contenedor">
+<div class="box" id="box1" contenteditable="true" alt="jfjhyu"></div>
+<div><a href="https://ibb.co/sd5GL3yM"><img src="https://i.ibb.co/0RBSPJhd/gran-arquitecto.jpg" alt="gran-arquitecto" border="0"></a>
+<p><strong><span class="mobido">El </span>Gran Arquitecto GAU<br><br><a href="GRAN-JERUSALEN/pagOnce.html">Pagina Once </a></strong></p>
+</div></div>
+<br>
+<button class="boton" id="btnCompartir">Compartir</button>
+<br><br>
+  
   <div class="calendario-1">
     <div class="encabezado">Noviembre 2025</div>
            <div class="dia-semana">D</div>
@@ -1644,10 +1837,18 @@ vick2021.github.io/pagOnce
       setupModal("myBtn-difuntos", "myModal-difuntos");
     });
   </script>
-
-  <br>
-vick2021.github.io/pagDoce
-  <br><br>    
+<br>
+<div class="contenedor">
+<div class="box" id="box1" contenteditable="true" alt="jfjhyu"></div>
+<div><a href='https://postimg.cc/qztZTGQN' target='_blank'><img src='https://i.postimg.cc/qztZTGQN/Moral.jpg' border='0' alt='Moral'></a>
+<!--<a href="jhj"><img src="https://docs.google.com/document/d/1jykp7NxnVjaJ-aj3SdRg7UvCrG4sZrLkxfgt23TNO_c/edit?usp=drivesdk" alt="que es la moral" border="0"></a>-->
+<!--<a href="https://ibb.co/vCZfLGLq"><img src="https://i.ibb.co/9msByLyg/Todos-Podemos-Yegar.jpg" alt="Todos-Podemos-Yegar" border="0"></a>-->
+<p><strong><span class="mobido">que</span> es la moral<br><br><a href="GRAN-JERUSALEN/pagDoce.html">Pagina Dose </a></strong></p>
+</div></div>
+<br>
+<button class="boton" id="btnCompartir">Compartir</button>
+<br><br>
+  
   <div class="calendario-1">
     <div class="encabezado">Diciembre 2025</div>
 
@@ -1764,8 +1965,11 @@ vick2021.github.io/pagDoce
       setupModal("myBtn-navidad", "myModal-navidad");
     });
   </script>
- <br><br>
-<div class ="pie-pagina" style="color:white; background:salmon; padding:10px; text-align: center; border-radius:10px; border:2px black solid; width:60%; margin-bottom:15px;">
+<br>
+<a href="https://vero.co/cuitlahuac2021" ><img src="https://i.ibb.co/fdfCvP2n/vero.jpg" alt="vero" border="0" class="link"> Fallow me in Vero app:</a>
+
+<br><br>
+<div class ="pie-pagina" style="color:white; background:salmon; padding:10px; text-align: center; border-radius:10px; border:2px black solid; width:60%; margin-bottom:15px;"></a>
 <p class="black" style="color:black;">Preguntas y Respuestas</p>
 mcuitlahuac62@gmail.com
 </div>
