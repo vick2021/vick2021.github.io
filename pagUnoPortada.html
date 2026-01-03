@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>La Gran Jerusalén – Revista de la Epopeya del Barrendero</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --card: #020617;
+      --accent: #facc15;
+      --accent-soft: rgba(250, 204, 21, 0.12);
+      --text-main: #e5e7eb;
+      --text-soft: #9ca3af;
+      --text-strong: #f9fafb;
+      --border-soft: rgba(148, 163, 184, 0.3);
+      --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      --font-title: "Playfair Display", "Times New Roman", serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-body);
+      background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3.5rem;
+    }
+
+    /* CABECERA TIPO REVISTA */
+    .masthead {
+      border-bottom: 1px solid var(--border-soft);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .masthead {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .mag-title {
+      font-family: var(--font-title);
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-strong);
+    }
+
+    .mag-subtitle {
+      font-size: 0.85rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 0.4rem;
+    }
+
+    .issue-info {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-top: 0.4rem;
+    }
+
+    .cover-box {
+      border-radius: 1.5rem;
+      border: 1px solid var(--border-soft);
+      background: radial-gradient(circle at 0 0, #1e293b 0, #020617 60%);
+      padding: 1.8rem 1.8rem 1.4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .cover-title {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      color: var(--text-strong);
+      margin-bottom: 0.6rem;
+    }
+
+    .cover-deck {
+      font-size: 0.92rem;
+      color: var(--text-soft);
+    }
+
+    .cover-orbit {
+      position: absolute;
+      inset: auto -40px -60px auto;
+      width: 210px;
+      height: 210px;
+      border-radius: 999px;
+      border: 1px dashed rgba(148, 163, 184, 0.4);
+      opacity: 0.7;
+    }
+
+    .cover-orbit::before,
+    .cover-orbit::after {
+      content: "";
+      position: absolute;
+      border-radius: inherit;
+      inset: 18px;
+      order: 1px dashed rgba(148, 163, 184, 0.2);
+    }
+
+    .cover-orbit::after {
+      inset: 36px;
+    }
+
+    .over-core {
+      position: absolute;
+      inset: auto 38px 38px auto;
+      width: 70px;
+      height: 70px;
+      border-radius: 999px;
+      ackground: radial-gradient(circle, var(--accent) 0, #fde68a 45%, #111827 100%);
+      box-shadow: 0 0 24px rgba(250, 204, 21, 0.45);
+    }
+
+    /* CUERPO ESTILO REVISTA */
+    .grid-main {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.2fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid-main {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .section-title {
+      font-family: var(--font-title);
+      font-size: 1.7rem;
+      margin-bottom: 0.8rem;
+      color: var(--text-strong);
+    }
+
+    .section-intro {
+      font-size: 0.98rem;
+      color: var(--text-soft);
+      margin-bottom: 1.4rem;
+    }
+
+    .two-column {
+      column-count: 2;
+      column-gap: 2rem;
+      column-rule: 1px solid rgba(31, 41, 55, 0.7);
+      font-size: 0.98rem;
+      text-align: justify;
+    }
+
+    @media (max-width: 800px) {
+      .two-column {
+        column-count: 1;
+      }
+    }
+
+    .two-column p {
+      margin-top: 0;
+      margin-bottom: 0.9rem;
+    }
+
+    .dropcap:first-letter {
+      float: left;
+      font-family: var(--font-title);
+      font-size: 3rem;
+      line-height: 1;
+      padding-right: 0.25rem;
+      padding-top: 0.15rem;
+      color: var(--accent);
+    }
+
+    /* BARRA LATERAL / PANEL */
+    .sidebar-card {
+      background: linear-gradient(135deg, #020617, #0b1120);
+      border-radius: 1.4rem;
+      border: 1px solid var(--border-soft);
+      padding: 1.4rem 1.4rem 1.6rem;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+      position: sticky;
+      top: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .sidebar-card {
+        position: static;
+      }
+    }
+
+    .sidebar-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      color: var(--text-strong);
+    }
+
+    .sidebar-sub {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 1rem;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .pill {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 0.32rem 0.75rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text-soft);
+      background: rgba(15, 23, 42, 0.85);
+      white-space: nowrap;
+    }
+
+    .pill.highlight {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .sidebar-block {
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding-top: 0.9rem;
+      margin-top: 0.9rem;
+      font-size: 0.86rem;
+      color: var(--text-soft);
+    }
+
+    .sidebar-block strong {
+      color: var(--text-strong);
+    }
+
+    .sidebar-quote {
+      font-size: 0.90rem;
+      font-style: italic;
+      border-left: 2px solid var(--accent);
+      padding-left: 0.7rem;
+      margin-top: 0.6rem;
+      color: #e5e7eb;
+    }
+
+    /* BLOQUES DESTACADOS */
+    .strip {
+      margin-top: 2.3rem;
+      border-radius: 1.2rem;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.95),
+        rgba(30, 64, 175, 0.6)
+      );
+      padding: 1.2rem 1.4rem 1.1rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .strip-title {
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .strip-main {
+      font-size: 1.05rem;
+      color: #f9fafb;
+      margin-bottom: 0.3rem;
+    }
+
+    .strip-text {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .strip-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      font-size: 0.8rem;
+      color: #e5e7eb;
+    }
+
+    @media (max-width: 600px) {
+      .strip-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .strip-item {
+      border-radius: 0.8rem;
+      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 0.7rem 0.8rem;
+    }
+
+    .strip-item span {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    /* SECCIÓN FINAL */
+    .footer-note {
+      margin-top: 2.6rem;
+      padding-top: 1.6rem;
+      border-top: 1px dashed rgba(75, 85, 99, 0.8);
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.2fr);
+      gap: 1.4rem;
+      font-size: 0.88rem;
+      color: var(--text-soft);
+    }
+
+    @media (max-width: 800px) {
+      .footer-note {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      margin-bottom: 0.45rem;
+    }
+
+    .footer-note strong {
+      color: var(--text-strong);
+    }
+
+    .signature {
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+    }
+.btn{
+width:60px;
+height:25px;
+background: aqua;
+border-radius:10px;
+border :3px blue solid;
+margin-bottom:30px;
+}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- CABECERA -->
+    <header class="masthead">
+<button class="btn"><a href="../header.html"><strong>Home</strong></a></button>
+      <div>
+        <div class="mag-title">REVISTA GRAN JERUSALÉN</div>
+        <div class="mag-subtitle">EPOPEYA DEL BARRENDERO – EDICIÓN ESPECIAL</div>
+        <div class="issue-info">Número 01 · Crónicas del Plano del Arquitecto</div>
+      </div>
+
+      <div class="cover-box">
+        <div class="cover-tag">DOSSIER CENTRAL</div>
+        <div class="cover-title">¿Qué es la Gran Jerusalén en nuestra narrativa?</div>
+        <p class="cover-deck">
+          No es sólo una ciudad ni sólo una nave espacial. Es plano, templo,
+          hogar, laboratorio y campo de batalla espiritual al mismo tiempo:
+          el gran experimento de amor, conciencia y responsabilidad.
+        </p>
+        <div class="cover-orbit"></div>
+        <div class="cover-core"></div>
+      </div>
+    </header>
+
+    <!-- CUERPO PRINCIPAL -->
+    <main class="grid-main">
+      <!-- ARTÍCULO -->
+      <article>
+        <div class="section-label">Concepto central</div>
+        <h1 class="section-title">La Gran Jerusalén: ciudad, nave y plano vivo</h1>
+        <p class="section-intro">
+          Dentro de nuestra epopeya, la <strong>Gran Jerusalén</strong> no es una copia
+          de ningún texto religioso específico, sino un símbolo vivo que integra
+          todo lo que hemos venido construyendo: el Gran Arquitecto, el Barrendero,
+          la nave nodriza, la familia, la moral, el crédito y la danza eterna
+          entre el bien y el mal.
+        </p>
+
+        <div class="two-column">
+          <p class="dropcap">
+            La Gran Jerusalén es, ante todo, <strong>un plano original</strong>:
+            la idea perfecta del Arquitecto sobre cómo debería organizarse la vida
+            cuando se toma en serio el amor, la justicia y la responsabilidad.
+            Es como un modelo maestro, un “dibujo” fractal donde cada parte
+            está pensada para que nadie sobre, nadie falte y nadie sea tratado
+            como basura.
+          </p>
+
+          <p>
+            Pero en nuestra narrativa ese plano no se queda en un papel
+            invisible: toma forma como una <strong>ciudad viva</strong>. Una ciudad
+            que puede estar en la Tierra, en otra estrella o convertida en
+            <strong>nave nodriza</strong> viajando por el espacio. Por eso hablamos
+            de la Gran Jerusalén también como una <em>nave–ciudad</em>: un hogar
+            en movimiento donde la humanidad aprende, se equivoca, se corrige
+            y vuelve a intentar vivir de acuerdo al plano original.
+          </p>
+
+          <p>
+            En el corazón de esta ciudad–nave hay una idea clave: la Gran Jerusalén
+            no se construye sólo con piedra o metal, se construye con
+            <strong>decisiones</strong>. Cada acto de amor, cada gesto de justicia,
+            cada vez que alguien renuncia a abusar del otro, está colocando
+            un ladrillo invisible en sus muros. Al contrario, cada acto de abuso,
+            corrupción o indiferencia genera grietas, ruinas y zonas oscuras
+            dentro de la misma obra.
+          </p>
+
+          <p>
+            Por eso, dentro de nuestra historia, la Gran Jerusalén convive
+            simbólicamente con sus contrarios: <strong>Babilonia la Ramera</strong>,
+            los imperios que se corrompen, el feudalismo digital, el culto
+            al dinero por encima de la vida. Esos sistemas también construyen
+            ciudades, pero son ciudades torcidas, laberintos donde pocos
+            mandan y muchos son usados como piezas desechables.
+          </p>
+
+          <p>
+            En contraste, la Gran Jerusalén se concibe como un espacio donde
+            el poder es servicio, no dominación. El <strong>Barrendero</strong> no es
+            un rey que mira desde un trono de oro, sino un capitán que limpia,
+            organiza, coordina y da la cara por su tripulación. Su fuerza
+            no proviene de la violencia, sino de la coherencia: su escoba
+            es símbolo de humildad, de orden y de valentía moral.
+          </p>
+
+          <p>
+            La ciudad también es una <strong>escuela de conciencia</strong>. Allí,
+            los errores no se tapan bajo la alfombra: se estudian, se entienden
+            y se usan como material de aprendizaje. Cada familia es una célula
+            fundamental, un pequeño taller donde se ensaya el amor real,
+            no idealizado. La Gran Jerusalén sabe que, si la familia está rota,
+            la ciudad entera se tambalea.
+          </p>
+
+          <p>
+            En esta visión, la Gran Jerusalén es a la vez pasado, presente
+            y futuro. Está en el recuerdo de todas las civilizaciones que
+            intentaron algo mejor y fracasaron; está en los barrios, talleres,
+            casas y pequeñas comunidades que hoy, sin saberlo, viven de forma
+            más justa; y está en el porvenir, en esa posible sociedad que
+            todavía no existe por completo, pero que estamos ayudando a dibujar
+            con cada decisión.
+          </p>
+
+          <p>
+            Finalmente, la Gran Jerusalén es también un <strong>campo de batalla
+            simbólico</strong>. No es que aparezcan demonios de caricatura,
+            sino que el conflicto se da entre dos tendencias reales dentro
+            de cada persona: el impulso de construir y el impulso de destruir.
+            El Gran Arquitecto propone, el Destructor tienta, y el Barrendero
+            –con su tripulación– elige a cada paso qué voz seguir.
+          </p>
+        </div>
+
+        <!-- BLOQUE FRAGMENTO EXPLICATIVO -->
+        <section class="strip">
+          <div>
+            <div class="strip-title">Mapa rápido</div>
+            <div class="strip-main">Cuatro rostros de una misma Gran Jerusalén</div>
+            <p class="strip-text">
+              Para entenderla mejor, podemos imaginar la Gran Jerusalén como
+              un cubo de cristal: según el ángulo desde el que mires, ves
+              una cara distinta, pero siempre es el mismo objeto.
+            </p>
+          </div>
+          <div class="strip-grid">
+            <div class="strip-item">
+              <span>Plano</span>
+              Diseño original del Arquitecto: la idea de una vida ordenada
+              por el amor y la justicia, sin corrupción ni abuso.
+            </div>
+            <div class="strip-item">
+              <span>Ciudad</span>
+              Comunidad concreta de familias, barrios y espacios donde se
+              busca vivir el plano, con aciertos y errores.
+            </div>
+            <div class="strip-item">
+              <span>Nave</span>
+              Gran nave nodriza que atraviesa el tiempo y el espacio,
+              llevando a la humanidad en su proceso de maduración.
+            </div>
+            <div class="strip-item">
+              <span>Templo</span>
+              No como edificio religioso cerrado, sino como dimensión interna:
+              el corazón humano cuando se alinea al amor y a la verdad.
+            </div>
+          </div>
+        </section>
+
+        <!-- SEGUNDA SECCIÓN -->
+        <section class="strip" style="margin-top: 1.8rem;">
+          <div>
+            <div class="strip-title">Economía simbólica</div>
+            <div class="strip-main">Creditilismo: la energía de la Gran Jerusalén</div>
+            <p class="strip-text">
+              En nuestra narrativa el dinero se replantea como <strong>energía
+              medible</strong>. El “creditilismo” no es un nuevo banco, sino
+              una forma de recordar que cada acción tiene un costo y un valor
+              en la construcción o destrucción de la ciudad.
+            </p>
+          </div>
+          <div class="strip-grid">
+            <div class="strip-item">
+              <span>Créditos</span>
+              Representan energía invertida en algo útil: reciclar, cuidar,
+              enseñar, sanar, construir, reparar.
+            </div>
+            <div class="strip-item">
+              <span>Contrapeso</span>
+              Denuncian el feudalismo digital y los sistemas donde pocos
+              se adueñan de toda la energía colectiva.
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside>
+        <div class="sidebar-card">
+          <div class="sidebar-sub">Guía rápida</div>
+          <h2 class="sidebar-title">
+            Pilares de la Gran Jerusalén en la Epopeya del Barrendero
+          </h2>
+
+          <div class="pill-list">
+            <div class="pill highlight">Gran Arquitecto</div>
+            <div class="pill">Barrendero – Capitán</div>
+            <div class="pill">Familia</div>
+            <div class="pill">Nave nodriza</div>
+            <div class="pill">Moral</div>
+            <div class="pill">Creditilismo</div>
+            <div class="pill">Despertar de conciencia</div>
+            <div class="pill">Danza eterna 67</div>
+          </div>
+
+          <div class="sidebar-block">
+            <strong>El Gran Arquitecto</strong> es la mente creadora del plano:
+            no es un tirano caprichoso, sino un diseñador que entiende
+            matemáticas, geometría sagrada, ciclos, límites y consecuencias.
+            Su “firma” aparece en la naturaleza, en los patrones, en las
+            proporciones que se repiten.
+          </div>
+
+          <div class="sidebar-block">
+            <strong>El Barrendero</strong> es el capitán de la nave Gran Jerusalén.
+            Representa al humano consciente que, sin ser dios ni diablo,
+            asume la misión de ordenar el caos. Es puente entre el 6 y el 7,
+            entre la imperfección y lo sublime, simbolizado por el número 67:
+            ni fanático de la perfección, ni esclavo del mal.
+          </div>
+
+          <div class="sidebar-block">
+            <strong>La nave nodriza</strong> es metáfora de nuestra historia
+            colectiva: una gigantesca “casa en movimiento” donde viajan
+            generaciones, culturas y especies. Allí también están Caty
+            la chamana, el Guardabosques, el Doctor IQ, Kali el babuino
+            estratega y toda la tripulación que aprende, discute y decide
+            por mayoría.
+          </div>
+
+          <div class="sidebar-block">
+            <strong>La moral</strong> en esta ciudad no es un listado de prohibiciones,
+            sino un <em>manual de navegación</em>: reglas básicas para que la nave
+            no choque contra los asteroides del egoísmo, la mentira,
+            la avaricia y el abuso.
+          </div>
+
+          <div class="sidebar-block">
+            <strong>El conflicto</strong> con los imperios (Babilonia, tecnofeudalismo,
+            sistemas corruptos) no se da sólo fuera de la nave, sino dentro
+            de cada tripulante. La Gran Jerusalén se gana y se pierde primero
+            en el corazón.
+            <div class="sidebar-quote">
+              “Cada vez que eliges amar, aunque te cueste, un pequeño barrio
+              de la Gran Jerusalén se ilumina un poco más.”
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <!-- PIE DE PÁGINA EXPLICATIVO -->
+    <section class="footer-note">
+      <div>
+        <div class="footer-tag">En resumen</div>
+        <p>
+          La <strong>Gran Jerusalén</strong> es el eje de nuestra narrativa: el
+          proyecto original del Arquitecto para una humanidad que se atreve
+          a madurar. Es ciudad, nave y templo, pero sobre todo es una
+          <strong>forma de vivir</strong>. No es un lugar que se encuentra en un mapa,
+          es un estado de conciencia que se va construyendo con decisiones
+          concretas, día a día, familia por familia.
+        </p>
+        <p>
+          Cada escena de la epopeya —las ruinas, los imperios caídos, las
+          batallas internas del Barrendero, los experimentos del Doctor IQ,
+          las visiones de Caty— son fragmentos de este proceso de construcción.
+          El plano está dibujado; lo que falta es que la tripulación asuma,
+          con libertad, si quiere habitarlo o seguir levantando otras
+          ciudades torcidas.
+        </p>
+      </div>
+      <div>
+        <div class="footer-tag">Nota para lectores y tripulantes</div>
+        <p>
+          Este texto está pensado como una <strong>ficha de revista</strong> dentro
+          del universo de la Epopeya del Barrendero. Puedes usarlo como base
+          para tu web, tus carteles, tus diarios o como introducción para
+          nuevos viajeros que quieran saber, en palabras sencillas pero
+          profundas, qué es la Gran Jerusalén de nuestra historia.
+        </p>
+        <div class="signature">
+          Archivo de la Nave Gran Jerusalén · Bitácora del Barrendero
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
