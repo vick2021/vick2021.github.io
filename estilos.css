@@ -6,8 +6,9 @@ body {
     }
 
     .h1 {
-      margin: 10px;
-    }
+  margin:10px;
+font-size:18px;
+}
 
     header {
       : 'Rubik Glitch Pop', system-ui;
@@ -260,53 +261,7 @@ margin-top:-5px;
 .mobido{
 margin-left:12px;
 }
-.menu {
-margin-left:50px;
-    position: relative;
-    display: inline-block;
-font-family:Arial, sans-serif ;
-}
 
-.menu-icon {
-    cursor: pointer;
-    font-size: 34px;
-    color: black;
-    display:flex;
-    justify-content:right;
- font-weight:800; 
-margin-top:13px;
-}
-
-.menu-dropdown {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: white;
-    /*box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);*/
-      box-shadow:;
-    z-index: 1;
-    min-width: 160px;
-font-family:Arial, sans-serif, ;
-}
-
-.menu-dropdown a {
-    /*color:clear;*/
-      color:black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-font-family:Arial, sans-serif, ;
-}
-
-.menu-dropdown a:hover {
-    background-color: #ddd;
-font-family:Arial, sans-serif, ;
-}
-
-.menu:hover .menu-dropdown {
-    display: block;
-font-family:Arial, sans-serif, ;
-}
 .page-link.active {
   background-color:red;
   color: white;
@@ -321,47 +276,9 @@ width:40px;
 height:40px;
 border-radius:20px;
 }
-.gj{
-:Roboto,Arial,san-serif;
-color :red;
-font-weight:800;
-font-size:35px;
-}
-
-.ox {
-  min-height: 20px;
-width:60%;
-  padding: 12px;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: #fff;
-  background: rgba(0,0,0,0.4);
-  outline: none;
-}
-
-/* placeholder semitransparente */
-.ox:empty::before {
-  content: attr(data-placeholder);
-  color: rgba(255,255,255,0.45);
-  pointer-events: none;
-}
-
-/* cuando escribes */
-.ox:focus::before {
-  content: "";
-}
-
 <!--Para que buelva cuando lo borras→
 .box:empty::before {
   transition: opacity 0.2s ease;
-}
-
-ox {
-  min-height: 20px;
-  padding: 12px;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: #fff;
-  background: rgba(0,0,0,0.4);
-  outline: none;
 }
 
 /* placeholder semitransparente */
@@ -385,36 +302,5 @@ ox {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
 
-
-
-.ox {
-  min-height: 20px;
-  padding: 12px;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: #fff;
-  background: rgba(0,0,0,0.4);
-  outline: none;
-}
-
-/* placeholder semitransparente */
-.box:empty::before {
-  content: attr(data-placeholder);
-  color: rgba(255,255,255,0.45);
-  pointer-events: none;
-}
-
-/* cuando escribes */
-.box:focus::before {
-  content: "";
-}
-
-<!--Para que buelva cuando lo borras→
-.box:empty::before {
-  transition: opacity 0.2s ease;
-}
-<!-- Fuente gótica desde Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
 
 </style>
