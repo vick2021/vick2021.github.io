@@ -4,8 +4,9 @@ order: 2px black solid;
 
 }
 .h1{
-margin:10px;
-
+margin:5px;
+font-size:18px;
+margin-left:10%;
 }
 
 header{
@@ -417,14 +418,14 @@ margin-top:-5px;
 .mobido{
 margin-left:12px;
 }
-.menu {
+.enu {
 margin-left:50px;
     position: relative;
     display: inline-block;
 font-family:Arial, sans-serif ;
 }
 
-.menu-icon {
+.enu-icon {
     cursor: pointer;
     font-size: 34px;
     color: black;
@@ -434,7 +435,7 @@ font-family:Arial, sans-serif ;
 margin-top:13px;
 }
 
-.menu-dropdown {
+.enu-dropdown {
     display: none;
     position: absolute;
     right: 0;
@@ -446,7 +447,7 @@ margin-top:13px;
 font-family:Arial, sans-serif, ;
 }
 
-.menu-dropdown a {
+.enu-dropdown a {
     /*color:clear;*/
       color:black;
     padding: 12px 16px;
@@ -455,7 +456,7 @@ font-family:Arial, sans-serif, ;
 font-family:Arial, sans-serif, ;
 }
 
-.menu-dropdown a:hover {
+.enu-dropdown a:hover {
     background-color: #ddd;
 font-family:Arial, sans-serif, ;
 }
