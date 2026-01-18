@@ -11,26 +11,26 @@ box {
   outline: none;
 }
 
-/* placeholder semitransparente */
+
 .box:empty::before {
   content: attr(data-placeholder);
   color: rgba(255,255,255,0.45);
   pointer-events: none;
 }
 
-/* cuando escribes */
+
 .box:focus::before {
   content: "";
 }
 
-<!--Para que buelva cuando lo borras→
+
 .box:empty::before {
   transition: opacity 0.2s ease;
 }
-<!-- Fuente gótica desde Google Fonts -->
+
   
 </style>
-<!-- Fuente gótica desde Google Fonts -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
@@ -295,22 +295,22 @@ box {
 <br><br>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Obtén la fecha actual
+      
       var currentDate = new Date();
-      // Obtiene el día actual
+      
       var currentDay = currentDate.getDate();
 
-      // Agrega la clase al día actual
+      
       var dayElement = document.getElementById('day' + currentDay);
       if (dayElement) {
         dayElement.classList.add('current-day');
       }
 
-      // Function to handle modal opening and closing
+      
       function setupModal(buttonId, modalId) {
         var modal = document.getElementById(modalId);
         var btn = document.getElementById(buttonId);
-        // Ensure the close button is within the modal content
+    
         var span = modal.querySelector(".close"); 
 
         if (btn && modal && span) {
@@ -330,7 +330,7 @@ box {
         }
       }
 
-      // Setup for each specific modal
+      
       setupModal("myBtn-anoNuevo", "myModal-anoNuevo");
       setupModal("myBtn-reyesMagos", "myModal-reyesMagos");
       setupModal("myBtn-martinLutherKing", "myModal-martinLutherKing");
@@ -338,22 +338,22 @@ box {
   </script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Obtén la fecha actual
+      
       var currentDate = new Date();
-      // Obtiene el día actual
+      
       var currentDay = currentDate.getDate();
 
-      // Agrega la clase al día actual
+      
       var dayElement = document.getElementById('day' + currentDay);
       if (dayElement) {
         dayElement.classList.add('current-day');
       }
 
-      // Function to handle modal opening and closing
+      
       function setupModal(buttonId, modalId) {
         var modal = document.getElementById(modalId);
         var btn = document.getElementById(buttonId);
-        // Ensure the close button is within the modal content
+        
         var span = modal.querySelector(".close"); 
 
         if (btn && modal && span) {
@@ -373,7 +373,7 @@ box {
         }
       }
 
-      // Setup for each specific modal
+      
       setupModal("myBtn-anoNuevo", "myModal-anoNuevo");
       setupModal("myBtn-reyesMagos", "myModal-reyesMagos");
       setupModal("myBtn-martinLutherKing", "myModal-martinLutherKing");
